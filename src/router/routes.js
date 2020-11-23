@@ -54,6 +54,15 @@ const routes = [
         },
       },
       {
+        path: '/zhgl/gds/ygd',
+        name: 'ygd',
+        component: () => import('../views/manage/gds/Ygd.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
         path: '/zhgl/gds/gqj',
         name: 'gqj',
         component: () => import('../views/manage/gds/Gqjgl.vue'),

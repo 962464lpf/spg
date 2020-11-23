@@ -1,12 +1,35 @@
 <template>
   <div>
-    <div>
+    <div class="mt10">
       <el-button type="primary" @click="goBack">返回</el-button>
     </div>
+    <el-form :inline="true" class="mt10">
+      <el-form-item label="姓名">
+        <el-input></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary">查询</el-button>
+      </el-form-item>
+    </el-form>
+    <!-- <div class="fl clearfloat ">
+      <el-button type="primary">出入记录</el-button>
+    </div> -->
+    <div class="fr">
+      <el-button type="primary">批量导入</el-button>
+      <el-button type="primary">导出</el-button>
+    </div>
+    <div class="clearfloat"></div>
     <el-table :data="tableData" border stripe style="width: 100%" class="mt10">
-      <el-table-column prop="nam" label="姓名"> </el-table-column>
+      <el-table-column prop="name" label="姓名"> </el-table-column>
       <el-table-column prop="age" label="年龄"> </el-table-column>
-      <el-table-column prop="zhicheng" label="职称"> </el-table-column>
+      <el-table-column prop="xb" label="性别"> </el-table-column>
+      <el-table-column prop="zw" label="职务"> </el-table-column>
+      <el-table-column label="操作" width="160">
+        <template>
+          <el-button>修改</el-button>
+          <el-button>删除</el-button>
+        </template>
+      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -14,7 +37,9 @@
 <script>
 export default {
   data() {
-    return { tableData: [{ name: '张小虎', age: 35, zhicheng: '技术工' }] }
+    return {
+      tableData: [{ name: '小王', age: '26', xb: '男', zw: '普通职员' }],
+    }
   },
   methods: {
     goBack() {
