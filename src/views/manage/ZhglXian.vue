@@ -208,7 +208,7 @@ export default {
     return {
       tableData: [
         {
-          gdgs: '陕西省地方电力集团西安供电分公司',
+          gdgs: '丈八北路供电所',
           gds: '93',
           people: '1643',
           car: '122',
@@ -227,7 +227,7 @@ export default {
           pgwhd: '129',
         },
         {
-          gdgs: '陕西省地方电力集团咸阳供电分公司',
+          gdgs: '鱼化寨供电所',
           gds: '93',
           people: '1643',
           car: '122',
@@ -246,7 +246,7 @@ export default {
           pgwhd: '129',
         },
         {
-          gdgs: '陕西省地方电力集团宝鸡供电分公司',
+          gdgs: '唐延路供电所',
           gds: '93',
           people: '1643',
           car: '122',
@@ -269,7 +269,10 @@ export default {
   },
   methods: {
     jump() {
-      this.$router.push({ path: '/zhgl/dishi', query: { city: 'xian' } })
+      this.$router.push({
+        path: '/zhgl/gds',
+        query: { city: 'zhangba' },
+      })
     },
   },
   mounted() {},

@@ -18,6 +18,96 @@ const routes = [
         },
       },
       {
+        path: '/zhgl/dishi',
+        name: 'dishi',
+        component: () => import('../views/manage/ZhglS.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/xian',
+        name: 'xian',
+        component: () => import('../views/manage/ZhglXian.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds',
+        name: 'gds',
+        component: () => import('../views/manage/Gongdiansuo.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/gdgl',
+        name: 'gd',
+        component: () => import('../views/manage/gds/Gdgl.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/gqj',
+        name: 'gqj',
+        component: () => import('../views/manage/gds/Gqjgl.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/bpbj',
+        name: 'bpbj',
+        component: () => import('../views/manage/gds/Bpbj.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/clgl',
+        name: 'clgl',
+        component: () => import('../views/manage/gds/Clgl.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/tqgl',
+        name: 'tqgl',
+        component: () => import('../views/manage/gds/Tqgl.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/rygl',
+        name: 'rygl',
+        component: () => import('../views/manage/gds/Rygl.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/jxgl',
+        name: 'jxgl',
+        component: () => import('../views/manage/gds/Jxgl.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
         path: '/zhgl/sjpz',
         name: 'sjpz',
         component: () => import('../views/manage/Sjpz.vue'),
@@ -26,7 +116,15 @@ const routes = [
           icon: 'el-icon-document',
         },
       },
-
+      {
+        path: '/zhgl/tjfx',
+        name: 'sjpz',
+        component: () => import('../views/manage/Tjfx.vue'),
+        meta: {
+          title: '统计分析',
+          icon: 'el-icon-document',
+        },
+      },
       {
         path: '/zhgl/jsgl',
         name: 'jsgl',
@@ -42,15 +140,6 @@ const routes = [
         component: () => import('../views/manage/Zygl.vue'),
         meta: {
           title: '资源管理',
-          icon: 'el-icon-document',
-        },
-      },
-      {
-        path: '/index/work',
-        name: 'index',
-        component: () => import('../views/target/Work.vue'),
-        meta: {
-          title: '工作督办',
           icon: 'el-icon-document',
         },
       },
@@ -113,60 +202,33 @@ const routes = [
     ],
   },
   {
-    path: '/index',
-    name: 'index',
+    path: '/yxfx',
+    name: 'yxfx',
     component: () => import('../components/layout/RouterView.vue'),
     meta: {
-      title: '统计分析',
+      title: '运行指标分析',
       icon: 'el-icon-document',
     },
     children: [
       {
-        path: '/index/analysis',
-        name: 'index',
-        component: () => import('../views/target/Analysis.vue'),
-        meta: {
-          title: '工单统计',
-          icon: 'el-icon-document',
-        },
-      },
-      {
-        path: '/index/analysis',
-        name: 'index',
-        component: () => import('../views/target/Analysis.vue'),
-        meta: {
-          title: '基础信息统计',
-          icon: 'el-icon-document',
-        },
-      },
-      {
-        path: '/index/analysis',
-        name: 'index',
-        component: () => import('../views/target/Analysis.vue'),
-        meta: {
-          title: '综合监控',
-          icon: 'el-icon-document',
-        },
-      },
-      {
-        path: '/index/analysis',
-        name: 'index',
-        component: () => import('../views/target/Analysis.vue'),
+        path: '/yxfx/zbfx',
+        name: 'spm',
+        component: () => import('../views/statistics/Zbfx.vue'),
         meta: {
           title: '指标分析',
           icon: 'el-icon-document',
         },
       },
+      {
+        path: '/yxfx/gzdu',
+        name: 'spm',
+        component: () => import('../views/statistics/Work.vue'),
+        meta: {
+          title: '工作督办',
+          icon: 'el-icon-document',
+        },
+      },
     ],
-  },
-  {
-    path: '/sys',
-    name: 'sys',
-    component: () => import('../components/layout/RouterView.vue'),
-    meta: {
-      title: '系统配置',
-      icon: 'el-icon-document',
-    },
   },
 ]
 

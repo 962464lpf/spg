@@ -21,27 +21,31 @@
       <template v-for="(route, index) in routes">
         <el-submenu
           :index="route.path"
-          v-if="route.children && route.children.length"
+          v-if="route.children && route.children.length && route.meta.title"
           :key="index"
         >
-          <template slot="title">
+          <template
+            slot="title"
+            v-if="route.children && route.children.length && route.meta.title"
+          >
             <i :class="route.meta.icon"></i>
             <span>{{ route.meta.title }}</span>
           </template>
-          <el-menu-item-group>
-            <el-menu-item
-              :key="todo.path"
-              :index="todo.path"
-              v-for="todo in route.children"
-              >{{ todo.meta.title }}</el-menu-item
-            >
+          <el-menu-item-group
+            v-if="route.children && route.children.length && route.meta.title"
+          >
+            <span v-for="todo in route.children" :key="todo.path">
+              <el-menu-item :index="todo.path" v-if="todo.meta.title">{{
+                todo.meta.title
+              }}</el-menu-item>
+            </span>
           </el-menu-item-group>
         </el-submenu>
 
         <el-menu-item
           :index="route.path"
           :key="route.path"
-          v-else-if="!route.children && route.meta"
+          v-else-if="!route.children && route.meta && route.meta.title"
         >
           <i :class="route.meta.icon"></i>
           <span slot="title">{{ route.meta.title }}</span>
