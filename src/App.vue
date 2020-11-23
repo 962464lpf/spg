@@ -2,7 +2,7 @@
   <div id="app">
     <Header class="my-header"></Header>
     <component v-bind:is="contentCmp" class="center"></component>
-    <Footer class="my-footer"></Footer>
+    <!-- <Footer class="my-footer"></Footer> -->
   </div>
 </template>
 <script>
@@ -52,7 +52,7 @@ export default {
     position: absolute;
     width: 100%;
     top: 55px;
-    bottom: 50px;
+    bottom: 0px;
     .my-nav {
       height: 100%;
       float: left;

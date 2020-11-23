@@ -19,6 +19,7 @@
     </el-form>
     <div class="fl clearfloat ">
       <el-button type="primary">领用记录</el-button>
+      <el-button type="primary">报废记录</el-button>
     </div>
     <div class="fr clearfloat mt10">
       <el-button type="primary">新增</el-button>
@@ -33,6 +34,8 @@
       <el-table-column prop="lx" label="类型"> </el-table-column>
       <el-table-column prop="syr" label="使用人"> </el-table-column>
       <el-table-column prop="dw" label="单位"> </el-table-column>
+      <el-table-column prop="rksj" label="入库时间"> </el-table-column>
+
       <el-table-column prop="bz" label="备注"> </el-table-column>
       <el-table-column label="操作">
         <template>
@@ -57,6 +60,7 @@ export default {
           lx: '安全工器具',
           dw: 'xxx供电所',
           bz: 'xxx',
+          rksj: '2020-3.25',
         },
         {
           bh: 2,
@@ -66,6 +70,7 @@ export default {
           lx: '生产工器具',
           dw: 'xxx供电所',
           bz: 'xxx',
+          rksj: '2020-3-25',
         },
       ],
     }

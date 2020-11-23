@@ -22,12 +22,13 @@
     <el-table :data="tableData" border stripe style="width: 100%" class="mt10">
       <el-table-column prop="name" label="姓名"> </el-table-column>
       <el-table-column prop="age" label="年龄"> </el-table-column>
-      <el-table-column prop="xb" label="性别"> </el-table-column>
-      <el-table-column prop="zw" label="职务"> </el-table-column>
+      <el-table-column prop="xb" label="性别"> </el-table-column
+      ><el-table-column prop="xl" label="学历"> </el-table-column>
+      <el-table-column prop="sfzg" label="是否在岗"> </el-table-column>
+      <el-table-column prop="zc" label="职称"> </el-table-column>
       <el-table-column label="操作" width="160">
         <template>
           <el-button>修改</el-button>
-          <el-button>删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -38,7 +39,16 @@
 export default {
   data() {
     return {
-      tableData: [{ name: '小王', age: '26', xb: '男', zw: '普通职员' }],
+      tableData: [
+        {
+          name: '小王',
+          age: '26',
+          xb: '男',
+          xl: '大专',
+          sfzg: '是',
+          zc: '普通职员',
+        },
+      ],
     }
   },
   methods: {

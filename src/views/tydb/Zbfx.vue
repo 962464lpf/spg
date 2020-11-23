@@ -21,6 +21,57 @@
         <el-button type="primary">导出</el-button>
       </el-form-item>
     </el-form>
+    <el-row class="content">
+      <el-col :span="6">
+        <p>监控平台应用率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+      <el-col :span="6">
+        <p>电费回收率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+      <el-col :span="6">
+        <p>采集下发成功率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+      <el-col :span="6">
+        <p>缴费APP占比率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+      <el-col :span="6">
+        <p>网上报装接电率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+      <el-col :span="6">
+        <p>线损率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+      <el-col :span="6">
+        <p>采集覆盖率</p>
+        <ve-histogram
+          :data="chartData"
+          :settings="chartSettings"
+        ></ve-histogram>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -94,6 +145,19 @@ export default {
           ],
         },
       ],
+      chartData: {
+        columns: ['区域', '应用率'],
+        rows: [
+          { 区域: '西安', 应用率: 0.32 },
+          { 区域: '宝鸡', 应用率: 0.26 },
+          { 区域: '渭南', 应用率: 0.76 },
+          { 区域: '咸阳', 应用率: 0.49 },
+          { 区域: '汉中', 应用率: 0.323 },
+        ],
+      },
+      chartSettings: {
+        yAxisType: ['percent'],
+      },
     }
   },
   methods: {},
@@ -101,4 +165,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.zbfx {
+  .content {
+    text-align: center;
+  }
+}
+</style>

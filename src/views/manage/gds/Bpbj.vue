@@ -18,7 +18,8 @@
       </el-form-item>
     </el-form>
     <div class="fl clearfloat ">
-      <el-button type="primary">出入库记录</el-button>
+      <el-button type="primary">出入库记录</el-button
+      ><el-button type="primary">小号盘点</el-button>
     </div>
     <div class="fr clearfloat mt10">
       <el-button type="primary">补充入库</el-button>
