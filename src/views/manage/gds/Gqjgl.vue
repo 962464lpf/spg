@@ -39,8 +39,8 @@
       <el-table-column prop="bz" label="备注"> </el-table-column>
       <el-table-column label="操作">
         <template>
-          <el-button>修改</el-button>
-          <el-button>删除</el-button>
+          <el-button type="text">修改</el-button>
+          <el-button type="text">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
