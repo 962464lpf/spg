@@ -22,16 +22,25 @@
       <el-table-column label="操作">
         <template>
           <el-button type="primary">删除</el-button>
+          <el-button type="primary" @click="tqxqStatus = true">详情</el-button>
         </template>
       </el-table-column>
     </el-table>
+    <div v-if="tqxqStatus">
+      <Tqxq v-model="tqxqStatus"></Tqxq>
+    </div>
   </div>
 </template>
 
 <script>
+import Tqxq from './Tqxq'
 export default {
+  components: {
+    Tqxq,
+  },
   data() {
     return {
+      tqxqStatus: false,
       tableData: [
         { tqmc: '一台区', tqfzr: '小王', pbrl: '' },
         { tqmc: '二台区', tqfzr: '小王', pbrl: '' },

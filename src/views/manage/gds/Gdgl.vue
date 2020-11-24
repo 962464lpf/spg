@@ -18,6 +18,7 @@
       ><el-table-column type="selection" width="55"> </el-table-column>
       <el-table-column prop="pgsj" label="派工时间"> </el-table-column>
       <el-table-column prop="pgdh" label="派工单号"> </el-table-column>
+      <el-table-column prop="gdly" label="工单来源"> </el-table-column>
       <el-table-column prop="rwmc" label="任务名称"> </el-table-column>
       <el-table-column prop="zylx" label="作业类型"> </el-table-column>
       <el-table-column prop="gzzrr" label="工作负责人"> </el-table-column>
@@ -54,6 +55,7 @@ export default {
           rwmc: '巡线',
           zylx: '检查',
           gzzrr: '王小虎',
+          gdly: '96789',
           zdr: '张小虎',
           qfr: 's',
           zt: '未制单',
@@ -63,6 +65,7 @@ export default {
           pgdh: '123456789',
           rwmc: '巡线',
           zylx: '检查',
+          gdly: '移动端推送',
           gzzrr: '王小虎',
           zdr: '张小虎',
           qfr: 's',
@@ -72,6 +75,7 @@ export default {
           pgsj: '2020-11-23',
           pgdh: '123456789',
           rwmc: '巡线',
+          gdly: '日常计划',
           zylx: '检查',
           gzzrr: '王小虎',
           zdr: '张小虎',
@@ -83,6 +87,7 @@ export default {
           pgdh: '123456789',
           rwmc: '巡线',
           zylx: '检查',
+          gdly: '',
           gzzrr: '王小虎',
           zdr: '张小虎',
           qfr: 's',

@@ -56,7 +56,7 @@
     <el-table :data="tableData" border style="width: 100%" class="mt10">
       <el-table-column
         prop="gdgs"
-        label="市供电公司"
+        label="县供电公司"
         align="center"
         width="240"
         fixed
