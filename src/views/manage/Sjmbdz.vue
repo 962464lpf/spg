@@ -17,6 +17,7 @@
           <li class="mt10">+ 交通工具</li>
           <li class="mt10">+ 房屋设施</li>
           <li class="mt10">+ 计算机配置</li>
+          <li class="mt10">+ 供电所照片</li>
         </ul>
       </el-col>
       <el-col :span="18">

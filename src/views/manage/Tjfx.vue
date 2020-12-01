@@ -1,6 +1,6 @@
 <template>
   <div class="tjfx">
-    <el-row>
+    <el-row style="height: 100%;">
       <el-col :span="3">
         <el-input placeholder="输入关键字进行过滤"
                   v-model="filterText">
@@ -12,18 +12,25 @@
                  ref="tree">
         </el-tree>
       </el-col>
-      <el-col :span="21" style="padding-left: 5px; box-sizing:border-box;">
+      <el-col :span="21"
+              style="padding-left: 5px; box-sizing:border-box; height: 100%;">
         <el-tabs v-model="activeName">
           <el-tab-pane label="基本信息"
-                       name="first" lazy>
+                       name="first"
+                       lazy
+                       style="height: 100%;">
             <Jbxx></Jbxx>
           </el-tab-pane>
           <el-tab-pane label="工单统计"
-                       name="second" lazy>
+                       name="second"
+                       lazy
+                       style="height: 100%;">
             <Gdtj></Gdtj>
           </el-tab-pane>
           <el-tab-pane label="台区统计"
-                       name="third" lazy>
+                       name="third"
+                       lazy
+                       style="height: 100%;">
             <Tqtj></Tqtj>
           </el-tab-pane>
         </el-tabs>
@@ -99,4 +106,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style  lang="scss">
+.tjfx {
+  height: 100%;
+  overflow: hidden;
+  .el-tabs {
+    height: 100% !important;
+    .el-tabs__content {
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}
+</style>

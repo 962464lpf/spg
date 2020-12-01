@@ -12,6 +12,7 @@
         <el-radio :label="6">交通工具</el-radio>
         <el-radio :label="9">房屋建设</el-radio>
         <el-radio :label="9">计算机配置</el-radio>
+        <el-radio :label="9">供电所照片</el-radio>
       </el-radio-group>
     </p>
     <el-form ref="form" label-width="120px" class="mt10">

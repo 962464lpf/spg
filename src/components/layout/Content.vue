@@ -42,6 +42,9 @@ export default {
 .content {
   .right {
     overflow: auto;
+    .right-view{
+      height: 100%;
+    }
   }
 }
 </style>

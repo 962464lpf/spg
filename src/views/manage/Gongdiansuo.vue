@@ -37,6 +37,36 @@
         <p>
           所长电话：xxx
         </p>
+        <div  class="jbqk">
+
+        <p class="text-center mt10">基本情况</p>
+        <el-row>
+          <el-col :span="12">
+            <p>服务台区数：122 个</p>
+          </el-col>
+          <el-col :span="12">
+            <p>客户数：122 22 人</p>
+          </el-col>
+          <el-col :span="12">
+            <p>台区经理：12 人</p>
+          </el-col>
+          <el-col :span="12">
+            <p>在岗人数：13 人</p>
+          </el-col>
+          <el-col :span="12">
+            <p>综合柜员: 11 人</p>
+          </el-col>
+          <el-col :span="12">
+            <p>在职人员：25 人</p>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="12"><p>本月 业务受理： 2489单</p></el-col>
+          <el-col :span="12"><p>派工单量： 1489单</p></el-col>
+        </el-row>
+        
+        </div>
+        
       </el-col>
       <el-col :span="12">
         <el-tabs v-model="activeName">
@@ -143,6 +173,9 @@ export default {
   .zhibiao {
     padding: 20px;
     line-height: 40px;
+  }
+  .jbqk{
+    border: 1px solid #ee3;
   }
 }
 </style>
