@@ -11,9 +11,12 @@
     <div class="mt10 fr clearfloat">
       <el-button type="success"
                  @click="zdStatus = true">制单</el-button>
-      <el-button type="success" @click="qf">签发</el-button>
-      <el-button type="success" @click="jdStatus = true">结单</el-button>
-      <el-button type="success" @click="gdStatus = true">归档</el-button>
+      <el-button type="success"
+                 @click="qf">签发</el-button>
+      <el-button type="success"
+                 @click="jdStatus = true">结单</el-button>
+      <el-button type="success"
+                 @click="gdStatus = true">归档</el-button>
       <!-- <el-button type="success">派工下发</el-button> -->
     </div>
     <div class="clearfloat"></div>
@@ -44,7 +47,8 @@
                        width="180">
         <template>
           <el-button type="text">制单</el-button>
-          <el-button type="text">查看</el-button>
+          <el-button type="text"
+                     @click="lookStatus = true">查看</el-button>
           <el-button type="text">修改</el-button>
           <el-button type="text">删除</el-button>
         </template>
@@ -54,10 +58,14 @@
       <GdTemplate v-model="zdStatus"></GdTemplate>
     </div>
     <div v-if="jdStatus">
-      <GdTemplate v-model="jdStatus" :values='values'></GdTemplate>
+      <GdTemplate v-model="jdStatus"
+                  :values='values'></GdTemplate>
     </div>
     <div v-if="gdStatus">
-      <GuiDang v-model="gdStatus" ></GuiDang>
+      <GuiDang v-model="gdStatus"></GuiDang>
+    </div>
+    <div v-if="lookStatus">
+      <GdglCk v-model="lookStatus"></GdglCk>
     </div>
   </div>
 </template>
@@ -65,15 +73,19 @@
 <script>
 import GdTemplate from './GdTemplate'
 import GuiDang from './GuiDang'
+import GdglCk from './GdglCk'
 export default {
   components: {
-    GdTemplate,GuiDang
+    GdTemplate,
+    GuiDang,
+    GdglCk,
   },
   data() {
     return {
       zdStatus: false,
       gdStatus: false,
       jdStatus: false,
+      lookStatus: false,
       tableData: [
         {
           pgsj: '2020-11-23',
@@ -122,7 +134,8 @@ export default {
       ],
       values: {
         name: '客户表后无电',
-        content: '杨山综合变得铜川市耀州区杨山村经济合作社户名：12345，表后无电，现场处理，开展志愿者服务。',
+        content:
+          '杨山综合变得铜川市耀州区杨山村经济合作社户名：12345，表后无电，现场处理，开展志愿者服务。',
         zxTime: '2020-11-13',
         jhTime: '',
         type: ['业扩报装'],
@@ -132,17 +145,17 @@ export default {
         gzfzr: '张军',
         gzcy: '李军',
         qtr: '王军',
-       resource: '是',
-       gzph: '123456',
-       zysx: '',
-       gqj: '',
-       bpbj: '',
-       qfr: '王鹏',
-       qfsj: '2020-11.22 14:34:45',
-       bclc: '123Km',
-       bcyh: '10升',
-       ghcl: true
-      }
+        resource: '是',
+        gzph: '123456',
+        zysx: '',
+        gqj: '',
+        bpbj: '',
+        qfr: '王鹏',
+        qfsj: '2020-11.22 14:34:45',
+        bclc: '123Km',
+        bcyh: '10升',
+        ghcl: true,
+      },
     }
   },
   methods: {
@@ -155,9 +168,9 @@ export default {
     qf() {
       this.$message({
         type: 'success',
-        message: '签发成功'
+        message: '签发成功',
       })
-    }
+    },
   },
   mounted() {},
 }

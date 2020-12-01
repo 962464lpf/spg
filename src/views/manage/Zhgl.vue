@@ -183,45 +183,45 @@ export default {
     return {
       tableData: [
         {
-          gdgs: '陕西省地方电力集团西安供电分公司',
-          gds: '93',
-          people: '1643',
-          car: '122',
-          gqj: '9365',
-          bpbj: '4525',
-          tqs: '17852',
-          hs: '2886554',
-          ywr: '53',
-          ywy: '2814',
-          ywlj: '41498',
-          pgr: '37',
-          pgy: '2311',
-          pglj: '25711',
-          pgwqf: '3',
-          pgwwj: '127',
-          pgwhd: '129',
-        },
-        {
-          gdgs: '陕西省地方电力集团咸阳供电分公司',
-          gds: '93',
-          people: '1643',
-          car: '122',
-          gqj: '9365',
-          bpbj: '4525',
-          tqs: '17852',
-          hs: '2886554',
-          ywr: '53',
-          ywy: '2814',
-          ywlj: '41498',
-          pgr: '37',
-          pgy: '2311',
-          pglj: '25711',
-          pgwqf: '3',
-          pgwwj: '127',
-          pgwhd: '129',
-        },
-        {
           gdgs: '陕西省地方电力集团宝鸡供电分公司',
+          gds: '93',
+          people: '1643',
+          car: '122',
+          gqj: '9365',
+          bpbj: '4525',
+          tqs: '17852',
+          hs: '2886554',
+          ywr: '53',
+          ywy: '2814',
+          ywlj: '41498',
+          pgr: '37',
+          pgy: '2311',
+          pglj: '25711',
+          pgwqf: '3',
+          pgwwj: '127',
+          pgwhd: '129',
+        },
+        {
+          gdgs: '陕西省地方电力集团汉中供电分公司',
+          gds: '93',
+          people: '1643',
+          car: '122',
+          gqj: '9365',
+          bpbj: '4525',
+          tqs: '17852',
+          hs: '2886554',
+          ywr: '53',
+          ywy: '2814',
+          ywlj: '41498',
+          pgr: '37',
+          pgy: '2311',
+          pglj: '25711',
+          pgwqf: '3',
+          pgwwj: '127',
+          pgwhd: '129',
+        },
+        {
+          gdgs: '陕西省地方电力集团榆林供电分公司',
           gds: '93',
           people: '1643',
           car: '122',
@@ -257,30 +257,31 @@ export default {
     height: 50px;
     text-align: center;
     font-size: 12px;
+     background:#409EFF;
   }
   .el-col-4:nth-child(1) {
     .el-card__body {
-      background:#b3d8ff;
+      background:#409EFF;
     }
   }
   .el-col-4:nth-child(2) {
     .el-card__body {
-      background:#e1f3d8;
+      background:#409EFF;
     }
   }
   .el-col-4:nth-child(3) {
     .el-card__body {
-      background:#faecd8;
+      background:#409EFF;
     }
   }
   .el-col-4:nth-child(4) {
     .el-card__body {
-      background:#fde2e2;
+      background:#409EFF;
     }
   }
   .el-col-4:nth-child(5) {
     .el-card__body {
-      background:#f5dfbf;
+      background:#409EFF  ;
     }
   }
   p {

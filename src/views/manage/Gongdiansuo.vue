@@ -151,8 +151,8 @@ export default {
     padding-left: 20px;
     box-sizing: border-box;
     img {
-      width: 100%;
-      height: 300px;
+      width: 80%;
+      height: 350px;
     }
     div {
       float: right;

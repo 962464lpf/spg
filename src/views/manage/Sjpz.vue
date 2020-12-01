@@ -1,6 +1,7 @@
 <template>
   <div class="sjpz">
     <div>
+      <el-button type="primary" @click="gdssypzStatus = true">供电所首页配置</el-button>
       <el-button type="primary" @click="sjmbdzStatus = true"
         >数据模板定制</el-button
       >
@@ -47,16 +48,20 @@
     <div v-if="sjtbStatus">
       <Sjtb v-model="sjtbStatus"></Sjtb>
     </div>
+    <div v-if="gdssypzStatus">
+      <Gdssypz v-model="gdssypzStatus"></Gdssypz>
+    </div>
   </div>
 </template>
 
 <script>
 import Sjmbdz from './Sjmbdz'
 import Sjtb from './Sjtb'
+import Gdssypz from './Gdssypz'
 export default {
   components: {
     Sjmbdz,
-    Sjtb,
+    Sjtb,Gdssypz
   },
   watch: {
     filterText(val) {
@@ -67,11 +72,12 @@ export default {
     return {
       sjmbdzStatus: false,
       sjtbStatus: false,
+      gdssypzStatus: false,
       tableData: [
         {
-          gdsmc: '丈八北路供电所',
+          gdsmc: '汤峪供电所',
           zbdh: '12345888',
-          gdsdz: '丈八北路',
+          gdsdz: '汤峪',
           szxm: '张小虎',
           szdh: '13598725632',
           sjzt: '未审核',
@@ -84,32 +90,19 @@ export default {
           children: [
             {
               id: 4,
-              label: '西安市',
+              label: '宝鸡市',
               children: [
                 {
                   id: 9,
-                  label: '雁塔区',
+                  label: '眉县',
                 },
                 {
                   id: 10,
-                  label: '碑林区',
+                  label: '岐山县',
                 },
               ],
             },
-            {
-              id: 5,
-              label: '渭南市',
-              children: [
-                {
-                  id: 6,
-                  label: '潼关县',
-                },
-                {
-                  id: 7,
-                  label: '蒲城县',
-                },
-              ],
-            },
+           
           ],
         },
       ],

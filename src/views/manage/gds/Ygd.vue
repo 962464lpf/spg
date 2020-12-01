@@ -36,18 +36,26 @@
       <el-table-column prop="gdsj" label="归档时间"> </el-table-column>
       <el-table-column label="操作" width="120">
         <template>
-          <el-button type="text">查看</el-button>
+          <el-button type="text" @click="lookStatus = true">查看</el-button>
           <el-button type="text">重新归档</el-button>
         </template>
       </el-table-column>
     </el-table>
+    <div v-if="lookStatus">
+      <GdglYgd v-model="lookStatus"></GdglYgd>
+    </div>
   </div>
 </template>
 
 <script>
+import GdglYgd from './GdglYgd'
 export default {
+  components: {
+    GdglYgd
+  },
   data() {
     return {
+      lookStatus: false,
       tableData: [
         {
           pgsj: '2020-11-23',

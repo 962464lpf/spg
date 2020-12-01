@@ -1,20 +1,18 @@
 <template>
   <div class="zbfx">
-    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+    <el-form :inline="true"
+             :model="formInline"
+             class="demo-form-inline">
       <el-form-item label="时间">
-        <el-date-picker
-          v-model="formInline.time"
-          type="month"
-          placeholder="选择时间"
-        >
+        <el-date-picker v-model="formInline.time"
+                        type="month"
+                        placeholder="选择时间">
         </el-date-picker>
       </el-form-item>
       <el-form-item label="地市选择">
-        <el-cascader
-          v-model="formInline.city"
-          :options="options"
-          :props="{ checkStrictly: true }"
-        ></el-cascader>
+        <el-cascader v-model="formInline.city"
+                     :options="options"
+                     :props="{ checkStrictly: true }"></el-cascader>
       </el-form-item>
       <el-form-item>
         <el-button type="primary">查询</el-button>
@@ -24,52 +22,38 @@
     <el-row class="content">
       <el-col :span="6">
         <p>监控平台应用率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
       <el-col :span="6">
         <p>电费回收率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
       <el-col :span="6">
         <p>采集下发成功率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
       <el-col :span="6">
         <p>缴费APP占比率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
       <el-col :span="6">
         <p>网上报装接电率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
       <el-col :span="6">
         <p>线损率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
       <el-col :span="6">
         <p>采集覆盖率</p>
-        <ve-histogram
-          :data="chartData"
-          :settings="chartSettings"
-        ></ve-histogram>
+        <ve-histogram :data="chartData"
+                      :settings="chartSettings" :colors="colors"></ve-histogram>
       </el-col>
     </el-row>
   </div>
@@ -79,6 +63,15 @@
 export default {
   data() {
     return {
+      colors: [
+        '#4271a2',
+        '#5783b1',
+        '#4a6888',
+        '#11263c',
+        '#6487ab',
+        '#0c2b4a',
+        '#04192d',
+      ],
       formInline: {
         time: '',
         city: '',

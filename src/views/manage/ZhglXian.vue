@@ -207,8 +207,9 @@ export default {
   data() {
     return {
       tableData: [
+        
         {
-          gdgs: '丈八北路供电所',
+          gdgs: '凤鸣供电所',
           gds: '93',
           people: '1643',
           car: '122',
@@ -226,44 +227,7 @@ export default {
           pgwwj: '127',
           pgwhd: '129',
         },
-        {
-          gdgs: '鱼化寨供电所',
-          gds: '93',
-          people: '1643',
-          car: '122',
-          gqj: '9365',
-          bpbj: '4525',
-          tqs: '17852',
-          hs: '2886554',
-          ywr: '53',
-          ywy: '2814',
-          ywlj: '41498',
-          pgr: '37',
-          pgy: '2311',
-          pglj: '25711',
-          pgwqf: '3',
-          pgwwj: '127',
-          pgwhd: '129',
-        },
-        {
-          gdgs: '唐延路供电所',
-          gds: '93',
-          people: '1643',
-          car: '122',
-          gqj: '9365',
-          bpbj: '4525',
-          tqs: '17852',
-          hs: '2886554',
-          ywr: '53',
-          ywy: '2814',
-          ywlj: '41498',
-          pgr: '37',
-          pgy: '2311',
-          pglj: '25711',
-          pgwqf: '3',
-          pgwwj: '127',
-          pgwhd: '129',
-        },
+       
       ],
     }
   },

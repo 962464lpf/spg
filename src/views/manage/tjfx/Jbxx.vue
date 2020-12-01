@@ -37,6 +37,7 @@
       <el-col :span="12">
         <p class="text-center">2020年xx供电所情况</p>
         <ve-histogram :extend="extend"
+        :colors="colors"
                       height='300px'
                       :data="gdsChartData"
                       :legend-visible="false"></ve-histogram>
@@ -66,6 +67,7 @@
         <el-col :span="16">
           <ve-histogram :extend="extend"
                         height='300px'
+                        :colors="colors"
                         :legend-visible='false'
                         :settings='qySetting'
                         :data="qyChartData"></ve-histogram>
@@ -85,7 +87,7 @@
         <el-col :span="6">
           <p class="text-center">2020年12月农电人员学历结构</p>
 
-          <ve-pie :data="xlChartData"
+          <ve-pie :data="xlChartData" 
                   :settings='chartSetting'
                   :legend-visible='false'
                   height='250px'></ve-pie>
@@ -99,7 +101,7 @@
         </el-col>
         <el-col :span="6">
           <p class="text-center">2020年12月农电人员技能等级结构</p>
-          <ve-pie :data="jnChartData"
+          <ve-pie :data="jnChartData" 
                   :settings='chartSetting'
                   :legend-visible='false'
                   height='250px'></ve-pie>
@@ -114,6 +116,7 @@ export default {
   name: 'vueName',
   data() {
     return {
+      colors: ['#4271a2', '#5783b1', '#4a6888', '#11263c', '#6487ab', '#0c2b4a', '#04192d'],
       gdsChartData: {
         columns: ['日期', '数量'],
         rows: [

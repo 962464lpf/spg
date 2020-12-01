@@ -25,24 +25,22 @@
       <el-form-item label="供电所名称">
         <el-input disabled></el-input>
       </el-form-item>
-      <el-form-item label="供电所详细地址">
+      <el-form-item label="供电区域面积（平方公里）">
         <el-input></el-input>
       </el-form-item>
-      <el-form-item label="供电所值班电话">
+      <el-form-item label="服务高压客户数量（万户）">
         <el-input disabled></el-input>
       </el-form-item>
-      <el-form-item label="本所人数">
+      <el-form-item label="服务低压客户数量（万户）">
         <el-input disabled></el-input>
       </el-form-item>
-      <el-form-item label="本所男人数">
+      <el-form-item label="取得荣誉">
         <el-input disabled></el-input>
       </el-form-item>
-      <el-form-item label="本所女人数">
+      <el-form-item label="其他">
         <el-input disabled></el-input>
       </el-form-item>
-      <el-form-item label="营配业务人数">
-        <el-input disabled></el-input>
-      </el-form-item>
+     
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="handleClose">取 消</el-button>

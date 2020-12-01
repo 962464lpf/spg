@@ -39,6 +39,7 @@
         <p class="text-center">工单按单位展示(2020-12-1)</p>
         <ve-line :data="gdChartData"
                  :settings='chartSetting'
+                 :colors="colors"
                  height='270px'></ve-line>
       </el-col>
       <el-col :span="12"
@@ -46,6 +47,7 @@
         <p class="text-center ">工单分类统计(2020-12-1)</p>
         <ve-line :data="gdFlChartData"
                  :settings='chartSetting'
+                 :colors="colors"
                  height='270px'></ve-line>
       </el-col>
       <el-col :span="12"
@@ -55,11 +57,13 @@
           <el-col :span="12">
             <ve-ring :data="gdWcChartData"
                      height='270px'
+                     :colors="colors"
                      :settings='gdWcChartSetting'></ve-ring>
           </el-col>
           <el-col :span="12">
             <ve-ring :data="gdPjChartData"
                      height='270px'
+                     :colors="colors"
                      :settings='gdWcChartSetting'></ve-ring>
           </el-col>
         </el-row>
@@ -73,6 +77,7 @@ export default {
   name: 'vueName',
   data() {
     return {
+      colors: ['#4271a2', '#5783b1', '#4a6888', '#11263c', '#6487ab', '#0c2b4a', '#04192d'],
       gdChartData: {
         columns: ['日期', '数量',],
         rows: [
@@ -85,14 +90,14 @@ export default {
         ],
       },
       gdFlChartData: {
-        columns: ['日期', '数量', ],
+        columns: ['日期', '类型一', '类型二', '类型三', '类型四', ],
          rows: [
-          { 日期: '区域1', 数量: 0,  },
-          { 日期: '区域2', 数量: 0, },
-          { 日期: '区域3', 数量: 0,  },
-          { 日期: '区域4', 数量: 0,  },
-          { 日期: '区域5', 数量: 0,  },
-          { 日期: '区域6', 数量: 0,  },
+          { 日期: '区域1', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
+          { 日期: '区域2', 类型一: 0, 类型二: 0,类型三: 0,类型四: 0,},
+          { 日期: '区域3', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
+          { 日期: '区域4', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
+          { 日期: '区域5', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
+          { 日期: '区域6', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
         ],
       },
       extend: {

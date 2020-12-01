@@ -208,7 +208,7 @@ export default {
     return {
       tableData: [
         {
-          gdgs: '陕西省地方电力集团雁塔区供电分公司',
+          gdgs: '陕西省地方电力集团眉县供电分公司',
           gds: '93',
           people: '1643',
           car: '122',
@@ -227,7 +227,7 @@ export default {
           pgwhd: '129',
         },
         {
-          gdgs: '陕西省地方电力集团碑林区供电分公司',
+          gdgs: '陕西省地方电力集团岐山县供电分公司',
           gds: '93',
           people: '1643',
           car: '122',
@@ -245,25 +245,7 @@ export default {
           pgwwj: '127',
           pgwhd: '129',
         },
-        {
-          gdgs: '陕西省地方电力集团城北供电分公司',
-          gds: '93',
-          people: '1643',
-          car: '122',
-          gqj: '9365',
-          bpbj: '4525',
-          tqs: '17852',
-          hs: '2886554',
-          ywr: '53',
-          ywy: '2814',
-          ywlj: '41498',
-          pgr: '37',
-          pgy: '2311',
-          pglj: '25711',
-          pgwqf: '3',
-          pgwwj: '127',
-          pgwhd: '129',
-        },
+       
       ],
     }
   },

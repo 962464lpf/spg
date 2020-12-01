@@ -71,32 +71,19 @@ export default {
           children: [
             {
               id: 4,
-              label: '西安市',
+              label: '宝鸡市',
               children: [
                 {
                   id: 9,
-                  label: '雁塔区',
+                  label: '眉县',
                 },
                 {
                   id: 10,
-                  label: '碑林区',
+                  label: '岐山县',
                 },
               ],
             },
-            {
-              id: 5,
-              label: '渭南市',
-              children: [
-                {
-                  id: 6,
-                  label: '潼关县',
-                },
-                {
-                  id: 7,
-                  label: '蒲城县',
-                },
-              ],
-            },
+           
           ],
         },
       ],
