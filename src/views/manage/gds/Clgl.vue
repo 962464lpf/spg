@@ -12,7 +12,7 @@
       </el-form-item>
     </el-form>
     <div class="fl clearfloat ">
-      <el-button type="primary">派车纪律</el-button>
+      <el-button type="primary">派车记录</el-button>
     </div>
     <div class="fr">
       <el-button type="primary">批量导入</el-button>

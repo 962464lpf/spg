@@ -1,30 +1,47 @@
 <template>
   <div>
     <div>
-      <el-button type="primary" @click="goBack">返回</el-button>
+      <el-button type="primary"
+                 @click="goBack">返回</el-button>
     </div>
     <div class="fl clearfloat mt10">
-      <el-button type="primary" @click="jump">已归档</el-button>
+      <el-button type="primary"
+                 @click="jump">已归档</el-button>
     </div>
     <div class="mt10 fr clearfloat">
-      <el-button type="success" @click="zdStatus = true">制单</el-button>
-      <el-button type="success">签发</el-button>
-      <el-button type="success">结单</el-button>
-      <el-button type="success">归档</el-button>
-      <el-button type="success">派工下发</el-button>
+      <el-button type="success"
+                 @click="zdStatus = true">制单</el-button>
+      <el-button type="success" @click="qf">签发</el-button>
+      <el-button type="success" @click="jdStatus = true">结单</el-button>
+      <el-button type="success" @click="gdStatus = true">归档</el-button>
+      <!-- <el-button type="success">派工下发</el-button> -->
     </div>
     <div class="clearfloat"></div>
-    <el-table :data="tableData" border stripe style="width: 100%" class="mt10"
-      ><el-table-column type="selection" width="55"> </el-table-column>
-      <el-table-column prop="pgsj" label="派工时间"> </el-table-column>
-      <el-table-column prop="pgdh" label="派工单号"> </el-table-column>
-      <el-table-column prop="gdly" label="工单来源"> </el-table-column>
-      <el-table-column prop="rwmc" label="任务名称"> </el-table-column>
-      <el-table-column prop="zylx" label="作业类型"> </el-table-column>
-      <el-table-column prop="gzzrr" label="工作负责人"> </el-table-column>
-      <el-table-column prop="zdr" label="制单人"> </el-table-column>
-      <el-table-column prop="zt" label="状态"> </el-table-column>
-      <el-table-column label="操作" width="180">
+    <el-table :data="tableData"
+              border
+              stripe
+              style="width: 100%"
+              class="mt10">
+      <el-table-column type="selection"
+                       width="55"> </el-table-column>
+      <el-table-column prop="pgsj"
+                       label="派工时间"> </el-table-column>
+      <el-table-column prop="pgdh"
+                       label="派工单号"> </el-table-column>
+      <el-table-column prop="gdly"
+                       label="工单来源"> </el-table-column>
+      <el-table-column prop="rwmc"
+                       label="任务名称"> </el-table-column>
+      <el-table-column prop="zylx"
+                       label="作业类型"> </el-table-column>
+      <el-table-column prop="gzzrr"
+                       label="工作负责人"> </el-table-column>
+      <el-table-column prop="zdr"
+                       label="制单人"> </el-table-column>
+      <el-table-column prop="zt"
+                       label="状态"> </el-table-column>
+      <el-table-column label="操作"
+                       width="180">
         <template>
           <el-button type="text">制单</el-button>
           <el-button type="text">查看</el-button>
@@ -34,20 +51,29 @@
       </el-table-column>
     </el-table>
     <div v-if="zdStatus">
-      <Zd v-model="zdStatus"></Zd>
+      <GdTemplate v-model="zdStatus"></GdTemplate>
+    </div>
+    <div v-if="jdStatus">
+      <GdTemplate v-model="jdStatus" :values='values'></GdTemplate>
+    </div>
+    <div v-if="gdStatus">
+      <GuiDang v-model="gdStatus" ></GuiDang>
     </div>
   </div>
 </template>
 
 <script>
-import Zd from './Zd'
+import GdTemplate from './GdTemplate'
+import GuiDang from './GuiDang'
 export default {
   components: {
-    Zd,
+    GdTemplate,GuiDang
   },
   data() {
     return {
       zdStatus: false,
+      gdStatus: false,
+      jdStatus: false,
       tableData: [
         {
           pgsj: '2020-11-23',
@@ -94,6 +120,29 @@ export default {
           zt: '已结单',
         },
       ],
+      values: {
+        name: '客户表后无电',
+        content: '杨山综合变得铜川市耀州区杨山村经济合作社户名：12345，表后无电，现场处理，开展志愿者服务。',
+        zxTime: '2020-11-13',
+        jhTime: '',
+        type: ['业扩报装'],
+        cfd: '铜川',
+        mdd: '铜川市耀州区杨山村',
+        cph: 'shanghai',
+        gzfzr: '张军',
+        gzcy: '李军',
+        qtr: '王军',
+       resource: '是',
+       gzph: '123456',
+       zysx: '',
+       gqj: '',
+       bpbj: '',
+       qfr: '王鹏',
+       qfsj: '2020-11.22 14:34:45',
+       bclc: '123Km',
+       bcyh: '10升',
+       ghcl: true
+      }
     }
   },
   methods: {
@@ -103,6 +152,12 @@ export default {
     jump() {
       this.$router.push('/zhgl/gds/ygd')
     },
+    qf() {
+      this.$message({
+        type: 'success',
+        message: '签发成功'
+      })
+    }
   },
   mounted() {},
 }
