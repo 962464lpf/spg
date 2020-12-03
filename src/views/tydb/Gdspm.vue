@@ -53,45 +53,14 @@ export default {
         city: '',
       },
       options: [
-        {
-          label: '西安',
-          value: 'xian',
-          children: [
-            {
-              value: 'yanta',
-              label: '雁塔区',
-            },
-            {
-              value: '长安',
-              label: '长安区',
-            },
-            {
-              value: 'beilin',
-              label: '碑林区',
-            },
-          ],
-        },
-        {
-          label: '咸阳',
-          value: 'xiyang',
-          children: [
-            {
-              value: 'liquan',
-              label: '礼泉县',
-            },
-            {
-              value: 'qianxian',
-              label: '乾县',
-            },
-          ],
-        },
+       
         {
           label: '宝鸡',
           value: 'baoji',
           children: [
             {
               value: 'fufeng',
-              label: '扶风县',
+              label: '岐山',
             },
             {
               value: 'meixian',
@@ -99,26 +68,13 @@ export default {
             },
           ],
         },
-        {
-          label: '渭南',
-          value: 'weinan',
-          children: [
-            {
-              value: 'dali',
-              label: '大荔县',
-            },
-            {
-              value: '蒲城',
-              label: '蒲城县',
-            },
-          ],
-        },
+       
       ],
       tableData: [
         {
-          city: '西安市',
-          area: '雁塔区',
-          name: '丈八北路供电所',
+          city: '宝鸡市',
+          area: '岐山县',
+          name: '凤鸣供电所',
           start: '二星级',
           score: '98',
           rank: '1',
@@ -130,10 +86,10 @@ export default {
           cjfg: '97%',
         },
         {
-          city: '西安市',
-          area: '雁塔区',
+          city: '宝鸡市',
+          area: '眉县县',
+          name: '汤峪供电所',
           start: '二星级',
-          name: '鱼化寨供电所',
           score: '96',
           rank: '2',
           jkpt: '95%',
@@ -143,34 +99,7 @@ export default {
           xs: '96%',
           cjfg: '94%',
         },
-        {
-          city: '西安市',
-          area: '雁塔区',
-          start: '三星级',
-          name: '高新供电所',
-          score: '95',
-          rank: '3',
-          jkpt: '93%',
-          dfhs: '92%',
-          cjxf: '94%',
-          jf: '92%',
-          xs: '91%',
-          cjfg: '94%',
-        },
-        {
-          city: '西安市',
-          area: '雁塔区',
-          name: '城西供电所',
-          start: '四星级',
-          score: '93',
-          rank: '4',
-          jkpt: '92%',
-          dfhs: '92%',
-          cjxf: '91%',
-          jf: '93%',
-          xs: '94%',
-          cjfg: '94%',
-        },
+       
       ],
     }
   },

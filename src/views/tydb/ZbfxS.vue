@@ -1,7 +1,7 @@
 <template>
   <div class="zbfx">
     <div>
-      <h5 style="line-height: 50px;">供电所同业对标按市公司综合得分排名
+      <h5 style="line-height: 50px;">供电所同业对标按县/区公司综合得分排名
         <el-date-picker class="fr"
                         type="month"
                         v-model="value"
@@ -12,20 +12,20 @@
     </div>
     <ul>
       <li>
-        <h2>11</h2>
-        <p class="mt10">市公司数量</p>
+        <h2>2</h2>
+        <p class="mt10">县/区公司数量</p>
       </li>
       <li>
-        <h2>110</h2>
+        <h2>23</h2>
         <p class="mt10">对标供电所数量</p>
       </li>
       <li>
-        <p class="mt10">市公司综合得分排名</p>
+        <p class="mt10">县/区综合得分排名</p>
       </li>
     </ul>
     <el-row>
       <el-col :span="16">
-        <h4>地电陕西省电力公司</h4>
+        <h4>地电陕西省电力公司宝鸡供电公司</h4>
         <el-table :data="tableData"
                   border
                   style="width: 100%">
@@ -61,7 +61,7 @@
           </el-table-column>
         </el-table>
       </el-col>
-      <el-col :span="8" >
+      <el-col :span="8">
         <ve-bar :data="chartData" height='240px' :colors='colors'
                 :extend="extend"></ve-bar>
       </el-col>
@@ -86,7 +86,7 @@ export default {
       tableData: [
         {
           date: '2020-10',
-          mc: '陕西省宝鸡市供电公司',
+          mc: '陕西省宝鸡市岐山县供电公司',
           gdssl: 53,
           hzfs: 3223,
           zhdf: 98.2,
@@ -94,7 +94,7 @@ export default {
         },
         {
           date: '2020-10',
-          mc: '陕西省榆林市供电公司',
+          mc: '陕西省宝鸡市眉县供电公司',
           gdssl: 153,
           hzfs: 13223,
           zhdf: 96.2,
@@ -105,11 +105,11 @@ export default {
         columns: ['日期', '综合得分'],
         rows: [
            {
-            日期: '陕西省榆林市供电公司',
+            日期: '陕西省宝鸡市眉县供电公司',
             综合得分: 96.2,
           },
           {
-            日期: '陕西省宝鸡市供电公司',
+            日期: '陕西省宝鸡市岐山县供电公司',
             综合得分: 98.2,
           },
          
@@ -127,7 +127,7 @@ export default {
   },
   methods: {
     jumpTo() {
-      this.$router.push('/tydb/zbfxS')
+      this.$router.push('/tydb/zbfxX')
     },
   },
   mounted() {},

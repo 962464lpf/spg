@@ -43,7 +43,7 @@ export default {
       },
       tableData: [
         {
-          name: '陕西省地方电力集团西安供电分公司',
+          name: '陕西省地方电力集团宝鸡电分公司',
           score: '98',
           rank: '1',
           jkpt: '98%',
@@ -54,7 +54,7 @@ export default {
           cjfg: '97%',
         },
         {
-          name: '陕西省地方电力集团咸阳供电分公司',
+          name: '陕西省地方电力集团榆林供电分公司',
           score: '96',
           rank: '2',
           jkpt: '95%',
@@ -64,28 +64,7 @@ export default {
           xs: '96%',
           cjfg: '94%',
         },
-        {
-          name: '陕西省地方电力集团宝鸡供电分公司',
-          score: '95',
-          rank: '3',
-          jkpt: '93%',
-          dfhs: '92%',
-          cjxf: '94%',
-          jf: '92%',
-          xs: '91%',
-          cjfg: '94%',
-        },
-        {
-          name: '陕西省地方电力集团渭南供电分公司',
-          score: '93',
-          rank: '4',
-          jkpt: '92%',
-          dfhs: '92%',
-          cjxf: '91%',
-          jf: '93%',
-          xs: '94%',
-          cjfg: '94%',
-        },
+      
       ],
     }
   },

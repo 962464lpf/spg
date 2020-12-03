@@ -1,7 +1,7 @@
 <template>
   <div class="zbfx">
     <div>
-      <h5 style="line-height: 50px;">供电所同业对标按市公司综合得分排名
+      <h5 style="line-height: 50px;">供电所同业对标按供电所综合得分排名
         <el-date-picker class="fr"
                         type="month"
                         v-model="value"
@@ -12,20 +12,16 @@
     </div>
     <ul>
       <li>
-        <h2>11</h2>
-        <p class="mt10">市公司数量</p>
-      </li>
-      <li>
-        <h2>110</h2>
+        <h2>2</h2>
         <p class="mt10">对标供电所数量</p>
       </li>
       <li>
-        <p class="mt10">市公司综合得分排名</p>
+        <p class="mt10">供电所综合得分排名</p>
       </li>
     </ul>
     <el-row>
-      <el-col :span="16">
-        <h4>地电陕西省电力公司</h4>
+      <el-col :span="12">
+        <h4>地电陕西省电力公司宝鸡市岐山县供电公司</h4>
         <el-table :data="tableData"
                   border
                   style="width: 100%">
@@ -43,26 +39,20 @@
                     @click="jumpTo">{{scope.row.mc}}</span>
             </template>
           </el-table-column>
-          <el-table-column prop="gdssl"
-                           label="供电所数量"
-                           width="80">
-          </el-table-column>
+          
           <el-table-column prop="hzfs"
-                           label="汇总分数"
+                           label="分数合计"
                            width="80">
           </el-table-column>
-          <el-table-column prop="zhdf"
-                           label="综合得分"
-                           width="80">
-          </el-table-column>
+          
           <el-table-column prop="pm"
                            width="80"
                            label="排名">
           </el-table-column>
         </el-table>
       </el-col>
-      <el-col :span="8" >
-        <ve-bar :data="chartData" height='240px' :colors='colors'
+      <el-col :span="12">
+        <ve-bar :data="chartData" height='160px' :colors='colors'
                 :extend="extend"></ve-bar>
       </el-col>
     </el-row>
@@ -86,32 +76,22 @@ export default {
       tableData: [
         {
           date: '2020-10',
-          mc: '陕西省宝鸡市供电公司',
+          mc: '凤鸣供电所',
           gdssl: 53,
           hzfs: 3223,
           zhdf: 98.2,
           pm: 1,
         },
-        {
-          date: '2020-10',
-          mc: '陕西省榆林市供电公司',
-          gdssl: 153,
-          hzfs: 13223,
-          zhdf: 96.2,
-          pm: 2,
-        },
+        
       ],
       chartData: {
-        columns: ['日期', '综合得分'],
+        columns: ['日期', '分数合计'],
         rows: [
            {
-            日期: '陕西省榆林市供电公司',
-            综合得分: 96.2,
+            日期: '凤鸣供电所',
+            分数合计: 98.2,
           },
-          {
-            日期: '陕西省宝鸡市供电公司',
-            综合得分: 98.2,
-          },
+          
          
         ],
       },
@@ -127,7 +107,7 @@ export default {
   },
   methods: {
     jumpTo() {
-      this.$router.push('/tydb/zbfxS')
+      this.$router.push('/tydb/zbfxGds')
     },
   },
   mounted() {},
@@ -143,7 +123,7 @@ export default {
     li {
       height: 100px;
       background: #eee;
-      width: 32%;
+      width: 49%;
       padding: 10px;
       box-sizing: border-box;
     }

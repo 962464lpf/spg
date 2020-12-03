@@ -51,14 +51,7 @@ export default {
         city: '',
       },
       options: [
-        {
-          label: '西安',
-          value: 'xian',
-        },
-        {
-          label: '咸阳',
-          value: 'xiyang',
-        },
+       
         {
           label: '宝鸡',
           value: 'baoji',
@@ -70,8 +63,8 @@ export default {
       ],
       tableData: [
         {
-          city: '西安市',
-          name: '陕西省地方电力集团雁塔区供电分公司',
+          city: '宝鸡',
+          name: '陕西省地方电力集团眉县供电分公司',
           score: '98',
           rank: '1',
           jkpt: '98%',
@@ -82,8 +75,8 @@ export default {
           cjfg: '97%',
         },
         {
-          city: '西安市',
-          name: '陕西省地方电力集团碑林区供电分公司',
+          city: '宝鸡',
+          name: '陕西省地方电力集团岐山县供电分公司',
           score: '96',
           rank: '2',
           jkpt: '95%',
@@ -93,30 +86,7 @@ export default {
           xs: '96%',
           cjfg: '94%',
         },
-        {
-          city: '西安市',
-          name: '陕西省地方电力集团长安区供电分公司',
-          score: '95',
-          rank: '3',
-          jkpt: '93%',
-          dfhs: '92%',
-          cjxf: '94%',
-          jf: '92%',
-          xs: '91%',
-          cjfg: '94%',
-        },
-        {
-          city: '西安市',
-          name: '陕西省地方电力集团鄠邑区供电分公司',
-          score: '93',
-          rank: '4',
-          jkpt: '92%',
-          dfhs: '92%',
-          cjxf: '91%',
-          jf: '93%',
-          xs: '94%',
-          cjfg: '94%',
-        },
+       
       ],
     }
   },

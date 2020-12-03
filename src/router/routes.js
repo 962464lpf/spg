@@ -200,6 +200,33 @@ const routes = [
         },
       },
       {
+        path: '/tydb/zbfxS',
+        name: 'zbfx',
+        component: () => import('../views/tydb/ZbfxS.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/tydb/zbfxX',
+        name: 'zbfx',
+        component: () => import('../views/tydb/ZbfxX.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/tydb/zbfxGds',
+        name: 'zbfx',
+        component: () => import('../views/tydb/ZbfxGds.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
         path: '/tydb/zbdy',
         name: 'zbdy',
         component: () => import('../views/tydb/Zbdy.vue'),
@@ -224,7 +251,7 @@ const routes = [
         name: 'spm',
         component: () => import('../views/statistics/Zbfx.vue'),
         meta: {
-          title: '指标分析',
+          title: '指标监控',
           icon: 'el-icon-document',
         },
       },
