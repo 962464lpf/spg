@@ -25,7 +25,7 @@
       <el-col :span="4">
         <el-card shadow="hover">
           <p>
-            <span class="fl">自由 212</span>
+            <span class="fl">自有 212</span>
             <span class="fr">外租 186</span>
           </p>
           <p>车辆(辆)</p>
@@ -207,7 +207,6 @@ export default {
   data() {
     return {
       tableData: [
-        
         {
           gdgs: '凤鸣供电所',
           gds: '93',
@@ -227,7 +226,6 @@ export default {
           pgwwj: '127',
           pgwhd: '129',
         },
-       
       ],
     }
   },

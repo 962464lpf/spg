@@ -26,7 +26,7 @@
       <el-col :span="4">
         <el-card shadow="hover">
           <p>
-            <span class="fl">自由 212</span>
+            <span class="fl">自有 212</span>
             <span class="fr">外租 186</span>
           </p>
           <p>车辆(辆)</p>
@@ -54,123 +54,149 @@
         </el-card>
       </el-col>
     </el-row>
-    <el-table :data="tableData"
-              border
-              style="width: 100%"
-              class="mt10">
-      <el-table-column prop="gdgs"
-                       label="市供电公司"
-                       align="center"
-                       width="240"
-                       fixed>
+    <el-table :data="tableData" border style="width: 100%" class="mt10">
+      <el-table-column
+        prop="gdgs"
+        label="市供电公司"
+        align="center"
+        width="240"
+        fixed
+      >
       </el-table-column>
-      <el-table-column prop="gds"
-                       label="供电所数量"
-                       width="90"
-                       align="center"
-                       sortable>
+      <el-table-column
+        prop="gds"
+        label="供电所数量"
+        width="90"
+        align="center"
+        sortable
+      >
       </el-table-column>
-      <el-table-column prop="people"
-                       label="人员（人）"
-                       width="70"
-                       align="center"
-                       sortable>
+      <el-table-column
+        prop="people"
+        label="人员（人）"
+        width="70"
+        align="center"
+        sortable
+      >
       </el-table-column>
-      <el-table-column prop="car"
-                       label="车辆（辆）"
-                       width="70"
-                       align="center"
-                       sortable>
+      <el-table-column
+        prop="car"
+        label="车辆（辆）"
+        width="70"
+        align="center"
+        sortable
+      >
       </el-table-column>
-      <el-table-column prop="gqj"
-                       label="工器具（件）"
-                       width="70"
-                       align="center">
+      <el-table-column
+        prop="gqj"
+        label="工器具（件）"
+        width="70"
+        align="center"
+      >
       </el-table-column>
-      <el-table-column prop="bpbj"
-                       label="备品备件（个）"
-                       width="90"
-                       align="center"
-                       sortable>
+      <el-table-column
+        prop="bpbj"
+        label="备品备件（个）"
+        width="90"
+        align="center"
+        sortable
+      >
       </el-table-column>
-      <el-table-column prop="tqs"
-                       label="台区数（个）"
-                       width="70"
-                       align="center"
-                       sortable>
+      <el-table-column
+        prop="tqs"
+        label="台区数（个）"
+        width="70"
+        align="center"
+        sortable
+      >
       </el-table-column>
-      <el-table-column prop="hs"
-                       label="户数（户）"
-                       width="70"
-                       align="center"
-                       sortable>
+      <el-table-column
+        prop="hs"
+        label="户数（户）"
+        width="70"
+        align="center"
+        sortable
+      >
       </el-table-column>
-      <el-table-column label="业务数量（条）"
-                       align="center">
-        <el-table-column prop="ywr"
-                         label="日"
-                         width="70"
-                         align="center"
-                         sortable>
+      <el-table-column label="业务数量（条）" align="center">
+        <el-table-column
+          prop="ywr"
+          label="日"
+          width="70"
+          align="center"
+          sortable
+        >
         </el-table-column>
-        <el-table-column prop="ywy"
-                         label="月"
-                         width="70"
-                         align="center"
-                         sortable>
+        <el-table-column
+          prop="ywy"
+          label="月"
+          width="70"
+          align="center"
+          sortable
+        >
         </el-table-column>
-        <el-table-column prop="ywlj"
-                         label="累计"
-                         width="70"
-                         align="center"
-                         sortable>
-        </el-table-column>
-      </el-table-column>
-      <el-table-column label="派工量（单）"
-                       align="center">
-        <el-table-column prop="pgr"
-                         label="日"
-                         width="70"
-                         align="center"
-                         sortable>
-        </el-table-column>
-        <el-table-column prop="pgy"
-                         label="月"
-                         width="70"
-                         align="center"
-                         sortable>
-        </el-table-column>
-        <el-table-column prop="pglj"
-                         label="累计"
-                         width="70"
-                         align="center"
-                         sortable>
-        </el-table-column>
-        <el-table-column prop="pgwqf"
-                         label="未签发"
-                         width="70"
-                         align="center"
-                         sortable>
-        </el-table-column>
-        <el-table-column prop="pgwwj"
-                         label="未完结"
-                         width="70"
-                         align="center"
-                         sortable>
-        </el-table-column>
-        <el-table-column prop="pgwhd"
-                         label="未归档"
-                         width="70"
-                         align="center"
-                         sortable>
+        <el-table-column
+          prop="ywlj"
+          label="累计"
+          width="70"
+          align="center"
+          sortable
+        >
         </el-table-column>
       </el-table-column>
-      <el-table-column label="进入"
-                       align="center"
-                       fixed="right">
+      <el-table-column label="派工量（单）" align="center">
+        <el-table-column
+          prop="pgr"
+          label="日"
+          width="70"
+          align="center"
+          sortable
+        >
+        </el-table-column>
+        <el-table-column
+          prop="pgy"
+          label="月"
+          width="70"
+          align="center"
+          sortable
+        >
+        </el-table-column>
+        <el-table-column
+          prop="pglj"
+          label="累计"
+          width="70"
+          align="center"
+          sortable
+        >
+        </el-table-column>
+        <el-table-column
+          prop="pgwqf"
+          label="未签发"
+          width="70"
+          align="center"
+          sortable
+        >
+        </el-table-column>
+        <el-table-column
+          prop="pgwwj"
+          label="未完结"
+          width="70"
+          align="center"
+          sortable
+        >
+        </el-table-column>
+        <el-table-column
+          prop="pgwhd"
+          label="未归档"
+          width="70"
+          align="center"
+          sortable
+        >
+        </el-table-column>
+      </el-table-column>
+      <el-table-column label="进入" align="center" fixed="right">
         <template>
-          <el-button size="mini"
-                     @click="jump">进入</el-button>
+          <el-button size="mini" @click="jump">进入</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -257,31 +283,31 @@ export default {
     height: 50px;
     text-align: center;
     font-size: 12px;
-     background:#409EFF;
+    background: #409eff;
   }
   .el-col-4:nth-child(1) {
     .el-card__body {
-      background:#409EFF;
+      background: #409eff;
     }
   }
   .el-col-4:nth-child(2) {
     .el-card__body {
-      background:#409EFF;
+      background: #409eff;
     }
   }
   .el-col-4:nth-child(3) {
     .el-card__body {
-      background:#409EFF;
+      background: #409eff;
     }
   }
   .el-col-4:nth-child(4) {
     .el-card__body {
-      background:#409EFF;
+      background: #409eff;
     }
   }
   .el-col-4:nth-child(5) {
     .el-card__body {
-      background:#409EFF  ;
+      background: #409eff;
     }
   }
   p {
