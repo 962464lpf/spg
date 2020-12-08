@@ -196,7 +196,7 @@
       </el-table-column>
       <el-table-column label="进入" align="center" fixed="right">
         <template>
-          <el-button size="mini" @click="jump">进入</el-button>
+          <el-button type="primary" size="mini" @click="jump">进入</el-button>
         </template>
       </el-table-column>
     </el-table>

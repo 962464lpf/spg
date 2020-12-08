@@ -1,8 +1,7 @@
 <template>
   <div class="tqgl">
     <div>
-      <el-button type="primary"
-                 @click="goBack">返回</el-button>
+      <el-button type="primary" @click="goBack">返回</el-button>
     </div>
     <div class="mt10 fr">
       <el-button type="primary">新增</el-button>
@@ -10,60 +9,57 @@
     </div>
     <div class="clearfloat"></div>
     <div class="mt10">
-      <el-amap ref="map"
-               vid="amapDemo"
-               :center="center"
-               :zoom="zoom"
-               :events="events"
-               class="amap-demo">
-        <el-amap-marker v-for="(marker, index) in markers"
-                        :key="index + 'mar'"
-                        :position="marker.position"
-                        :events="marker.events"
-                        :visible="marker.visible"
-                        :draggable="marker.draggable"
-                        :vid="index"></el-amap-marker>
-        <el-amap-text v-for="text in texts"
-                      :key="text"
-                      :text="text.text"
-                      :offset="text.offset"
-                      :position="text.position"
-                      :events="text.events"></el-amap-text>
+      <el-amap
+        ref="map"
+        vid="amapDemo"
+        :center="center"
+        :zoom="zoom"
+        :events="events"
+        class="amap-demo"
+      >
+        <el-amap-marker
+          v-for="(marker, index) in markers"
+          :key="index + 'mar'"
+          :position="marker.position"
+          :events="marker.events"
+          :visible="marker.visible"
+          :draggable="marker.draggable"
+          :vid="index"
+        ></el-amap-marker>
+        <el-amap-text
+          v-for="text in texts"
+          :key="text"
+          :text="text.text"
+          :offset="text.offset"
+          :position="text.position"
+          :events="text.events"
+        ></el-amap-text>
 
-        <el-amap-polygon v-for="(polygon, index) in polygons"
-                         :key="index + 'poly'"
-                         :vid="index"
-                         :ref="`polygon_${index}`"
-                         :fillColor="polygon.fillColor"
-                         :strokeColor="polygon.strokeColor"
-                         :path="polygon.path"
-                         :draggable="polygon.draggable"
-                         :events="polygon.events"></el-amap-polygon>
+        <el-amap-polygon
+          v-for="(polygon, index) in polygons"
+          :key="index + 'poly'"
+          :vid="index"
+          :ref="`polygon_${index}`"
+          :fillColor="polygon.fillColor"
+          :strokeColor="polygon.strokeColor"
+          :path="polygon.path"
+          :draggable="polygon.draggable"
+          :events="polygon.events"
+        ></el-amap-polygon>
       </el-amap>
     </div>
-    <el-table :data="tableData"
-              border
-              style="width: 100%"
-              class="mt10">
-      <el-table-column prop="tqmc"
-                       label="台区名称"> </el-table-column>
-      <el-table-column prop="tqfzr"
-                       label="台区负责人"> </el-table-column>
-      <el-table-column prop="pbrl"
-                       label="配变容量"> </el-table-column>
-      <el-table-column prop="10kv"
-                       label="10KV接杆"> </el-table-column>
-      <el-table-column prop="dxhs"
-                       label="单相户数"> </el-table-column>
-      <el-table-column prop="sxhs"
-                       label="三相户数"> </el-table-column>
-      <el-table-column prop="sxhs"
-                       label="经纬度"> </el-table-column>
+    <el-table :data="tableData" border style="width: 100%" class="mt10">
+      <el-table-column prop="tqmc" label="台区名称"> </el-table-column>
+      <el-table-column prop="tqfzr" label="台区负责人"> </el-table-column>
+      <el-table-column prop="pbrl" label="配变容量"> </el-table-column>
+      <el-table-column prop="10kv" label="10KV接杆"> </el-table-column>
+      <el-table-column prop="dxhs" label="单相户数"> </el-table-column>
+      <el-table-column prop="sxhs" label="三相户数"> </el-table-column>
+      <el-table-column prop="sxhs" label="经纬度"> </el-table-column>
       <el-table-column label="操作">
         <template>
-          <el-button type="primary">删除</el-button>
-          <el-button type="primary"
-                     @click="tqxqStatus = true">详情</el-button>
+          <el-button type="danger">删除</el-button>
+          <el-button type="primary" @click="tqxqStatus = true">详情</el-button>
         </template>
       </el-table-column>
     </el-table>

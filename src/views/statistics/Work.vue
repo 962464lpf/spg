@@ -1,37 +1,29 @@
 <template>
   <div class="work">
-    <el-form :inline="true"
-             :model="formInline"
-             class="demo-form-inline">
+    <el-form :inline="true" :model="formInline" class="demo-form-inline">
       <el-form-item label="事件名称">
-        <el-input v-model="formInline.user"
-                  placeholder="事件名称"></el-input>
+        <el-input v-model="formInline.user" placeholder="事件名称"></el-input>
       </el-form-item>
 
       <el-form-item>
         <el-button type="primary">查询</el-button>
-        <el-button type="primary"
-                   @click="newWorkStatus = true">新建督办</el-button>
+        <el-button type="primary" @click="newWorkStatus = true"
+          >新建督办</el-button
+        >
       </el-form-item>
     </el-form>
-    <el-table :data="tableData"
-              style="width: 100%">
-      <el-table-column prop="name"
-                       label="事件名称"> </el-table-column>
-      <el-table-column prop="type"
-                       label="事件类型"> </el-table-column>
-      <el-table-column prop="time"
-                       label="完成时间"> </el-table-column>
-      <el-table-column fixed="right"
-                       label="操作"
-                       width="100">
+    <el-table :data="tableData" style="width: 100%">
+      <el-table-column prop="name" label="事件名称"> </el-table-column>
+      <el-table-column prop="type" label="事件类型"> </el-table-column>
+      <el-table-column prop="time" label="完成时间"> </el-table-column>
+      <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
-          <el-button @click="newWorkStatus = true"
-                     type="text"
-                     size="small">查看</el-button>
-          <el-button type="text"
-                     size="small"
-                     @click="duban(scope.row)">督办</el-button>
+          <el-button @click="newWorkStatus = true" type="primary" size="small"
+            >查看</el-button
+          >
+          <el-button type="primary" size="small" @click="duban(scope.row)"
+            >督办</el-button
+          >
         </template>
       </el-table-column>
     </el-table>

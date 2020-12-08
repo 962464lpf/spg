@@ -21,9 +21,9 @@
         <template slot-scope="scope">
           <span>{{ scope.row.gzkhx }}</span>
           <span class="fr">
-            <el-button type="text">添加</el-button>
-            <el-button type="text">修改</el-button>
-            <el-button type="text">删除</el-button>
+            <el-button type="primary">添加</el-button>
+            <el-button type="primary">修改</el-button>
+            <el-button type="danger">删除</el-button>
           </span>
         </template>
       </el-table-column>

@@ -1,56 +1,35 @@
 <template>
   <div>
     <div>
-      <el-button type="primary"
-                 @click="goBack">返回</el-button>
+      <el-button type="primary" @click="goBack">返回</el-button>
     </div>
     <div class="fl clearfloat mt10">
-      <el-button type="primary"
-                 @click="jump">已归档</el-button>
+      <el-button type="primary" @click="jump">已归档</el-button>
     </div>
     <div class="mt10 fr clearfloat">
-      <el-button type="success"
-                 @click="zdStatus = true">制单</el-button>
-      <el-button type="success"
-                 @click="qf">签发</el-button>
-      <el-button type="success"
-                 @click="jdStatus = true">结单</el-button>
-      <el-button type="success"
-                 @click="gdStatus = true">归档</el-button>
+      <el-button type="primary" @click="zdStatus = true">制单</el-button>
+      <el-button type="primary" @click="qf">签发</el-button>
+      <el-button type="primary" @click="jdStatus = true">结单</el-button>
+      <el-button type="primary" @click="gdStatus = true">归档</el-button>
       <!-- <el-button type="success">派工下发</el-button> -->
     </div>
     <div class="clearfloat"></div>
-    <el-table :data="tableData"
-              border
-              stripe
-              style="width: 100%"
-              class="mt10">
-      <el-table-column type="selection"
-                       width="55"> </el-table-column>
-      <el-table-column prop="pgsj"
-                       label="派工时间"> </el-table-column>
-      <el-table-column prop="pgdh"
-                       label="派工单号"> </el-table-column>
-      <el-table-column prop="gdly"
-                       label="工单来源"> </el-table-column>
-      <el-table-column prop="rwmc"
-                       label="任务名称"> </el-table-column>
-      <el-table-column prop="zylx"
-                       label="作业类型"> </el-table-column>
-      <el-table-column prop="gzzrr"
-                       label="工作负责人"> </el-table-column>
-      <el-table-column prop="zdr"
-                       label="制单人"> </el-table-column>
-      <el-table-column prop="zt"
-                       label="状态"> </el-table-column>
-      <el-table-column label="操作"
-                       width="180">
+    <el-table :data="tableData" border stripe style="width: 100%" class="mt10">
+      <el-table-column type="selection" width="55"> </el-table-column>
+      <el-table-column prop="pgsj" label="派工时间"> </el-table-column>
+      <el-table-column prop="pgdh" label="派工单号"> </el-table-column>
+      <el-table-column prop="gdly" label="工单来源"> </el-table-column>
+      <el-table-column prop="rwmc" label="任务名称"> </el-table-column>
+      <el-table-column prop="zylx" label="作业类型"> </el-table-column>
+      <el-table-column prop="gzzrr" label="工作负责人"> </el-table-column>
+      <el-table-column prop="zdr" label="制单人"> </el-table-column>
+      <el-table-column prop="zt" label="状态"> </el-table-column>
+      <el-table-column label="操作" width="180">
         <template>
-          <el-button type="text">制单</el-button>
-          <el-button type="text"
-                     @click="lookStatus = true">查看</el-button>
-          <el-button type="text">修改</el-button>
-          <el-button type="text">删除</el-button>
+          <el-button type="primary">制单</el-button>
+          <el-button type="primary" @click="lookStatus = true">查看</el-button>
+          <el-button type="primary">修改</el-button>
+          <el-button type="danger">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -58,8 +37,7 @@
       <GdTemplate v-model="zdStatus"></GdTemplate>
     </div>
     <div v-if="jdStatus">
-      <GdTemplate v-model="jdStatus"
-                  :values='values'></GdTemplate>
+      <GdTemplate v-model="jdStatus" :values="values"></GdTemplate>
     </div>
     <div v-if="gdStatus">
       <GuiDang v-model="gdStatus"></GuiDang>

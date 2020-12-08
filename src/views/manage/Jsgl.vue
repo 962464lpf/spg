@@ -20,21 +20,21 @@
           <el-button type="primary">分配权限</el-button>
         </div>
         <el-table :data="tableData" style="width: 100%">
-          <el-table-column prop="zhm" label="账户名" width="180">
+          <el-table-column prop="zhm" label="账户名" width="120">
           </el-table-column
-          ><el-table-column prop="xm" label="姓名" width="180">
+          ><el-table-column prop="xm" label="姓名" width="120">
           </el-table-column>
-          <el-table-column prop="jsmc" label="角色名称" width="180">
+          <el-table-column prop="jsmc" label="角色名称" width="120">
           </el-table-column>
 
           <el-table-column prop="ssbm" label="所属部门"> </el-table-column>
           <el-table-column prop="zt" label="状态"> </el-table-column>
           <el-table-column prop="cjsj" label="创建时间"> </el-table-column>
           <el-table-column prop="gxsj" label="更新时间"> </el-table-column>
-          <el-table-column label="操作">
+          <el-table-column label="操作" width="180">
             <template>
-              <el-button type="text" size="small">编辑</el-button>
-              <el-button type="text" size="small">删除</el-button>
+              <el-button type="primary" size="small">编辑</el-button>
+              <el-button type="danger" size="small">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -83,7 +83,6 @@ export default {
                 },
               ],
             },
-           
           ],
         },
       ],

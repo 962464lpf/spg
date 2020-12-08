@@ -27,8 +27,8 @@
       <el-table-column prop="ziyou" label="资产类型"> </el-table-column>
       <el-table-column label="操作" width="160">
         <template>
-          <el-button>修改</el-button>
-          <el-button>删除</el-button>
+          <el-button type="primary">修改</el-button>
+          <el-button type="danger">删除</el-button>
         </template>
       </el-table-column>
     </el-table>

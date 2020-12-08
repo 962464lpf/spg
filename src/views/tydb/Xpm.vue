@@ -51,7 +51,6 @@ export default {
         city: '',
       },
       options: [
-       
         {
           label: '宝鸡',
           value: 'baoji',
@@ -86,7 +85,6 @@ export default {
           xs: '96%',
           cjfg: '94%',
         },
-       
       ],
     }
   },

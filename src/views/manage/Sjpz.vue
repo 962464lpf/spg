@@ -1,7 +1,9 @@
 <template>
   <div class="sjpz">
     <div>
-      <el-button type="primary" @click="gdssypzStatus = true">供电所首页配置</el-button>
+      <el-button type="primary" @click="gdssypzStatus = true"
+        >供电所首页配置</el-button
+      >
       <el-button type="primary" @click="sjmbdzStatus = true"
         >数据模板定制</el-button
       >
@@ -34,8 +36,8 @@
           <el-table-column prop="sjzt" label="数据状态"> </el-table-column>
           <el-table-column label="操作" width="180">
             <template>
-              <el-button size="mini">审核</el-button>
-              <el-button size="mini">数据锁定</el-button>
+              <el-button type="primary" size="mini">审核</el-button>
+              <el-button type="primary" size="mini">数据锁定</el-button>
             </template>
           </el-table-column>
         </el-table></el-col
@@ -61,7 +63,8 @@ import Gdssypz from './Gdssypz'
 export default {
   components: {
     Sjmbdz,
-    Sjtb,Gdssypz
+    Sjtb,
+    Gdssypz,
   },
   watch: {
     filterText(val) {
@@ -102,7 +105,6 @@ export default {
                 },
               ],
             },
-           
           ],
         },
       ],

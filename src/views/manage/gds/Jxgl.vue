@@ -15,8 +15,8 @@
       <el-table-column prop="df" label="得分"> </el-table-column>
       <el-table-column label="操作">
         <template>
-          <el-button>修改</el-button>
-          <el-button>锁定</el-button>
+          <el-button type="primary">修改</el-button>
+          <el-button type="primary">锁定</el-button>
         </template>
       </el-table-column>
     </el-table>

@@ -15,7 +15,7 @@
       <el-table-column prop="cjsj" label="创建时间"> </el-table-column>
       <el-table-column label="操作">
         <template>
-          <el-button size="mini">操作</el-button>
+          <el-button type="primary" size="mini">操作</el-button>
           <el-button size="mini" type="danger">删除</el-button>
         </template>
       </el-table-column>

@@ -10,7 +10,7 @@
         <div>
           <el-button type="primary" size="mini">添加</el-button>
           <el-button type="primary" size="mini">编辑</el-button>
-          <el-button type="primary" size="mini">删除</el-button>
+          <el-button type="danger" size="mini">删除</el-button>
         </div>
         <ul class="mt10">
           <li class="mt10">+ 基础信息</li>
