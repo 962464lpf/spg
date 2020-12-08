@@ -283,33 +283,10 @@ export default {
     height: 50px;
     text-align: center;
     font-size: 12px;
-    background: #409eff;
+    background: $shallow-base-color;
+    color: white;
   }
-  .el-col-4:nth-child(1) {
-    .el-card__body {
-      background: #409eff;
-    }
-  }
-  .el-col-4:nth-child(2) {
-    .el-card__body {
-      background: #409eff;
-    }
-  }
-  .el-col-4:nth-child(3) {
-    .el-card__body {
-      background: #409eff;
-    }
-  }
-  .el-col-4:nth-child(4) {
-    .el-card__body {
-      background: #409eff;
-    }
-  }
-  .el-col-4:nth-child(5) {
-    .el-card__body {
-      background: #409eff;
-    }
-  }
+
   p {
     line-height: 34px;
   }

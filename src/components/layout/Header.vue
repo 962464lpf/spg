@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 .header {
-  background: #00254c;
+  background: $base-color;
   display: flex;
   align-items: center;
   color: white;

@@ -42,8 +42,10 @@ export default {
 .content {
   .right {
     overflow: auto;
-    .right-view{
+    .right-view {
       height: 100%;
+      padding: 5px;
+      box-sizing: border-box;
     }
   }
 }

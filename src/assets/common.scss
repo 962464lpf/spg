@@ -161,7 +161,7 @@ img {
 .mr10 {
   margin-right: 10px;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
 .omit {
@@ -180,4 +180,8 @@ img {
 }
 .el-dialog__body {
   padding: 15px 20px !important;
+}
+.el-button--primary {
+  background-color: $shallow-base-color !important;
+  border-color: $shallow-base-color !important;
 }
