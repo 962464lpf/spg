@@ -1,9 +1,9 @@
 <template>
   <div class="jbxx">
-    <el-row>
+    <el-row class="border-box">
       <el-col :span="12">
         <p class="text-center">2020年xx供电所基本信息统计</p>
-        <el-row class="border-box">
+        <el-row>
           <el-col :span="12">
             <p>供电所总数： 34</p>
           </el-col>
@@ -36,28 +36,29 @@
       </el-col>
       <el-col :span="12">
         <p class="text-center">2020年xx供电所情况</p>
-        <ve-histogram :extend="extend"
-        :colors="colors"
-                      height='300px'
-                      :data="gdsChartData"
-                      :legend-visible="false"></ve-histogram>
+        <ve-histogram
+          :extend="extend"
+          :colors="colors"
+          height="250px"
+          :data="gdsChartData"
+          :legend-visible="false"
+        ></ve-histogram>
       </el-col>
     </el-row>
 
-    <el-row class="mt10">
+    <el-row class="mt10 border">
       <div class="top-remove">
         <p class="text-center">2020年12月所辖区域情况</p>
       </div>
-      <el-row class="h300 border">
-        <el-col :span="8"
-                class='flex-center'>
+      <el-row class="h300 mb10">
+        <el-col :span="8" class="flex-center">
           <el-col :span="8">
             <p>乡镇人口</p>
             <p>54万</p>
           </el-col>
           <el-col :span="8">
             <p>乡镇面积</p>
-            <p> 5万平方米</p>
+            <p>5万平方米</p>
           </el-col>
           <el-col :span="8">
             <p>行政村个数</p>
@@ -65,58 +66,76 @@
           </el-col>
         </el-col>
         <el-col :span="16">
-          <ve-histogram :extend="extend"
-                        height='300px'
-                        :colors="colors"
-                        :legend-visible='false'
-                        :settings='qySetting'
-                        :data="qyChartData"></ve-histogram>
-        </el-col>
-      </el-row>
-
-      <el-row class=" border mt10">
-        <el-col :span="6">
-          <p class="text-center">2020年12月农电人员年龄结构</p>
-          <p class="text-center fl"
-             style="position: relative;left: 40%;">平均47.4岁</p>
-          <ve-pie :data="nlChartData"
-                  :settings='chartSetting'
-                  :legend-visible='false'
-                  height='250px'></ve-pie>
-        </el-col>
-        <el-col :span="6">
-          <p class="text-center">2020年12月农电人员学历结构</p>
-
-          <ve-pie :data="xlChartData" 
-                  :settings='chartSetting'
-                  :legend-visible='false'
-                  height='250px'></ve-pie>
-        </el-col>
-        <el-col :span="6">
-          <p class="text-center">2020年12月农电人员职称结构</p>
-          <ve-pie :data="zcChartData"
-                  :settings='chartSetting'
-                  :legend-visible='false'
-                  height='250px'></ve-pie>
-        </el-col>
-        <el-col :span="6">
-          <p class="text-center">2020年12月农电人员技能等级结构</p>
-          <ve-pie :data="jnChartData" 
-                  :settings='chartSetting'
-                  :legend-visible='false'
-                  height='250px'></ve-pie>
+          <ve-histogram
+            :extend="extend"
+            height="300px"
+            :colors="colors"
+            :legend-visible="false"
+            :settings="qySetting"
+            :data="qyChartData"
+          ></ve-histogram>
         </el-col>
       </el-row>
     </el-row>
+    <el-row class=" border mt10">
+      <el-col :span="6">
+        <p class="text-center">2020年12月农电人员年龄结构</p>
+        <p class="text-center fl" style="position: relative;left: 40%;">
+          平均47.4岁
+        </p>
+        <ve-pie
+          :data="nlChartData"
+          :settings="chartSetting"
+          :legend-visible="false"
+          height="250px"
+        ></ve-pie>
+      </el-col>
+      <el-col :span="6">
+        <p class="text-center">2020年12月农电人员学历结构</p>
+
+        <ve-pie
+          :data="xlChartData"
+          :settings="chartSetting"
+          :legend-visible="false"
+          height="250px"
+        ></ve-pie>
+      </el-col>
+      <el-col :span="6">
+        <p class="text-center">2020年12月农电人员职称结构</p>
+        <ve-pie
+          :data="zcChartData"
+          :settings="chartSetting"
+          :legend-visible="false"
+          height="250px"
+        ></ve-pie>
+      </el-col>
+      <el-col :span="6">
+        <p class="text-center">2020年12月农电人员技能等级结构</p>
+        <ve-pie
+          :data="jnChartData"
+          :settings="chartSetting"
+          :legend-visible="false"
+          height="250px"
+        ></ve-pie>
+      </el-col>
+    </el-row>
   </div>
 </template>
- 
+
 <script>
 export default {
   name: 'vueName',
   data() {
     return {
-      colors: ['#4271a2', '#5783b1', '#4a6888', '#11263c', '#6487ab', '#0c2b4a', '#04192d'],
+      colors: [
+        '#4271a2',
+        '#5783b1',
+        '#4a6888',
+        '#11263c',
+        '#6487ab',
+        '#0c2b4a',
+        '#04192d',
+      ],
       gdsChartData: {
         columns: ['日期', '数量'],
         rows: [
@@ -179,9 +198,10 @@ export default {
           return v
         },
         yAxis: {
-          offset: -15
-        }
+          offset: -15,
+        },
       },
+
       qySetting: {
         yAxisName: ['乡镇人口(万人)'],
       },
@@ -195,8 +215,8 @@ export default {
   mounted() {},
 }
 </script>
- 
-<style  lang = "scss">
+
+<style lang="scss">
 .jbxx {
   .text-center {
     text-align: center;
