@@ -1,14 +1,16 @@
 <template>
   <div class="zbfx">
     <div>
-      <h5 style="line-height: 50px;">供电所同业对标按供电所综合得分排名
-        <el-date-picker class="fr"
-                        type="month"
-                        v-model="value"
-                        placeholder="选择月">
+      <h5 style="line-height: 50px;">
+        供电所同业对标按供电所综合得分排名
+        <el-date-picker
+          class="fr"
+          type="month"
+          v-model="value"
+          placeholder="选择月"
+        >
         </el-date-picker>
       </h5>
-
     </div>
     <ul>
       <li>
@@ -22,38 +24,33 @@
     <el-row>
       <el-col :span="12">
         <h4>地电陕西省电力公司宝鸡市岐山县供电公司</h4>
-        <el-table :data="tableData"
-                  border
-                  style="width: 100%">
-          <el-table-column type="index"
-                           label="序号"
-                           width="50">
+        <el-table :data="tableData" border style="width: 100%">
+          <el-table-column type="index" label="序号" width="50">
           </el-table-column>
-          <el-table-column prop="date"
-                           label="对标月份"
-                           width="150"></el-table-column>
-          <el-table-column prop="mc"
-                           label="单位名称">
+          <el-table-column
+            prop="date"
+            label="对标月份"
+            width="150"
+          ></el-table-column>
+          <el-table-column prop="mc" label="单位名称">
             <template slot-scope="scope">
-              <span class="curp"
-                    @click="jumpTo">{{scope.row.mc}}</span>
+              <span class="curp" @click="jumpTo">{{ scope.row.mc }}</span>
             </template>
           </el-table-column>
-          
-          <el-table-column prop="hzfs"
-                           label="分数合计"
-                           width="80">
+
+          <el-table-column prop="hzfs" label="分数合计" width="80">
           </el-table-column>
-          
-          <el-table-column prop="pm"
-                           width="80"
-                           label="排名">
-          </el-table-column>
+
+          <el-table-column prop="pm" width="80" label="排名"> </el-table-column>
         </el-table>
       </el-col>
       <el-col :span="12">
-        <ve-bar :data="chartData" height='160px' :colors='colors'
-                :extend="extend"></ve-bar>
+        <ve-bar
+          :data="chartData"
+          height="160px"
+          :colors="colors"
+          :extend="extend"
+        ></ve-bar>
       </el-col>
     </el-row>
   </div>
@@ -65,13 +62,12 @@ export default {
     return {
       value: '',
       colors: [
-        '#4271a2',
-        '#5783b1',
-        '#4a6888',
-        '#11263c',
-        '#6487ab',
-        '#0c2b4a',
-        '#04192d',
+        '#0b3a8a',
+        '#1767ac',
+        '#5480bd',
+        '#88a0ce',
+        '#b7c5e2',
+        '#e7e9f5',
       ],
       tableData: [
         {
@@ -82,17 +78,14 @@ export default {
           zhdf: 98.2,
           pm: 1,
         },
-        
       ],
       chartData: {
         columns: ['日期', '分数合计'],
         rows: [
-           {
+          {
             日期: '凤鸣供电所',
             分数合计: 98.2,
           },
-          
-         
         ],
       },
       extend: {

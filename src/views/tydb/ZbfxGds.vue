@@ -1,14 +1,16 @@
 <template>
   <div class="zbfx">
     <div>
-      <h5 style="line-height: 50px;">凤鸣供电所
-        <el-date-picker class="fr"
-                        type="month"
-                        v-model="value"
-                        placeholder="选择月">
+      <h5 style="line-height: 50px;">
+        凤鸣供电所
+        <el-date-picker
+          class="fr"
+          type="month"
+          v-model="value"
+          placeholder="选择月"
+        >
         </el-date-picker>
       </h5>
-
     </div>
     <ul>
       <li>
@@ -30,51 +32,49 @@
     </ul>
     <el-row>
       <el-col :span="6">
-        <el-table :data="tableData"
-                  border
-                  style="width: 100%">
-          <el-table-column type="index"
-                           label="序号"
-                           width="50">
+        <el-table :data="tableData" border style="width: 100%">
+          <el-table-column type="index" label="序号" width="50">
           </el-table-column>
-          <el-table-column prop="zb"
-                           label="指标"></el-table-column>
-          <el-table-column prop="zbz"
-                           label="指标值"
-                           width="50">
+          <el-table-column prop="zb" label="指标"></el-table-column>
+          <el-table-column prop="zbz" label="指标值" width="50">
           </el-table-column>
-          <el-table-column prop="df"
-                           label="得分"
-                           width="50">
-          </el-table-column>
+          <el-table-column prop="df" label="得分" width="50"> </el-table-column>
         </el-table>
       </el-col>
       <el-col :span="6">
-        <ve-bar :data="chartDatadf"
-                height='240px' :colors='colors'
-                :extend="extend"></ve-bar>
+        <ve-bar
+          :data="chartDatadf"
+          height="240px"
+          :colors="colors"
+          :extend="extend"
+        ></ve-bar>
       </el-col>
       <el-col :span="6">
-        <ve-bar :data="chartDatadf"
-                height='240px' :colors='colors'
-                :extend="extend"></ve-bar>
+        <ve-bar
+          :data="chartDatadf"
+          height="240px"
+          :colors="colors"
+          :extend="extend"
+        ></ve-bar>
       </el-col>
       <el-col :span="6">
-        <ve-bar :data="chartDatadf"
-                height='240px' :colors='colors'
-                :extend="extend"></ve-bar>
+        <ve-bar
+          :data="chartDatadf"
+          height="240px"
+          :colors="colors"
+          :extend="extend"
+        ></ve-bar>
       </el-col>
     </el-row>
     <el-row class="content">
       <el-col :span="12">
-        <p class='text-center mt10 mb10'>指标环装图</p>
-       <ve-ring :data="ringchartData" :colors='colors'></ve-ring>
+        <p class="text-center mt10 mb10">指标环装图</p>
+        <ve-ring :data="ringchartData" :colors="colors"></ve-ring>
       </el-col>
       <el-col :span="12">
-        <p class='text-center mt10 mb10'>历史排名曲线图</p>
-        <ve-line :data="linechartData" :colors='colors'></ve-line>
+        <p class="text-center mt10 mb10">历史排名曲线图</p>
+        <ve-line :data="linechartData" :colors="colors"></ve-line>
       </el-col>
-      
     </el-row>
   </div>
 </template>
@@ -85,13 +85,12 @@ export default {
     return {
       value: '',
       colors: [
-        '#4271a2',
-        '#5783b1',
-        '#4a6888',
-        '#11263c',
-        '#6487ab',
-        '#0c2b4a',
-        '#04192d',
+        '#0b3a8a',
+        '#1767ac',
+        '#5480bd',
+        '#88a0ce',
+        '#b7c5e2',
+        '#e7e9f5',
       ],
       tableData: [
         {
@@ -142,10 +141,10 @@ export default {
       linechartData: {
         columns: ['区域', '省排名', '市排名', '区排名'],
         rows: [
-          { 区域: '1月', '省排名': 5, '市排名': 4, '区排名':3},
-          { 区域: '2月', '省排名': 2, '市排名': 1, '区排名': 1 },
-          { 区域: '3月', '省排名': 4, '市排名': 3, '区排名': 2 },
-          { 区域: '4月', '省排名': 3, '市排名': 2, '区排名' : 2},
+          { 区域: '1月', 省排名: 5, 市排名: 4, 区排名: 3 },
+          { 区域: '2月', 省排名: 2, 市排名: 1, 区排名: 1 },
+          { 区域: '3月', 省排名: 4, 市排名: 3, 区排名: 2 },
+          { 区域: '4月', 省排名: 3, 市排名: 2, 区排名: 2 },
         ],
       },
       chartSettings: {

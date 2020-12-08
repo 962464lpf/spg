@@ -2,27 +2,24 @@
   <div class="zbfx">
     <el-row class="mt10">
       <el-col :span="4">
-        <el-input placeholder="输入关键字进行过滤"
-                  v-model="filterText">
+        <el-input placeholder="输入关键字进行过滤" v-model="filterText">
         </el-input>
-        <el-tree class="filter-tree"
-                 :data="data"
-                 :colors="colors"
-                 :props="defaultProps"
-                 default-expand-all
-                 :filter-node-method="filterNode"
-                 ref="tree">
+        <el-tree
+          class="filter-tree"
+          :data="data"
+          :colors="colors"
+          :props="defaultProps"
+          default-expand-all
+          :filter-node-method="filterNode"
+          ref="tree"
+        >
         </el-tree>
       </el-col>
       <el-col :span="20">
-        <el-tabs v-model="activeName"
-                 type="card">
-          <el-tab-pane label="综合管理"
-                       name="first">
+        <el-tabs v-model="activeName" type="card">
+          <el-tab-pane label="综合管理" name="first">
             <el-row>
-
-              <el-col :span="24"
-                      class="item">
+              <el-col :span="24" class="item">
                 <h3>供电所情况</h3>
                 <ul>
                   <li>
@@ -31,7 +28,6 @@
                       <p>班组信息</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-warning"></i></p>
@@ -39,7 +35,6 @@
                       <p>员工人数</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-plus"></i></p>
@@ -47,7 +42,6 @@
                       <p>供电所面积</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-upload"></i></p>
@@ -55,7 +49,6 @@
                       <p>生产车辆</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-s-fold"></i></p>
@@ -63,7 +56,6 @@
                       <p>集体工具</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-s-grid"></i></p>
@@ -71,15 +63,15 @@
                       <p>备品备件</p>
                       <p>99</p>
                     </div>
-
                   </li>
                 </ul>
-                <ve-line height='300px'
-                         :data="chartData"
-                         :colors='colors'></ve-line>
+                <ve-line
+                  height="300px"
+                  :data="chartData"
+                  :colors="colors"
+                ></ve-line>
               </el-col>
-              <el-col class="item mt10"
-                      :span="24">
+              <el-col class="item mt10" :span="24">
                 <h3>客户情况</h3>
                 <ul>
                   <li>
@@ -88,7 +80,6 @@
                       <p>重要客户</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-warning"></i></p>
@@ -96,7 +87,6 @@
                       <p>一般客户</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-plus"></i></p>
@@ -104,7 +94,6 @@
                       <p>低压用户</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-upload"></i></p>
@@ -112,7 +101,6 @@
                       <p>居民</p>
                       <p>99</p>
                     </div>
-
                   </li>
                   <li>
                     <p><i class="el-icon-s-fold"></i></p>
@@ -120,90 +108,73 @@
                       <p>非居民</p>
                       <p>99</p>
                     </div>
-
                   </li>
-
                 </ul>
-                <ve-ring :data="ringChartData"
-                         height='300px'
-                         :settings='chartSetting'></ve-ring>
+                <ve-ring
+                  :data="ringChartData"
+                  height="300px"
+                  :colors="colors"
+                  :settings="chartSetting"
+                ></ve-ring>
               </el-col>
-              <el-col :span="24"
-                      class="item mt10 item3">
+              <el-col :span="24" class="item mt10 item3">
                 <h3>设备（网架）情况</h3>
                 <ul>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-s-tools"></i></p>
                     <div>
                       <p>专变台数</p>
                       <p>99</p>
                     </div>
-
                   </li>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-warning"></i></p>
                     <div>
                       <p>智能电表</p>
                       <p>99</p>
                     </div>
-
                   </li>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-plus"></i></p>
                     <div>
                       <p>集中器台数</p>
                       <p>99</p>
                     </div>
-
                   </li>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-upload"></i></p>
                     <div>
                       <p>平均供电半径</p>
                       <p>99</p>
                     </div>
-
                   </li>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-s-fold"></i></p>
                     <div>
                       <p>0.4KV低压塔杆数量</p>
                       <p>99</p>
                     </div>
-
                   </li>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-s-fold"></i></p>
                     <div>
                       <p>低压线路长度</p>
                       <p>99</p>
                     </div>
-
                   </li>
-                  <li class="curp"
-                      @click="detailStatus = true">
+                  <li class="curp" @click="detailStatus = true">
                     <p><i class="el-icon-s-fold"></i></p>
                     <div>
                       <p>低压线路条数</p>
                       <p>99</p>
                     </div>
-
                   </li>
-
                 </ul>
               </el-col>
             </el-row>
           </el-tab-pane>
-          <el-tab-pane label="营销服务"
-                       name="second">
-            <div class="item"
-                 v-if="activeName==='second'">
+          <el-tab-pane label="营销服务" name="second">
+            <div class="item" v-if="activeName === 'second'">
               <h3>业扩报装</h3>
               <el-row>
                 <el-col :span="12">
@@ -214,7 +185,6 @@
                         <p>当前低压在途流程数</p>
                         <p>99</p>
                       </div>
-
                     </li>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -226,21 +196,23 @@
                   </ul>
 
                   <p class="text-center mt10 mb10">当月发起流程图统计分析</p>
-                  <ve-histogram :data="ykChartData1"
-                                height='250px'
-                                :colors="colors"
-                                :settings="chartSetting"></ve-histogram>
+                  <ve-histogram
+                    :data="ykChartData1"
+                    height="250px"
+                    :colors="colors"
+                    :settings="chartSetting"
+                  ></ve-histogram>
                 </el-col>
                 <el-col :span="12">
                   <p class="text-center mt10 mb10">当月在途流程统计</p>
-                  <ve-ring :data="ykringChartData"
-                           height='300px'
-                           :colors="colors"
-                           :settings='chartSetting'></ve-ring>
-
+                  <ve-ring
+                    :data="ykringChartData"
+                    height="300px"
+                    :colors="colors"
+                    :settings="chartSetting"
+                  ></ve-ring>
                 </el-col>
-                <el-col :span="12"
-                        class="mt10 border-top">
+                <el-col :span="12" class="mt10 border-top">
                   <ul>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -248,7 +220,6 @@
                         <p>时限达标率</p>
                         <p>99%</p>
                       </div>
-
                     </li>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -259,22 +230,27 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">业扩报装时限统计分析</p>
-                  <ve-histogram :data="ykChartData2"
-                                height='250px'
-                                :colors="colors"
-                                :settings="chartSetting"></ve-histogram>
+                  <ve-histogram
+                    :data="ykChartData2"
+                    height="250px"
+                    :colors="colors"
+                    :settings="chartSetting"
+                  ></ve-histogram>
                 </el-col>
                 <el-col :span="12">
-                  <p class="text-center mt10 mb10">业扩报装时限达标率月曲线图</p>
-                  <ve-line :data="ykChartData3"
-                           height='250px'
-                           :colors="colors"
-                           :settings="chartSetting1"></ve-line>
+                  <p class="text-center mt10 mb10">
+                    业扩报装时限达标率月曲线图
+                  </p>
+                  <ve-line
+                    :data="ykChartData3"
+                    height="250px"
+                    :colors="colors"
+                    :settings="chartSetting1"
+                  ></ve-line>
                 </el-col>
               </el-row>
             </div>
-            <div class="item"
-                 v-if="activeName==='second'">
+            <div class="item" v-if="activeName === 'second'">
               <h3>电费回收</h3>
               <el-row>
                 <el-col :span="8">
@@ -285,7 +261,6 @@
                         <p>电费回收率</p>
                         <p>99%</p>
                       </div>
-
                     </li>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -303,10 +278,12 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">电费回收情况统计(班组)</p>
-                  <ve-line :data="dfChartData1"
-                           height='250px'
-                           :colors="colors"
-                           :settings="{area: true,yAxisName: [ '单位：万元']}"></ve-line>
+                  <ve-line
+                    :data="dfChartData1"
+                    height="250px"
+                    :colors="colors"
+                    :settings="{ area: true, yAxisName: ['单位：万元'] }"
+                  ></ve-line>
                 </el-col>
                 <el-col :span="8">
                   <ul style="height: 32px">
@@ -316,14 +293,14 @@
                         <p></p>
                         <p></p>
                       </div>
-
                     </li>
-
                   </ul>
                   <p class="text-center mt10 mb10">电费回收情况统计(责任人)</p>
-                  <ve-histogram :data="dfChartData2"
-                                :colors="colors"
-                                height='250px'></ve-histogram>
+                  <ve-histogram
+                    :data="dfChartData2"
+                    :colors="colors"
+                    height="250px"
+                  ></ve-histogram>
                 </el-col>
                 <el-col :span="8">
                   <ul style="height: 32px">
@@ -333,32 +310,31 @@
                         <p></p>
                         <p></p>
                       </div>
-
                     </li>
-
                   </ul>
                   <p class="text-center mt10 mb10">欠费情况统计(班组)</p>
-                  <ve-histogram :data="dfChartData3"
-                                :colors="colors"
-                                height='250px'></ve-histogram>
+                  <ve-histogram
+                    :data="dfChartData3"
+                    :colors="colors"
+                    height="250px"
+                  ></ve-histogram>
                 </el-col>
               </el-row>
             </div>
-            <div class="item"
-                 v-if="activeName==='second'">
+            <div class="item" v-if="activeName === 'second'">
               <h3>台区线损率</h3>
               <el-row>
                 <el-col :span="24">
-                  <ve-histogram :data="tqChartData"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ yAxisType: ["percent"]}'></ve-histogram>
+                  <ve-histogram
+                    :data="tqChartData"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
-
               </el-row>
             </div>
-            <div class="item"
-                 v-if="activeName==='second'">
+            <div class="item" v-if="activeName === 'second'">
               <h3>96789</h3>
               <ul>
                 <li>
@@ -400,32 +376,37 @@
               <el-row>
                 <el-col :span="8">
                   <p class="text-center mt10 mb10">抢修工单数</p>
-                  <ve-histogram :data="jlChartData1"
-                                :colors="colors"
-                                height='250px'></ve-histogram>
+                  <ve-histogram
+                    :data="jlChartData1"
+                    :colors="colors"
+                    height="250px"
+                  ></ve-histogram>
                 </el-col>
                 <el-col :span="8">
-                  <p class="text-center mt10 mb10">96789故障报装到达现场及时率</p>
-                  <ve-histogram :data="jlChartData2"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ area: true,yAxisType: ["percent"]}'></ve-histogram>
+                  <p class="text-center mt10 mb10">
+                    96789故障报装到达现场及时率
+                  </p>
+                  <ve-histogram
+                    :data="jlChartData2"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ area: true, yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
                 <el-col :span="8">
                   <p class="text-center mt10 mb10">故障报修率</p>
-                  <ve-histogram :data="jlChartData3"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ area: true,yAxisType: ["percent"]}'></ve-histogram>
+                  <ve-histogram
+                    :data="jlChartData3"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ area: true, yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
               </el-row>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="设备运行"
-                       name="third">
-
-            <div class="item"
-                 v-if="activeName==='third'">
+          <el-tab-pane label="设备运行" name="third">
+            <div class="item" v-if="activeName === 'third'">
               <h3>公变运行</h3>
               <el-row>
                 <el-col :span="12">
@@ -453,12 +434,14 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">公变采集</p>
-                  <ve-histogram :data="gbChartData"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ area: true,yAxisType: ["percent"]}'></ve-histogram>
+                  <ve-histogram
+                    :data="gbChartData"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ area: true, yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
-                 <el-col :span="12">
+                <el-col :span="12">
                   <ul>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -483,16 +466,16 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">公变低电压</p>
-                  <ve-histogram :data="gbChartData1"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ area: true,yAxisType: ["percent"]}'></ve-histogram>
+                  <ve-histogram
+                    :data="gbChartData1"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ area: true, yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
               </el-row>
-
             </div>
-            <div class="item mt10"
-                 v-if="activeName==='third'">
+            <div class="item mt10" v-if="activeName === 'third'">
               <h3>用电采集</h3>
               <el-row>
                 <el-col :span="12">
@@ -532,13 +515,15 @@
                     <li>99%</li>
                     <li>99%</li>
                   </ul>
-                  <ve-histogram :data="gbChartData"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ area: true,yAxisType: ["percent"]}'></ve-histogram>
+                  <ve-histogram
+                    :data="gbChartData"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ area: true, yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
-                 
-                 <el-col :span="12">
+
+                <el-col :span="12">
                   <ul>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -575,19 +560,17 @@
                     <li>99%</li>
                     <li>99%</li>
                   </ul>
-                  <ve-histogram :data="gbChartData"
-                                :colors="colors"
-                                height='250px'
-                                :settings='{ area: true,yAxisType: ["percent"]}'></ve-histogram>
+                  <ve-histogram
+                    :data="gbChartData"
+                    :colors="colors"
+                    height="250px"
+                    :settings="{ area: true, yAxisType: ['percent'] }"
+                  ></ve-histogram>
                 </el-col>
-
-               
               </el-row>
-
             </div>
           </el-tab-pane>
         </el-tabs>
-
       </el-col>
     </el-row>
     <div v-if="detailStatus">
@@ -611,7 +594,14 @@ export default {
     return {
       detailStatus: false,
       activeName: 'first',
-      colors: ['#4271a2', '#11263c', '#6487ab', '#0c2b4a', '#04192d'],
+      colors: [
+        '#0b3a8a',
+        '#1767ac',
+        '#5480bd',
+        '#88a0ce',
+        '#b7c5e2',
+        '#e7e9f5',
+      ],
       data: [
         {
           id: 1,

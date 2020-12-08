@@ -1,14 +1,16 @@
 <template>
   <div class="zbfx">
     <div>
-      <h5 style="line-height: 50px;">供电所同业对标按市公司综合得分排名
-        <el-date-picker class="fr"
-                        type="month"
-                        v-model="value"
-                        placeholder="选择月">
+      <h5 style="line-height: 50px;">
+        供电所同业对标按市公司综合得分排名
+        <el-date-picker
+          class="fr"
+          type="month"
+          v-model="value"
+          placeholder="选择月"
+        >
         </el-date-picker>
       </h5>
-
     </div>
     <ul>
       <li>
@@ -26,44 +28,35 @@
     <el-row>
       <el-col :span="16">
         <h4>地电陕西省电力公司</h4>
-        <el-table :data="tableData"
-                  border
-                  style="width: 100%">
-          <el-table-column type="index"
-                           label="序号"
-                           width="50">
+        <el-table :data="tableData" border style="width: 100%">
+          <el-table-column type="index" label="序号" width="50">
           </el-table-column>
-          <el-table-column prop="date"
-                           label="对标月份"
-                           width="150"></el-table-column>
-          <el-table-column prop="mc"
-                           label="单位名称">
+          <el-table-column
+            prop="date"
+            label="对标月份"
+            width="150"
+          ></el-table-column>
+          <el-table-column prop="mc" label="单位名称">
             <template slot-scope="scope">
-              <span class="curp"
-                    @click="jumpTo">{{scope.row.mc}}</span>
+              <span class="curp" @click="jumpTo">{{ scope.row.mc }}</span>
             </template>
           </el-table-column>
-          <el-table-column prop="gdssl"
-                           label="供电所数量"
-                           width="80">
+          <el-table-column prop="gdssl" label="供电所数量" width="80">
           </el-table-column>
-          <el-table-column prop="hzfs"
-                           label="汇总分数"
-                           width="80">
+          <el-table-column prop="hzfs" label="汇总分数" width="80">
           </el-table-column>
-          <el-table-column prop="zhdf"
-                           label="综合得分"
-                           width="80">
+          <el-table-column prop="zhdf" label="综合得分" width="80">
           </el-table-column>
-          <el-table-column prop="pm"
-                           width="80"
-                           label="排名">
-          </el-table-column>
+          <el-table-column prop="pm" width="80" label="排名"> </el-table-column>
         </el-table>
       </el-col>
-      <el-col :span="8" >
-        <ve-bar :data="chartData" height='240px' :colors='colors'
-                :extend="extend"></ve-bar>
+      <el-col :span="8">
+        <ve-bar
+          :data="chartData"
+          height="240px"
+          :colors="colors"
+          :extend="extend"
+        ></ve-bar>
       </el-col>
     </el-row>
   </div>
@@ -75,13 +68,12 @@ export default {
     return {
       value: '',
       colors: [
-        '#4271a2',
-        '#5783b1',
-        '#4a6888',
-        '#11263c',
-        '#6487ab',
-        '#0c2b4a',
-        '#04192d',
+        '#0b3a8a',
+        '#1767ac',
+        '#5480bd',
+        '#88a0ce',
+        '#b7c5e2',
+        '#e7e9f5',
       ],
       tableData: [
         {
@@ -104,7 +96,7 @@ export default {
       chartData: {
         columns: ['日期', '综合得分'],
         rows: [
-           {
+          {
             日期: '陕西省榆林市供电公司',
             综合得分: 96.2,
           },
@@ -112,7 +104,6 @@ export default {
             日期: '陕西省宝鸡市供电公司',
             综合得分: 98.2,
           },
-         
         ],
       },
       extend: {

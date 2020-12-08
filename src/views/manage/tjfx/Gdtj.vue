@@ -1,15 +1,14 @@
 <template>
   <div class="gdtj">
     <el-row>
-      <el-col :span="12"
-              class="content border">
+      <el-col :span="12" class="content border">
         <p class="text-center">工单总体情况统计(2020-12-1)</p>
-        <p>统计维度：
+        <p>
+          统计维度：
           <el-button type="primary">日</el-button>
           <el-button type="success">月</el-button>
         </p>
         <div class="flex">
-
           <p>
             总数： 0 张
           </p>
@@ -32,72 +31,83 @@
             </el-col>
           </el-row>
         </div>
-
       </el-col>
-      <el-col :span="12"
-              class="content border">
+      <el-col :span="12" class="content border">
         <p class="text-center">工单按单位展示(2020-12-1)</p>
-        <ve-line :data="gdChartData"
-                 :settings='chartSetting'
-                 :colors="colors"
-                 height='270px'></ve-line>
+        <ve-line
+          :data="gdChartData"
+          :settings="chartSetting"
+          :colors="colors"
+          height="270px"
+        ></ve-line>
       </el-col>
-      <el-col :span="12"
-              class="content mt10 border">
+      <el-col :span="12" class="content mt10 border">
         <p class="text-center ">工单分类统计(2020-12-1)</p>
-        <ve-line :data="gdFlChartData"
-                 :settings='chartSetting'
-                 :colors="colors"
-                 height='270px'></ve-line>
+        <ve-line
+          :data="gdFlChartData"
+          :settings="chartSetting"
+          :colors="colors"
+          height="270px"
+        ></ve-line>
       </el-col>
-      <el-col :span="12"
-              class="content mt10 border ">
+      <el-col :span="12" class="content mt10 border ">
         <p class="text-center">工单完成情况统计(2020-12-1)</p>
         <el-row>
           <el-col :span="12">
-            <ve-ring :data="gdWcChartData"
-                     height='270px'
-                     :colors="colors"
-                     :settings='gdWcChartSetting'></ve-ring>
+            <ve-ring
+              :data="gdWcChartData"
+              height="270px"
+              :colors="colors"
+              :settings="gdWcChartSetting"
+            ></ve-ring>
           </el-col>
           <el-col :span="12">
-            <ve-ring :data="gdPjChartData"
-                     height='270px'
-                     :colors="colors"
-                     :settings='gdWcChartSetting'></ve-ring>
+            <ve-ring
+              :data="gdPjChartData"
+              height="270px"
+              :colors="colors"
+              :settings="gdWcChartSetting"
+            ></ve-ring>
           </el-col>
         </el-row>
       </el-col>
     </el-row>
   </div>
 </template>
- 
+
 <script>
 export default {
   name: 'vueName',
   data() {
     return {
-      colors: ['#4271a2', '#5783b1', '#4a6888', '#11263c', '#6487ab', '#0c2b4a', '#04192d'],
+      colors: [
+        '#0b3a8a',
+        '#1767ac',
+        '#5480bd',
+        '#88a0ce',
+        '#b7c5e2',
+        '#e7e9f5',
+      ],
       gdChartData: {
-        columns: ['日期', '数量',],
+        columns: ['日期', '数量'],
         rows: [
-          { 日期: '区域1', 数量: 0,  },
-          { 日期: '区域2', 数量: 0, },
-          { 日期: '区域3', 数量: 0,  },
-          { 日期: '区域4', 数量: 0,  },
-          { 日期: '区域5', 数量: 0,  },
-          { 日期: '区域6', 数量: 0,  },
+          { 日期: '区域1', 数量: 0 },
+          { 日期: '区域2', 数量: 0 },
+          { 日期: '区域3', 数量: 0 },
+          { 日期: '区域4', 数量: 0 },
+          { 日期: '区域5', 数量: 0 },
+          { 日期: '区域6', 数量: 0 },
         ],
       },
       gdFlChartData: {
-        columns: ['日期', '类型一', '类型二', '类型三', '类型四', ],
-         rows: [
-          { 日期: '区域1', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
-          { 日期: '区域2', 类型一: 0, 类型二: 0,类型三: 0,类型四: 0,},
-          { 日期: '区域3', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
-          { 日期: '区域4', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
-          { 日期: '区域5', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
-          { 日期: '区域6', 类型一: 0,  类型二: 0,类型三: 0,类型四: 0,},
+        columns: ['日期', '类型一', '类型二', '类型三', '类型四'],
+        rows: [
+          { 日期: '区域1', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '区域2', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '区域3', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '区域4', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '区域5', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '区域6', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
         ],
       },
       extend: {
@@ -135,8 +145,8 @@ export default {
   mounted() {},
 }
 </script>
- 
-<style scoped lang = "scss">
+
+<style scoped lang="scss">
 .gdtj {
   .border {
     border: 1px solid #eee;

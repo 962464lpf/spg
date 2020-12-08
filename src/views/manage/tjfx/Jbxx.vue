@@ -88,12 +88,14 @@
           :settings="chartSetting"
           :legend-visible="false"
           height="250px"
+          :colors="colors"
         ></ve-pie>
       </el-col>
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员学历结构</p>
 
         <ve-pie
+          :colors="colors"
           :data="xlChartData"
           :settings="chartSetting"
           :legend-visible="false"
@@ -103,6 +105,7 @@
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员职称结构</p>
         <ve-pie
+          :colors="colors"
           :data="zcChartData"
           :settings="chartSetting"
           :legend-visible="false"
@@ -112,6 +115,7 @@
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员技能等级结构</p>
         <ve-pie
+          :colors="colors"
           :data="jnChartData"
           :settings="chartSetting"
           :legend-visible="false"
@@ -128,13 +132,12 @@ export default {
   data() {
     return {
       colors: [
-        '#4271a2',
-        '#5783b1',
-        '#4a6888',
-        '#11263c',
-        '#6487ab',
-        '#0c2b4a',
-        '#04192d',
+        '#0b3a8a',
+        '#1767ac',
+        '#5480bd',
+        '#88a0ce',
+        '#b7c5e2',
+        '#e7e9f5',
       ],
       gdsChartData: {
         columns: ['日期', '数量'],
