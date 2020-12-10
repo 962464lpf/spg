@@ -24,7 +24,7 @@
       <el-table-column prop="gzzrr" label="工作负责人"> </el-table-column>
       <el-table-column prop="zdr" label="制单人"> </el-table-column>
       <el-table-column prop="zt" label="状态"> </el-table-column>
-      <el-table-column label="操作" width="180">
+      <el-table-column label="操作" width="280">
         <template>
           <el-button type="primary">制单</el-button>
           <el-button type="primary" @click="lookStatus = true">查看</el-button>

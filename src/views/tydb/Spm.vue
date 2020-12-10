@@ -50,7 +50,7 @@ export default {
           dfhs: '96%',
           cjxf: '96%',
           jf: '97%',
-          xs: '95%',
+          xs: '5%',
           cjfg: '97%',
         },
         {
@@ -61,10 +61,9 @@ export default {
           dfhs: '96%',
           cjxf: '94%',
           jf: '93%',
-          xs: '96%',
+          xs: '6%',
           cjfg: '94%',
         },
-      
       ],
     }
   },

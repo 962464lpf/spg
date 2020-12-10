@@ -61,6 +61,11 @@
         width="240"
         fixed
       >
+        <template slot-scope="scope">
+          <a @click="jump" class="curp" style="color: #0b3a8a;">{{
+            scope.row.gdgs
+          }}</a>
+        </template>
       </el-table-column>
       <el-table-column
         prop="gds"
@@ -193,11 +198,11 @@
         >
         </el-table-column>
       </el-table-column>
-      <el-table-column label="进入" align="center" fixed="right">
+      <!-- <el-table-column label="进入" align="center" fixed="right">
         <template>
           <el-button type="primary" size="mini" @click="jump">进入</el-button>
         </template>
-      </el-table-column>
+      </el-table-column> -->
     </el-table>
   </div>
 </template>

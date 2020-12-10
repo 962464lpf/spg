@@ -2,41 +2,37 @@
   <div class="tjfx">
     <el-row style="height: 100%;">
       <el-col :span="3">
-        <el-input placeholder="输入关键字进行过滤"
-                  v-model="filterText">
-        </el-input>
-        <el-tree class="filter-tree"
-                 :data="data"
-                 :props="defaultProps"
-                 default-expand-all
-                 ref="tree">
+        <el-tree
+          class="filter-tree"
+          :data="data"
+          :props="defaultProps"
+          default-expand-all
+          ref="tree"
+        >
         </el-tree>
       </el-col>
-      <el-col :span="21"
-              style="padding-left: 5px; box-sizing:border-box; height: 100%;">
+      <el-col
+        :span="21"
+        style="padding-left: 5px; box-sizing:border-box; height: 100%;"
+      >
         <el-tabs v-model="activeName">
-          <el-tab-pane label="基本信息"
-                       name="first"
-                       lazy
-                       style="height: 100%;">
+          <el-tab-pane label="基本信息" name="first" lazy style="height: 100%;">
             <Jbxx></Jbxx>
           </el-tab-pane>
-          <el-tab-pane label="工单统计"
-                       name="second"
-                       lazy
-                       style="height: 100%;">
+          <el-tab-pane
+            label="工单统计"
+            name="second"
+            lazy
+            style="height: 100%;"
+          >
             <Gdtj></Gdtj>
           </el-tab-pane>
-          <el-tab-pane label="台区统计"
-                       name="third"
-                       lazy
-                       style="height: 100%;">
+          <el-tab-pane label="台区统计" name="third" lazy style="height: 100%;">
             <Tqtj></Tqtj>
           </el-tab-pane>
         </el-tabs>
       </el-col>
     </el-row>
-
   </div>
 </template>
 
@@ -59,7 +55,7 @@ export default {
     return {
       activeName: 'first',
       filterText: '',
-       data: [
+      data: [
         {
           id: 1,
           label: '陕西省',
@@ -78,7 +74,6 @@ export default {
                 },
               ],
             },
-           
           ],
         },
       ],
@@ -93,7 +88,7 @@ export default {
 }
 </script>
 
-<style  lang="scss">
+<style lang="scss">
 .tjfx {
   height: 100%;
   overflow: hidden;
