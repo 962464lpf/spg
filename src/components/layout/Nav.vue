@@ -10,6 +10,68 @@
         @click="handleScaling"
       ></i>
     </div>
+    <!-- <el-menu
+      router
+      style="width: 100%;"
+      :default-active="defaultActive"
+      :collapse="isCollapse"
+      :collapse-transition="false"
+      unique-opened
+    >
+      <template v-for="(route, index) in routes">
+        <el-submenu
+          v-if="route.children && route.children.length && route.meta.title"
+          :index="route.path"
+          :key="index"
+        >
+          <template slot="title">
+            <i :class="route.meta.icon"></i>
+            <span>{{ route.meta.title }}</span>
+          </template>
+
+          <template v-for="(itemChild, index) in route.children">
+            <el-submenu
+              v-if="
+                itemChild.children &&
+                  itemChild.children.length &&
+                  itemChild.meta.title
+              "
+              :index="itemChild.path"
+              :key="index"
+            >
+              <template slot="title">
+                <i :class="itemChild.meta.icon"></i>
+                <span>{{ itemChild.meta.title }}</span>
+              </template>
+
+              <el-menu-item
+                v-for="(itemChild_Child, index) in itemChild.children"
+                :index="itemChild_Child.path"
+                :key="index"
+              >
+                <i :class="itemChild_Child.meta.icon"></i>
+                <span slot="title">{{ itemChild_Child.meta.title }}</span>
+              </el-menu-item>
+            </el-submenu>
+
+            <el-menu-item
+              v-else-if="itemChild.meta.title"
+              :index="itemChild.path"
+              :key="index"
+            >
+              <i :class="itemChild.meta.icon"></i>
+              <span slot="title">{{ itemChild.meta.title }}</span>
+            </el-menu-item>
+          </template>
+        </el-submenu>
+
+        <el-menu-item v-else :index="route.path" :key="index">
+          <i :class="route.meta.icon"></i>
+          <span slot="title">{{ route.meta.title }}</span>
+        </el-menu-item>
+      </template>
+    </el-menu> -->
+
     <el-menu
       router
       style="width: 100%;"
