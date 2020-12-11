@@ -7,7 +7,9 @@
     <div>
       <el-form :inline="true"
                class="mt10">
-
+        <el-form-item label="工单号">
+          <el-input></el-input>
+        </el-form-item>
         <el-form-item label="工单状态">
           <el-select v-model="gdstatus"
                      placeholder="请选择">
@@ -18,13 +20,19 @@
             </el-option>
           </el-select>
         </el-form-item>
-
+        <el-form-item label="时间">
+          <el-date-picker type="datetimerange"
+                          range-separator="至"
+                          start-placeholder="开始日期"
+                          end-placeholder="结束日期">
+          </el-date-picker>
+        </el-form-item>
         <el-form-item>
           <el-button type="primary">查询</el-button>
         </el-form-item>
       </el-form>
     </div>
-    <!-- <div class="fl clearfloat mt10">
+    <div class="fl clearfloat mt10">
       <el-button type="primary"
                  @click="jump('yjied')">已接单</el-button>
       <el-button type="primary"
@@ -33,8 +41,8 @@
                  @click="jump('yjd')">已结单</el-button>
       <el-button type="primary"
                  @click="jump('ygd')">已归档</el-button>
-    </div> -->
-    <div class="mt10 fl clearfloat">
+    </div>
+    <div class="mt10 fr clearfloat">
       <el-button type="primary"
                  @click="zdStatus = true">制单</el-button>
       <el-button type="primary"
@@ -53,9 +61,9 @@
       <el-table-column type="selection"
                        width="55"> </el-table-column>
       <el-table-column prop="pgsj"
-                       label="派工时间"> </el-table-column>
+                       label="接单时间"> </el-table-column>
       <el-table-column prop="pgdh"
-                       label="派工单号"> </el-table-column>
+                       label="工单号"> </el-table-column>
       <el-table-column prop="gdly"
                        label="工单来源"> </el-table-column>
       <el-table-column prop="rwmc"
@@ -67,10 +75,10 @@
       <el-table-column prop="zdr"
                        label="制单人"> </el-table-column>
       <el-table-column prop="zt"
-                       label="状态" width="400">
+                       label="状态"
+                       width="400">
         <template slot-scope="scope">
-          <el-steps 
-                    :active="scope.row.status"
+          <el-steps :active="scope.row.status"
                     finish-status="success">
             <el-step title="已接单"></el-step>
             <el-step title="未签发"></el-step>
@@ -85,7 +93,7 @@
       <el-table-column label="操作"
                        width="90">
         <template>
-          
+
           <el-button type="text"
                      @click="lookStatus = true">查看</el-button>
           <!-- <el-button type="primary">修改</el-button> -->

@@ -1,18 +1,22 @@
 <template>
   <div>
     <div>
-      <el-button type="primary" @click="goBack">返回</el-button>
+      <el-button type="primary"
+                 @click="goBack">返回</el-button>
     </div>
     <el-tabs v-model="activeName">
-      <el-tab-pane label="工器具台账" name="first">
+      <el-tab-pane label="工器具台账"
+                   name="first">
         <el-form :inline="true">
           <el-form-item label="编号">
             <el-input></el-input>
           </el-form-item>
           <el-form-item label="类型">
             <el-select>
-              <el-option label="类型1" value="shanghai"></el-option>
-              <el-option label="类型1" value="beijing"></el-option>
+              <el-option label="类型1"
+                         value="shanghai"></el-option>
+              <el-option label="类型1"
+                         value="beijing"></el-option>
             </el-select>
           </el-form-item>
           <el-form-item>
@@ -26,23 +30,30 @@
           <el-button type="primary">导出</el-button>
         </div>
         <div class="clearfloat"></div>
-        <el-table
-          :data="tableData"
-          border
-          stripe
-          style="width: 100%"
-          class="mt10"
-        >
-          <el-table-column prop="bh" label="编号"> </el-table-column>
-          <el-table-column prop="mc" label="名称"> </el-table-column>
-          <el-table-column prop="gg" label="规格"> </el-table-column>
-          <el-table-column prop="lx" label="类型"> </el-table-column>
-          <el-table-column prop="syr" label="使用人"> </el-table-column>
-          <el-table-column prop="dw" label="单位"> </el-table-column>
-          <el-table-column prop="rksj" label="入库时间"> </el-table-column>
+        <el-table :data="tableData"
+                  border
+                  stripe
+                  style="width: 100%"
+                  class="mt10">
+          <el-table-column prop="bh"
+                           label="编号"> </el-table-column>
+          <el-table-column prop="mc"
+                           label="名称"> </el-table-column>
+          <el-table-column prop="gg"
+                           label="规格"> </el-table-column>
+          <el-table-column prop="lx"
+                           label="类型"> </el-table-column>
+          <el-table-column prop="syr"
+                           label="使用人"> </el-table-column>
+          <el-table-column prop="dw"
+                           label="单位"> </el-table-column>
+          <el-table-column prop="rksj"
+                           label="入库时间"> </el-table-column>
 
-          <el-table-column prop="bz" label="备注"> </el-table-column>
-          <el-table-column label="操作" width="150">
+          <el-table-column prop="bz"
+                           label="备注"> </el-table-column>
+          <el-table-column label="操作"
+                           width="150">
             <template>
               <el-button type="primary">修改</el-button>
               <el-button type="danger">删除</el-button>
@@ -50,15 +61,18 @@
           </el-table-column>
         </el-table>
       </el-tab-pane>
-      <el-tab-pane label="领用记录" name="second">
+      <el-tab-pane label="领用记录"
+                   name="second">
         <el-form :inline="true">
           <el-form-item label="编号">
             <el-input></el-input>
           </el-form-item>
           <el-form-item label="类型">
             <el-select>
-              <el-option label="类型1" value="shanghai"></el-option>
-              <el-option label="类型1" value="beijing"></el-option>
+              <el-option label="类型1"
+                         value="shanghai"></el-option>
+              <el-option label="类型1"
+                         value="beijing"></el-option>
             </el-select>
           </el-form-item>
           <el-form-item>
@@ -66,7 +80,7 @@
           </el-form-item>
         </el-form>
         <div class="clearfloat"></div>
-        <el-table
+        <!-- <el-table
           :data="tableData"
           border
           stripe
@@ -77,7 +91,9 @@
           <el-table-column prop="mc" label="名称"> </el-table-column>
           <el-table-column prop="gg" label="规格"> </el-table-column>
           <el-table-column prop="lx" label="类型"> </el-table-column>
-          <el-table-column prop="syr" label="领用时间"> </el-table-column>
+          <el-table-column prop="gdh" label="工单号"> </el-table-column>
+          <el-table-column prop="pgsj" label="派工时间"> </el-table-column>
+          <el-table-column prop="rksj" label="领用时间"> </el-table-column>
           <el-table-column prop="rksj" label="归还时间"> </el-table-column>
           <el-table-column prop="glfzr" label="管理负责人"> </el-table-column>
           <el-table-column prop="bz" label="备注"> </el-table-column>
@@ -86,6 +102,44 @@
               <el-button type="primary">查看</el-button>
             </template>
           </el-table-column>
+        </el-table> -->
+        <el-table :data="tableData2"
+                  style="width: 100%">
+          <el-table-column type="expand">
+            <template slot-scope="props">
+              <el-table :data="props.row.list"
+                        style="width: 100%">
+                <el-table-column prop="lymc"
+                                 label="领用物品名称"> </el-table-column>
+                <el-table-column prop="lx"
+                                 label="类型"> </el-table-column>
+                <el-table-column prop="lysl"
+                                 label="领用数量"> </el-table-column>
+                <el-table-column prop="lysj"
+                                 label="领用时间"> </el-table-column>
+                <el-table-column prop="ghsj"
+                                 label="归还时间"> </el-table-column>
+                <el-table-column prop="fzr"
+                                 label="管理负责人"> </el-table-column>
+              </el-table>
+
+            </template>
+          </el-table-column>
+          <el-table-column prop="pgdh"
+                           label="工单号"> </el-table-column>
+          <el-table-column prop="pgsj"
+                           label="接单时间"> </el-table-column>
+
+          <el-table-column prop="gdly"
+                           label="工单来源"> </el-table-column>
+          <el-table-column prop="rwmc"
+                           label="任务名称"> </el-table-column>
+          <el-table-column prop="zylx"
+                           label="作业类型"> </el-table-column>
+          <el-table-column prop="gzzrr"
+                           label="工作负责人"> </el-table-column>
+          <el-table-column prop="zdr"
+                           label="制单人"> </el-table-column>
         </el-table>
       </el-tab-pane>
       <!-- <el-tab-pane label="检查纪录" name="third">
@@ -148,6 +202,8 @@ export default {
           bz: 'xxx',
           rksj: '2020-3.25',
           glfzr: '小王',
+          gdh: 123456,
+          pgsh: '2020-3.25',
         },
         {
           bh: 2,
@@ -159,6 +215,8 @@ export default {
           bz: 'xxx',
           rksj: '2020-3-25',
           glfzr: '小王',
+          gdh: 1234567,
+          pgsh: '2020-3.25',
         },
       ],
       tableData1: [
@@ -166,6 +224,56 @@ export default {
           jcsj: '2020-12-1 12:34:34',
           jcr: '小王',
           jcqksm: '一切正常',
+        },
+      ],
+      tableData2: [
+        {
+          pgsj: '2020-11-23 12:23:34',
+          pgdh: '123456789',
+          rwmc: '巡线',
+          zylx: '检查',
+          gzzrr: '王小虎',
+          gdly: '96789',
+          zdr: '张小虎',
+          qfr: 's',
+          zt: '已接单',
+          status: 1,
+          lymc: '安全帽',
+          lx: '安全工器具',
+          lysl: '3',
+          lysj: '2020-11-23 14:23:34',
+          ghsj: '2020-11-23 16:23:34',
+          fzr: '小王',
+          list: [
+            {
+              lymc: '安全帽',
+              lx: '安全工器具',
+              lysl: '3',
+              lysj: '2020-11-23 14:23:34',
+              ghsj: '2020-11-23 16:23:34',
+              fzr: '小王',
+            },
+            {
+              lymc: '梯子',
+              lx: '生产工器具',
+              lysl: '1',
+              lysj: '2020-11-23 14:23:34',
+              ghsj: '2020-11-23 16:23:34',
+              fzr: '小王',
+            },
+          ],
+        },
+        {
+          pgsj: '2020-11-23',
+          pgdh: '123456789',
+          rwmc: '巡线',
+          zylx: '检查',
+          gdly: '移动端推送',
+          gzzrr: '王小虎',
+          zdr: '张小虎',
+          qfr: 's',
+          zt: '未签发',
+          status: 2,
         },
       ],
     }
