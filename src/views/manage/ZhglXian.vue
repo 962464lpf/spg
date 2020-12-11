@@ -62,9 +62,9 @@
         fixed
       >
         <template slot-scope="scope">
-          <a @click="jump" class="curp" style="color: #0b3a8a;">{{
+          <b @click="jump" class="curp" style="color: #0b3a8a;">{{
             scope.row.gdgs
-          }}</a>
+          }}</b>
         </template>
       </el-table-column>
       <el-table-column

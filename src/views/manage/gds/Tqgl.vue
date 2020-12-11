@@ -55,10 +55,9 @@
       <el-table-column prop="10kv" label="10KV接杆"> </el-table-column>
       <el-table-column prop="dxhs" label="单相户数"> </el-table-column>
       <el-table-column prop="sxhs" label="三相户数"> </el-table-column>
-      <el-table-column prop="sxhs" label="经纬度"> </el-table-column>
-      <el-table-column label="操作">
+      <!-- <el-table-column prop="wz" label="位置"> </el-table-column> -->
+      <el-table-column label="操作" width="80">
         <template>
-          <el-button type="danger">删除</el-button>
           <el-button type="primary" @click="tqxqStatus = true">详情</el-button>
         </template>
       </el-table-column>
@@ -160,11 +159,11 @@ export default {
       ],
       tqxqStatus: false,
       tableData: [
-        { tqmc: '一台区', tqfzr: '小王', pbrl: '' },
-        { tqmc: '二台区', tqfzr: '小王', pbrl: '' },
-        { tqmc: '三台区', tqfzr: '小王', pbrl: '' },
-        { tqmc: '四台区', tqfzr: '小王', pbrl: '' },
-        { tqmc: '五台区', tqfzr: '小王', pbrl: '' },
+        { tqmc: '一台区', tqfzr: '小王', pbrl: '', wz: 'xx街道以西' },
+        { tqmc: '二台区', tqfzr: '小王', pbrl: '' , wz: '' },
+        { tqmc: '三台区', tqfzr: '小王', pbrl: '' , wz: '' },
+        { tqmc: '四台区', tqfzr: '小王', pbrl: '' , wz: '' },
+        { tqmc: '五台区', tqfzr: '小王', pbrl: '' , wz: '' },
       ],
     }
   },

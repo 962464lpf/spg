@@ -42,7 +42,7 @@
           <el-table-column prop="rksj" label="入库时间"> </el-table-column>
 
           <el-table-column prop="bz" label="备注"> </el-table-column>
-          <el-table-column label="操作">
+          <el-table-column label="操作" width="150">
             <template>
               <el-button type="primary">修改</el-button>
               <el-button type="danger">删除</el-button>
@@ -88,7 +88,7 @@
           </el-table-column>
         </el-table>
       </el-tab-pane>
-      <el-tab-pane label="检查纪录" name="third">
+      <!-- <el-tab-pane label="检查纪录" name="third">
         <el-row>
           <el-button type="primary" @click="dialogVisible = true"
             >检查情况说明</el-button
@@ -126,7 +126,7 @@
             >
           </span>
         </el-dialog>
-      </el-tab-pane>
+      </el-tab-pane> -->
     </el-tabs>
   </div>
 </template>

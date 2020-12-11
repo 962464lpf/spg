@@ -33,7 +33,7 @@
       <el-table-column label="操作" width="240">
         <template>
           <el-button type="primary">查看</el-button>
-          <el-button type="primary">设置</el-button>
+          <el-button type="primary">编辑</el-button>
           <el-button @click="dialogVisible = true" type="primary"
             >分配角色</el-button
           >

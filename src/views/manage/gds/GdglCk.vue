@@ -169,9 +169,9 @@
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
-      <el-button @click="handleClose" type="primary">补打派工单</el-button>
-      <el-button type="primary" @click="handleClose">补打备品备件</el-button>
-      <el-button type="primary" @click="handleClose">补打工器具</el-button>
+      <el-button @click="handleClose" type="primary">打印派工单</el-button>
+      <el-button type="primary" @click="handleClose">打印备品备件</el-button>
+      <el-button type="primary" @click="handleClose">打印工器具</el-button>
       <el-button type="primary" @click="handleClose">关闭</el-button>
     </span>
   </el-dialog>

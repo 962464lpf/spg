@@ -22,6 +22,8 @@
       <el-table-column prop="bxbh" label="表箱编号"> </el-table-column>
       <el-table-column prop="bxwz" label="表箱位置"> </el-table-column>
       <el-table-column prop="sjh" label="手机号"> </el-table-column>
+      <el-table-column prop="pb" label="配变"> </el-table-column>
+
     </el-table>
 
     <span slot="footer" class="dialog-footer">
@@ -49,6 +51,7 @@ export default {
           bxbh: '78946',
           bxwz: 'xxx',
           sjh: '13587952654',
+          pb: 'xx配变'
         },
       ],
     }

@@ -63,6 +63,33 @@ const routes = [
         },
       },
       {
+        path: '/zhgl/gds/yjied',
+        name: 'yjied',
+        component: () => import('../views/manage/gds/YjieD.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/yqf',
+        name: 'yjied',
+        component: () => import('../views/manage/gds/Yqf.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/zhgl/gds/yjd',
+        name: 'yjied',
+        component: () => import('../views/manage/gds/Yjd.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
         path: '/zhgl/gds/gqj',
         name: 'gqj',
         component: () => import('../views/manage/gds/Gqjgl.vue'),

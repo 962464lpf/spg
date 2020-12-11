@@ -82,7 +82,7 @@
         </el-col>
         <el-col :span="12">
           <el-form-item label="工作负责人">
-            <el-select v-model="form.gzfzr">
+            <el-select v-model="form.gzfzr" multiple>
               <el-option label="小二" value="shanghai"></el-option>
               <el-option label="小三" value="beijing"></el-option>
             </el-select>
@@ -92,17 +92,17 @@
       <el-row>
         <el-col :span="12">
           <el-form-item label="工作成员">
-            <el-select v-model="form.gzcy">
+            <el-select v-model="form.gzcy" multiple>
               <el-option label="小二" value="shanghai"></el-option>
               <el-option label="小三" value="beijing"></el-option>
             </el-select>
           </el-form-item>
         </el-col>
-        <el-col :span="12">
+        <!-- <el-col :span="12">
           <el-form-item label="其他人">
             <el-input v-model="form.qtr"></el-input>
           </el-form-item>
-        </el-col>
+        </el-col> -->
       </el-row>
       <el-row>
         <el-col :span="12">
