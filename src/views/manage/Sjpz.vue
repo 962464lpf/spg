@@ -11,7 +11,7 @@
       <el-button type="primary">导出</el-button>
     </div>
     <el-row class="mt10">
-      <el-col :span="4">
+      <!-- <el-col :span="4">
         <el-tree
           class="filter-tree"
           :data="data"
@@ -21,8 +21,8 @@
           ref="tree"
         >
         </el-tree
-      ></el-col>
-      <el-col :span="20">
+      ></el-col> -->
+      <el-col :span="24">
         <el-table :data="tableData" style="width: 100%" class="mt10">
           <el-table-column prop="gdsmc" label="供电所名称" width="180">
           </el-table-column>

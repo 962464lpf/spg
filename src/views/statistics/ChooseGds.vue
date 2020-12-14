@@ -4,15 +4,15 @@
              width="65%"
              :before-close="handleClose">
     <el-row>
-      <el-col :span="4">
+      <!-- <el-col :span="4">
         <el-tree class="filter-tree"
                  :data="data"
                  :props="defaultProps"
                  default-expand-all
                  ref="tree">
         </el-tree>
-      </el-col>
-      <el-col :span="20">
+      </el-col> -->
+      <el-col :span="24">
         <el-table ref="multipleTable"
                   :data="tableData"
                   tooltip-effect="dark"

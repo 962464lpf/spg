@@ -34,7 +34,7 @@
           ></el-table-column>
           <el-table-column prop="mc" label="单位名称">
             <template slot-scope="scope">
-              <span class="curp" @click="jumpTo">{{ scope.row.mc }}</span>
+              <b class="curp" style="color: #0b3a8a;" @click="jumpTo">{{ scope.row.mc }}</b>
             </template>
           </el-table-column>
 

@@ -20,7 +20,7 @@
             </el-select>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary">查询</el-button>
+            <el-button type="primary">检索</el-button>
           </el-form-item>
         </el-form>
 
@@ -38,20 +38,16 @@
           <el-table-column prop="bh"
                            label="编号"> </el-table-column>
           <el-table-column prop="mc"
-                           label="名称"> </el-table-column>
-          <el-table-column prop="gg"
-                           label="规格"> </el-table-column>
+                           label="工器具名称"> </el-table-column>
           <el-table-column prop="lx"
                            label="类型"> </el-table-column>
-          <el-table-column prop="syr"
-                           label="使用人"> </el-table-column>
+         
           <el-table-column prop="dw"
                            label="单位"> </el-table-column>
           <el-table-column prop="rksj"
                            label="入库时间"> </el-table-column>
 
-          <el-table-column prop="bz"
-                           label="备注"> </el-table-column>
+         
           <el-table-column label="操作"
                            width="150">
             <template>
@@ -76,7 +72,7 @@
             </el-select>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary">查询</el-button>
+            <el-button type="primary">检索</el-button>
           </el-form-item>
         </el-form>
         <div class="clearfloat"></div>
@@ -109,12 +105,14 @@
             <template slot-scope="props">
               <el-table :data="props.row.list"
                         style="width: 100%">
-                <el-table-column prop="lymc"
-                                 label="领用物品名称"> </el-table-column>
+                <el-table-column prop="bh"
+                                 label="编号"> </el-table-column>
                 <el-table-column prop="lx"
                                  label="类型"> </el-table-column>
-                <el-table-column prop="lysl"
-                                 label="领用数量"> </el-table-column>
+                <el-table-column prop="lymc"
+                                 label="工器具名称"> </el-table-column>
+                <el-table-column prop="lyr"
+                                 label="领用人"> </el-table-column>
                 <el-table-column prop="lysj"
                                  label="领用时间"> </el-table-column>
                 <el-table-column prop="ghsj"
@@ -128,8 +126,7 @@
           <el-table-column prop="pgdh"
                            label="工单号"> </el-table-column>
           <el-table-column prop="pgsj"
-                           label="接单时间"> </el-table-column>
-
+                           label="签发时间"> </el-table-column>
           <el-table-column prop="gdly"
                            label="工单来源"> </el-table-column>
           <el-table-column prop="rwmc"
@@ -138,8 +135,6 @@
                            label="作业类型"> </el-table-column>
           <el-table-column prop="gzzrr"
                            label="工作负责人"> </el-table-column>
-          <el-table-column prop="zdr"
-                           label="制单人"> </el-table-column>
         </el-table>
       </el-tab-pane>
       <!-- <el-tab-pane label="检查纪录" name="third">
@@ -193,30 +188,18 @@ export default {
       dialogVisible: false,
       tableData: [
         {
-          bh: 1,
-          mc: '安全帽',
+          bh: '1-01',
+          mc: '验电笔',
           gg: '',
           syr: '小李',
           lx: '安全工器具',
-          dw: 'xxx供电所',
+          dw: '党岔供电所',
           bz: 'xxx',
-          rksj: '2020-3.25',
+          rksj: '2020-11-02 10：48',
           glfzr: '小王',
           gdh: 123456,
           pgsh: '2020-3.25',
-        },
-        {
-          bh: 2,
-          mc: '砍刀',
-          gg: '',
-          syr: '小李',
-          lx: '生产工器具',
-          dw: 'xxx供电所',
-          bz: 'xxx',
-          rksj: '2020-3-25',
-          glfzr: '小王',
-          gdh: 1234567,
-          pgsh: '2020-3.25',
+          sl: '10个',
         },
       ],
       tableData1: [
@@ -229,7 +212,7 @@ export default {
       tableData2: [
         {
           pgsj: '2020-11-23 12:23:34',
-          pgdh: '123456789',
+          pgdh: '2020112301',
           rwmc: '巡线',
           zylx: '检查',
           gzzrr: '王小虎',
@@ -246,35 +229,19 @@ export default {
           fzr: '小王',
           list: [
             {
-              lymc: '安全帽',
+              bh: '1-22-02',
+              lymc: '梯子',
               lx: '安全工器具',
               lysl: '3',
               lysj: '2020-11-23 14:23:34',
               ghsj: '2020-11-23 16:23:34',
-              fzr: '小王',
+              fzr: '闫春莉',
+              lyr: '王永涛',
             },
-            {
-              lymc: '梯子',
-              lx: '生产工器具',
-              lysl: '1',
-              lysj: '2020-11-23 14:23:34',
-              ghsj: '2020-11-23 16:23:34',
-              fzr: '小王',
-            },
+           
           ],
         },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          zylx: '检查',
-          gdly: '移动端推送',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          zt: '未签发',
-          status: 2,
-        },
+      
       ],
     }
   },

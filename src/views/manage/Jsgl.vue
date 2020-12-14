@@ -1,7 +1,7 @@
 <template>
   <div class="jsgl">
     <el-row>
-      <el-col :span="4">
+      <!-- <el-col :span="4">
         <el-tree
           class="filter-tree"
           :data="data"
@@ -11,8 +11,8 @@
           ref="tree"
         >
         </el-tree>
-      </el-col>
-      <el-col :span="20">
+      </el-col> -->
+      <el-col :span="24">
         <div class="ml10">
           <el-button type="primary">新增</el-button>
           <el-button type="primary">分配权限</el-button>

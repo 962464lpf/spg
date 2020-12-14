@@ -8,39 +8,39 @@ const routes = [
       icon: 'el-icon-document',
     },
     children: [
-      {
-        path: '/zhgl/index',
-        name: 'index',
-        component: () => import('../views/manage/Zhgl.vue'),
-        meta: {
-          title: '综合管理首页',
-          icon: 'el-icon-document',
-        },
-      },
-      {
-        path: '/zhgl/dishi',
-        name: 'dishi',
-        component: () => import('../views/manage/ZhglS.vue'),
-        meta: {
-          title: '',
-          icon: 'el-icon-document',
-        },
-      },
-      {
-        path: '/zhgl/xian',
-        name: 'xian',
-        component: () => import('../views/manage/ZhglXian.vue'),
-        meta: {
-          title: '',
-          icon: 'el-icon-document',
-        },
-      },
+      // {
+      //   path: '/zhgl/index',
+      //   name: 'index',
+      //   component: () => import('../views/manage/Zhgl.vue'),
+      //   meta: {
+      //     title: '所务工作',
+      //     icon: 'el-icon-document',
+      //   },
+      // },
+      // {
+      //   path: '/zhgl/dishi',
+      //   name: 'dishi',
+      //   component: () => import('../views/manage/ZhglS.vue'),
+      //   meta: {
+      //     title: '',
+      //     icon: 'el-icon-document',
+      //   },
+      // },
+      // {
+      //   path: '/zhgl/xian',
+      //   name: 'xian',
+      //   component: () => import('../views/manage/ZhglXian.vue'),
+      //   meta: {
+      //     title: '',
+      //     icon: 'el-icon-document',
+      //   },
+      // },
       {
         path: '/zhgl/gds',
         name: 'gds',
         component: () => import('../views/manage/Gongdiansuo.vue'),
         meta: {
-          title: '',
+          title: '所务工作',
           icon: 'el-icon-document',
         },
       },

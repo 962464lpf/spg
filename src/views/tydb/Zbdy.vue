@@ -4,7 +4,7 @@
       <el-table-column prop="name" label="指标名称" width="160"> </el-table-column>
       <el-table-column prop="list" label="指标定义" width="160"> </el-table-column>
       <el-table-column prop="source" label="指标来源" width="160"> </el-table-column>
-      <el-table-column prop="search" label="指标查询方式及计算方法"> </el-table-column>
+      <el-table-column prop="search" label="指标检索方式及计算方法"> </el-table-column>
       <el-table-column prop="bz" label="备注" width="160"> </el-table-column>
       
     </el-table>

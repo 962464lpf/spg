@@ -1,7 +1,7 @@
 <template>
   <div class="zbfx">
     <el-row class="mt10">
-      <el-col :span="4">
+      <!-- <el-col :span="4">
         <el-tree
           class="filter-tree"
           :data="data"
@@ -12,8 +12,8 @@
           ref="tree"
         >
         </el-tree>
-      </el-col>
-      <el-col :span="20">
+      </el-col> -->
+      <el-col :span="24">
         <el-tabs v-model="activeName" type="card">
           <el-tab-pane label="综合管理" name="first">
             <el-row>

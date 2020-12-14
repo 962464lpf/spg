@@ -48,34 +48,69 @@ export default {
       tableData: [
         {
           id: 3,
-          gzkhx: '工单完成情况',
-          khbz: '综合班营配班',
+          gzkhx: '用电信息采集装置运行检查',
+          khbz: '营配班',
           children: [
             {
               id: 31,
-              gzkhx: '工单完成20%',
-              khbz: '综合班营配班',
+              gzkhx: '常见故障排查及处理',
+              khbz: '营配班',
               select: '',
             },
             {
               id: 32,
-              gzkhx: '工单完成50%',
-              khbz: '综合班营配班',
-              select: '',
-            },
-            {
-              id: 33,
-              gzkhx: '工单完成70%',
-              khbz: '综合班营配班',
+              gzkhx: '现场设备调试',
+              khbz: '营配班',
               select: '',
             },
           ],
         },
         {
           id: 4,
-          gzkhx: '综合事务',
-          khbz: '综合班营配班',
-          select: '',
+          gzkhx: '线损管理',
+          khbz: '营配班',
+          children: [
+            {
+              id: 41,
+              gzkhx: '量价费排查',
+              khbz: '营配班',
+              select: '',
+            },
+          ],
+        },
+        {
+          id: 5,
+          gzkhx: '用电检查',
+          khbz: '营配班',
+          children: [
+            {
+              id: 51,
+              gzkhx: '故障抢修',
+              khbz: '营配班',
+              select: '',
+            },
+            {
+              id: 52,
+              gzkhx: '违约用电和窃电查处',
+              khbz: '营配班',
+              select: '',
+            },
+          ],
+        },
+        {
+          id: 6,
+          gzkhx: '配电设备运行维护及事故处理',
+          khbz: '营配班',
+        },
+        {
+          id: 7,
+          gzkhx: '安全用电',
+          khbz: '营配班',
+        },
+        {
+          id: 8,
+          gzkhx: '新型业务',
+          khbz: '营配班',
         },
       ],
     }

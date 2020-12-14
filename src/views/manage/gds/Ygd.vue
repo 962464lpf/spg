@@ -21,7 +21,8 @@
       </el-form-item>
 
       <el-form-item>
-        <el-button type="primary">查询</el-button>
+        <el-button type="primary">检索</el-button>
+        <el-button type="primary">导出</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="tableData" border stripe style="width: 100%" class="mt10">
@@ -58,52 +59,19 @@ export default {
       lookStatus: false,
       tableData: [
         {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          qfr: '小张',
-          zdr: '张小虎',
-          jdr: '小李',
-          gdr: '小王',
+          pgsj: '2020-11.23',
+          jdr: '袁春田',
+          gdr: '袁春田',
           gdsj: '2020-11.23',
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          zylx: '检查',
-          qfr: '小张',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          jdr: '小李',
-          gdr: '小王',
-          gdsj: '2020-11.23',
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          qfr: '小张',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          jdr: '小李',
-          gdr: '小王',
-          gdsj: '2020-11.23',
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          qfr: '小张',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          jdr: '小李',
-          gdr: '小王',
-          gdsj: '2020-11.23',
+          pgdh: '2020121101',
+          rwmc: '换表',
+          zylx: '电能计量装置的安装检查与更换',
+          gzzrr: '张峰',
+          gdly: '96789',
+          zdr: '王永涛',
+          qfr: '肖远辉',
+          zt: '已接单',
+          status: 2,
         },
       ],
     }

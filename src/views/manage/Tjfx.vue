@@ -1,7 +1,7 @@
 <template>
   <div class="tjfx">
     <el-row style="height: 100%;">
-      <el-col :span="3">
+      <!-- <el-col :span="3">
         <el-tree
           class="filter-tree"
           :data="data"
@@ -10,9 +10,9 @@
           ref="tree"
         >
         </el-tree>
-      </el-col>
+      </el-col> -->
       <el-col
-        :span="21"
+        :span="24"
         style="padding-left: 5px; box-sizing:border-box; height: 100%;"
       >
         <el-tabs v-model="activeName">

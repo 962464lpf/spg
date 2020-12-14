@@ -20,7 +20,7 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="时间">
+        <el-form-item label="派工时间">
           <el-date-picker type="datetimerange"
                           range-separator="至"
                           start-placeholder="开始日期"
@@ -28,17 +28,17 @@
           </el-date-picker>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary">查询</el-button>
+          <el-button type="primary">检索</el-button>
         </el-form-item>
       </el-form>
     </div>
     <div class="fl clearfloat mt10">
+      <!-- <el-button type="primary"
+                 @click="jump('yjied')">接单</el-button>
       <el-button type="primary"
-                 @click="jump('yjied')">已接单</el-button>
+                 @click="jump('yqf')">签发</el-button>
       <el-button type="primary"
-                 @click="jump('yqf')">已签发</el-button>
-      <el-button type="primary"
-                 @click="jump('yjd')">已结单</el-button>
+                 @click="jump('yjd')">结单</el-button> -->
       <el-button type="primary"
                  @click="jump('ygd')">已归档</el-button>
     </div>
@@ -48,9 +48,9 @@
       <el-button type="primary"
                  @click="qf">签发</el-button>
       <el-button type="primary"
-                 @click="jdStatus = true">结单</el-button>
+                 @click="jd">结单</el-button>
       <el-button type="primary"
-                 @click="gdStatus = true">归档</el-button>
+                 @click="gd">归档</el-button>
     </div>
     <div class="clearfloat"></div>
     <el-table :data="tableData"
@@ -61,7 +61,7 @@
       <el-table-column type="selection"
                        width="55"> </el-table-column>
       <el-table-column prop="pgsj"
-                       label="接单时间"> </el-table-column>
+                       label="派工时间"> </el-table-column>
       <el-table-column prop="pgdh"
                        label="工单号"> </el-table-column>
       <el-table-column prop="gdly"
@@ -80,13 +80,11 @@
         <template slot-scope="scope">
           <el-steps :active="scope.row.status"
                     finish-status="success">
-            <el-step title="已接单"></el-step>
-            <el-step title="未签发"></el-step>
-            <el-step title="已签发"></el-step>
-            <el-step title="未结单"></el-step>
-            <el-step title="已结单"></el-step>
-            <el-step title="未归档"></el-step>
-            <el-step title="已归档"></el-step>
+            <el-step title="接单"></el-step>
+            <el-step title="制单"></el-step>
+            <el-step title="签发"></el-step>
+            <el-step title="结单"></el-step>
+            <el-step title="归档"></el-step>
           </el-steps>
         </template>
       </el-table-column>
@@ -121,6 +119,7 @@
 import GdTemplate from './GdTemplate'
 import GuiDang from './GuiDang'
 import GdglCk from './GdglCk'
+import formatDate from '../../../tools/formatDate'
 export default {
   components: {
     GdTemplate,
@@ -140,114 +139,39 @@ export default {
           label: '全部状态',
         },
         {
-          value: '已接单',
-          label: '已接单',
+          value: '接单',
+          label: '接单',
+        },
+       {
+          value: '制单',
+          label: '制单',
         },
         {
-          value: '未签发',
-          label: '未签发',
+          value: '签发',
+          label: '签发',
+        },
+        
+        {
+          value: '结单',
+          label: '结单',
         },
         {
-          value: '已签发',
-          label: '已签发',
-        },
-        {
-          value: '未结单',
-          label: '未结单',
-        },
-        {
-          value: '已结单',
-          label: '已结单',
-        },
-        {
-          value: '未归档',
-          label: '未归档',
+          value: '归档',
+          label: '归档',
         },
       ],
       tableData: [
         {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          zylx: '检查',
-          gzzrr: '王小虎',
+          pgsj: '',
+          pgdh: '2020121101',
+          rwmc: '换表',
+          zylx: '电能计量装置的安装检查与更换',
+          gzzrr: '张峰',
           gdly: '96789',
-          zdr: '张小虎',
+          zdr: '王永涛',
           qfr: 's',
           zt: '已接单',
-          status: 1,
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          zylx: '检查',
-          gdly: '移动端推送',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          zt: '未签发',
           status: 2,
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          gdly: '日常计划',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          zt: '签发',
-          status: 3,
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          gdly: '日常计划',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          zt: '未结单',
-          status: 4,
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          gdly: '日常计划',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          zt: '已结单',
-          status: 5,
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          gdly: '日常计划',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          zt: '未归档',
-          status: 6,
-        },
-        {
-          pgsj: '2020-11-23',
-          pgdh: '123456789',
-          rwmc: '巡线',
-          gdly: '日常计划',
-          zylx: '检查',
-          gzzrr: '王小虎',
-          zdr: '张小虎',
-          qfr: 's',
-          status: 7,
-          zt: '已归档',
         },
       ],
       values: {
@@ -264,7 +188,7 @@ export default {
         gzcy: '李军',
         qtr: '王军',
         resource: '是',
-        gzph: '123456',
+        gzph: '2020121102',
         zysx: '',
         gqj: '',
         bpbj: '',
@@ -289,9 +213,21 @@ export default {
         type: 'success',
         message: '签发成功',
       })
+      this.tableData[0].pgsj = formatDate('YYYY-mm-dd HH:MM', new Date())
+      this.tableData[0].status = 3  
     },
+    jd(){
+      this.jdStatus = true
+      this.tableData[0].status = 4
+    },
+    gd () {
+      this.gdStatus = true
+       this.tableData[0].status = 5
+    }
   },
-  mounted() {},
+  mounted() {
+   
+  },
 }
 </script>
 

@@ -18,7 +18,7 @@
       </el-form-item>
       <el-row>
         <el-col :span="12">
-          <el-form-item label="执行时间">
+          <el-form-item label="派工时间">
             <el-date-picker
               type="datetime"
               v-model="form.zxTime"
