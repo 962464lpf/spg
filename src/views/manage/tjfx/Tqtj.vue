@@ -30,19 +30,25 @@
     </el-amap>
     <div class="content">
       <el-row>
-        <el-input placeholder="请输入姓名或工号"
+        <el-input placeholder="请输入姓名或工号查询"
                   prefix-icon="el-icon-search">
         </el-input>
       </el-row>
       <div class="list">
-        <p class="fl">王小二</p>
+        <!-- <p class="fl">王小二</p>
         <p class="fr">134092892830</p>
         <p class="clearfloat"></p>
         <p>工号：12345</p>
         <p>组织：营配班</p>
         <p>岗位：营配班组员</p>
-        <p>当前位置：陕西省宝鸡市岐山县</p>
-        <el-divider></el-divider>
+        <p>当前位置：陕西省宝鸡市岐山县</p> -->
+        <!-- <div class="list">
+              <p>申请编号：12345</p>
+              <p>接收时间：2020-12-1</p>
+              <p>业务类型：业扩报装</p>
+              <p>流程节点：装表接电</p>
+              <p>处理人：王小二</p>
+            </div> -->
         <el-tabs v-model="activeName">
           <el-tab-pane label="待办"
                        name="first">
@@ -51,7 +57,7 @@
               <p>接收时间：2020-12-1</p>
               <p>业务类型：业扩报装</p>
               <p>流程节点：装表接电</p>
-              <p>处理人：王小二</p>
+              <p>处理人：王永涛</p>
             </div>
             <el-divider></el-divider>
             <div class="list">
@@ -59,10 +65,10 @@
               <p>接收时间：2020-12-1</p>
               <p>业务类型：业扩报装</p>
               <p>流程节点：装表接电</p>
-              <p>处理人：王小二</p>
+              <p>处理人：刘胜强</p>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="已办"
+          <!-- <el-tab-pane label="已办"
                        name="second">
             <div class="list">
               <p>申请编号：12345</p>
@@ -89,7 +95,7 @@
               <p>流程节点：装表接电</p>
               <p>处理人：王小二</p>
             </div>
-          </el-tab-pane>
+          </el-tab-pane> -->
         </el-tabs>
       </div>
     </div>
@@ -131,7 +137,7 @@ export default {
       windows: {
         position: [107.594127, 34.470633],
         content: `<div class="list">
-        <p>王小二</p>
+        <p> 王永涛</p>
         <p>工号：12345</p>
         <p>当前业务：业扩报装</p>
         <p>附近的人：王小三</p>`,
@@ -140,8 +146,8 @@ export default {
       texts: [
         {
           position: [107.640132, 34.468227],
-          text: '王小三 工号：123456',
-          offset: [10,-53],
+          text: '刘胜强 工号：123456',
+          offset: [10, -53],
         },
       ],
     }

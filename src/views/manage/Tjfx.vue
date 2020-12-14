@@ -16,7 +16,7 @@
         style="padding-left: 5px; box-sizing:border-box; height: 100%;"
       >
         <el-tabs v-model="activeName">
-          <el-tab-pane label="基本信息" name="first" lazy style="height: 100%;">
+          <el-tab-pane v-if="!tqStatus" label="基本信息" name="first" lazy style="height: 100%;">
             <Jbxx></Jbxx>
           </el-tab-pane>
           <el-tab-pane

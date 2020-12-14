@@ -27,7 +27,7 @@
     </ul>
     <el-row>
       <el-col :span="16">
-        <h4>地电陕西省电力公司</h4>
+        <h4 class="mt10 mb10">陕西省地方电力 ( 集团 ) 有限公司</h4>
         <el-table :data="tableData" border style="width: 100%">
           <el-table-column type="index" label="序号" width="50">
           </el-table-column>
@@ -78,7 +78,7 @@ export default {
       tableData: [
         {
           date: '2020-10',
-          mc: '陕西省宝鸡市供电公司',
+          mc: '宝鸡市供电公司',
           gdssl: 53,
           hzfs: 3223,
           zhdf: 98.2,
@@ -86,7 +86,7 @@ export default {
         },
         {
           date: '2020-10',
-          mc: '陕西省榆林市供电公司',
+          mc: '榆林市供电公司',
           gdssl: 153,
           hzfs: 13223,
           zhdf: 96.2,
@@ -97,11 +97,11 @@ export default {
         columns: ['日期', '综合得分'],
         rows: [
           {
-            日期: '陕西省榆林市供电公司',
+            日期: '榆林市供电公司',
             综合得分: 96.2,
           },
           {
-            日期: '陕西省宝鸡市供电公司',
+            日期: '宝鸡市供电公司',
             综合得分: 98.2,
           },
         ],

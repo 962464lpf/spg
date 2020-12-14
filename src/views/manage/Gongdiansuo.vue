@@ -24,6 +24,7 @@
         </p>
         <p>
           供电所共有员工*名，其中在岗人员*人，男女比例*，其中中级工及以上*人，大专以上学历*人。<br>
+
         </p>
         <p>
           供电所现有房产*处，总面积*平方米。<br>
@@ -83,7 +84,7 @@
       </el-col>
 
     </el-row>
-    <el-row class="mt10">
+    <!-- <el-row class="mt10">
       <el-col :span="12">
         <h3 class="text-center mt10 mb10">工单列表</h3>
         <el-table :data="tableDatawork"
@@ -127,7 +128,7 @@
                            label="完成时间"> </el-table-column>
         </el-table>
       </el-col>
-    </el-row>
+    </el-row> -->
   </div>
 </template>
 

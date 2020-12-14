@@ -231,4 +231,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.el-steps {
+  .is-success{
+    color: $base-color;
+    border-color: $base-color;
+  }
+  .el-step__title{
+    font-size: 12px !important;
+  }
+}
+</style>

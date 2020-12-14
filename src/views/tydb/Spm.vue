@@ -15,20 +15,17 @@
       </el-form-item>
     </el-form>
     <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="name" label="市公司" >
+      <el-table-column type="index" label="序号" width="50"></el-table-column>
+      <el-table-column prop="name" label="单位名称" >
         <template slot-scope="scope">
           <span class="curp" @click="queryName(scope.row.name)">{{
             scope.row.name
           }}</span>
         </template>
       </el-table-column>
-      <!-- <el-table-column prop="jkpt" label="监控平台应用率"> </el-table-column>
-      <el-table-column prop="dfhs" label="电费回收率"> </el-table-column>
-      <el-table-column prop="cjxf" label="采集下发成功率"> </el-table-column>
-      <el-table-column prop="jf" label="缴费APP占比率"> </el-table-column>
-      <el-table-column prop="xs" label="线损率"> </el-table-column>
-      <el-table-column prop="cjfg" label="采集覆盖率"> </el-table-column> -->
-      <el-table-column prop="score" label="总分" width="80"> </el-table-column>
+      <el-table-column prop="gdssl" label="供电所数量"> </el-table-column>
+      <el-table-column prop="dfhs" label="汇总得分"> </el-table-column>
+      <el-table-column prop="dfhs" label="综合得分"> </el-table-column>
       <el-table-column prop="rank" label="排名" width="80"></el-table-column>
     </el-table>
   </div>
@@ -43,26 +40,13 @@ export default {
       },
       tableData: [
         {
-          name: '陕西省地方电力集团宝鸡电分公司',
-          score: '98',
-          rank: '1',
-          jkpt: '98%',
-          dfhs: '96%',
-          cjxf: '96%',
-          jf: '97%',
-          xs: '5%',
-          cjfg: '97%',
+          name: '陕西省地方电力集团宝鸡供电分公司',
+          
+          
         },
         {
           name: '陕西省地方电力集团榆林供电分公司',
-          score: '96',
-          rank: '2',
-          jkpt: '95%',
-          dfhs: '96%',
-          cjxf: '94%',
-          jf: '93%',
-          xs: '6%',
-          cjfg: '94%',
+         
         },
       ],
     }

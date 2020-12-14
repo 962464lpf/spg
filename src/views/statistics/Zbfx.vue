@@ -16,6 +16,411 @@
       <el-col :span="24">
         <el-tabs v-model="activeName"
                  type="card">
+          <el-tab-pane label="营销服务"
+                       name="second">
+            <div class="item"
+                 v-if="activeName === 'second'">
+              <h3>业扩报装</h3>
+              <el-row>
+                <el-col :span="12">
+                  <ul>
+                    <li>
+
+                      <div>
+                        <p>当前低压在途流程数</p>
+                        <p>99</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>超过7天总数</p>
+                        <p>99</p>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <p class="text-center mt10 mb10">当月发起流程图统计分析</p>
+                  <ve-histogram :data="ykChartData1"
+                                height="250px"
+                                :colors="colors"
+                                :settings="chartSetting"></ve-histogram>
+                </el-col>
+                <el-col :span="12">
+                  <p class="text-center mt10 mb10">当月在途流程统计</p>
+                  <ve-ring :data="ykringChartData"
+                           height="300px"
+                           :colors="colors"
+                           :settings="chartSetting"></ve-ring>
+                </el-col>
+                <el-col :span="12"
+                        class="mt10 border-top">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>时限达标率</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>时限达标数</p>
+                        <p>99</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">业扩报装时限统计分析</p>
+                  <ve-histogram :data="ykChartData2"
+                                height="250px"
+                                :colors="colors"
+                                :settings="chartSetting"></ve-histogram>
+                </el-col>
+                <el-col :span="12">
+                  <p class="text-center mt10 mb10">
+                    业扩报装时限达标率月曲线图
+                  </p>
+                  <ve-line :data="ykChartData3"
+                           height="250px"
+                           :colors="colors"
+                           :settings="chartSetting1"></ve-line>
+                </el-col>
+              </el-row>
+            </div>
+            <div class="item"
+                 v-if="activeName === 'second'">
+              <h3>电费回收</h3>
+              <el-row>
+                <el-col :span="8">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>电费回收率</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>欠费金额</p>
+                        <p>2</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>欠费笔数</p>
+                        <p>2</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">电费回收情况统计(班组)</p>
+                  <ve-line :data="dfChartData1"
+                           height="250px"
+                           :colors="colors"
+                           :settings="{ area: true, yAxisName: ['单位：万元'] }"></ve-line>
+                </el-col>
+                <el-col :span="8">
+                  <ul style="height: 32px">
+                    <li>
+                      <p></p>
+                      <div>
+                        <p></p>
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">电费回收情况统计(责任人)</p>
+                  <ve-histogram :data="dfChartData2"
+                                :colors="colors"
+                                height="250px"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <ul style="height: 32px">
+                    <li>
+                      <p></p>
+                      <div>
+                        <p></p>
+                        <p></p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">欠费情况统计(班组)</p>
+                  <ve-histogram :data="dfChartData3"
+                                :colors="colors"
+                                height="250px"></ve-histogram>
+                </el-col>
+              </el-row>
+            </div>
+            <div class="item"
+                 v-if="activeName === 'second'">
+              <h3>台区线损率</h3>
+              <el-row>
+                <el-col :span="24">
+                  <ve-histogram :data="tqChartData"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+              </el-row>
+            </div>
+            <div class="item"
+                 v-if="activeName === 'second'">
+              <h3>96789</h3>
+              <ul>
+                <li>
+                  <div>
+                    <p>抢修工单数</p>
+                    <p>99</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>每万户报修率</p>
+                    <p>9%</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>累计平均修复时间</p>
+                    <p>90min</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>单日完成工单数</p>
+                    <p>9</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>96789工单同比</p>
+                    <p>9</p>
+                  </div>
+                </li>
+              </ul>
+              <el-row>
+                <el-col :span="8">
+                  <p class="text-center mt10 mb10">抢修工单数</p>
+                  <ve-histogram :data="jlChartData1"
+                                :colors="colors"
+                                height="250px"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <p class="text-center mt10 mb10">
+                    96789故障报装到达现场及时率
+                  </p>
+                  <ve-histogram :data="jlChartData2"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <p class="text-center mt10 mb10">故障报修率</p>
+                  <ve-histogram :data="jlChartData3"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+              </el-row>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="设备运行"
+                       name="third">
+            <div class="item"
+                 v-if="activeName === 'third'">
+              <h3>公变运行</h3>
+              <el-row>
+                <el-col :span="12">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>公变采集成功率(昨日)</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+
+                    <li>
+
+                      <div>
+                        <p>采集不成功清单</p>
+                        <p>9</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">公变采集</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="12">
+                  <ul>
+                    <li>
+
+                      <div>
+                        <p>公变低电压率(昨日)</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+
+                    <li>
+
+                      <div>
+                        <p>公变低电压清单</p>
+                        <p>9</p>
+                      </div>
+                    </li>
+
+                  </ul>
+                  <p class="text-center mt10 mb10">公变低电压</p>
+                  <ve-histogram :data="gbChartData1"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>公变超载率(昨日)</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>公变超载率清单</p>
+                        <p>99</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">公变超载率</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :legend-visible="false"
+                                :settings="{  yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>公变过载率(昨日)</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>公变过载率清单</p>
+                        <p>99</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">公变过载率</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :legend-visible="false"
+                                :settings="{ yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>公变重载率(昨日)</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>公变重载率清单</p>
+                        <p>99</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="text-center mt10 mb10">公变重载率</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :legend-visible="false"
+                                :settings="{  yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+              </el-row>
+            </div>
+            <div class="item mt10"
+                 v-if="activeName === 'third'">
+              <h3>用电采集</h3>
+              <el-row>
+
+                <el-col :span="8">
+                   <ul>
+                    <li>
+                      <div>
+                        <p>低电压安装覆盖率</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>低电压未安装清单</p>
+                        <p>9</p>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <p class="text-center mt10 mb10">低压安装覆盖率</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :legend-visible="false"
+                                :settings="{  yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>低电压采集率</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>低电压采集不成功装清单</p>
+                        <p>9</p>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <p class="text-center mt10 mb10">低压采集成功率</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :legend-visible="false"
+                                :settings="{  yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+                <el-col :span="8">
+                  <ul>
+                    <li>
+                      <div>
+                        <p>低压计量异常处理率</p>
+                        <p>99%</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <p>低压计量异常处理清单</p>
+                        <p>9</p>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <p class="text-center mt10 mb10">低压计量异常处理率</p>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :legend-visible="false"
+                                :settings="{  yAxisType: ['percent'] }"></ve-histogram>
+                </el-col>
+               
+              </el-row>
+            </div>
+          </el-tab-pane>
           <el-tab-pane label="综合管理"
                        name="first">
             <el-row>
@@ -187,382 +592,7 @@
 
             </el-row>
           </el-tab-pane>
-          <el-tab-pane label="营销服务"
-                       name="second">
-            <div class="item"
-                 v-if="activeName === 'second'">
-              <h3>业扩报装</h3>
-              <el-row>
-                <el-col :span="12">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>当前低压在途流程数</p>
-                        <p>99</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>超过7天总数</p>
-                        <p>99</p>
-                      </div>
-                    </li>
-                  </ul>
 
-                  <p class="text-center mt10 mb10">当月发起流程图统计分析</p>
-                  <ve-histogram :data="ykChartData1"
-                                height="250px"
-                                :colors="colors"
-                                :settings="chartSetting"></ve-histogram>
-                </el-col>
-                <el-col :span="12">
-                  <p class="text-center mt10 mb10">当月在途流程统计</p>
-                  <ve-ring :data="ykringChartData"
-                           height="300px"
-                           :colors="colors"
-                           :settings="chartSetting"></ve-ring>
-                </el-col>
-                <el-col :span="12"
-                        class="mt10 border-top">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>时限达标率</p>
-                        <p>99%</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>时限达标数</p>
-                        <p>99</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">业扩报装时限统计分析</p>
-                  <ve-histogram :data="ykChartData2"
-                                height="250px"
-                                :colors="colors"
-                                :settings="chartSetting"></ve-histogram>
-                </el-col>
-                <el-col :span="12">
-                  <p class="text-center mt10 mb10">
-                    业扩报装时限达标率月曲线图
-                  </p>
-                  <ve-line :data="ykChartData3"
-                           height="250px"
-                           :colors="colors"
-                           :settings="chartSetting1"></ve-line>
-                </el-col>
-              </el-row>
-            </div>
-            <div class="item"
-                 v-if="activeName === 'second'">
-              <h3>电费回收</h3>
-              <el-row>
-                <el-col :span="8">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>电费回收率</p>
-                        <p>99%</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>欠费金额</p>
-                        <p>2</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>欠费笔数</p>
-                        <p>2</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">电费回收情况统计(班组)</p>
-                  <ve-line :data="dfChartData1"
-                           height="250px"
-                           :colors="colors"
-                           :settings="{ area: true, yAxisName: ['单位：万元'] }"></ve-line>
-                </el-col>
-                <el-col :span="8">
-                  <ul style="height: 32px">
-                    <li>
-                      <p></p>
-                      <div>
-                        <p></p>
-                        <p></p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">电费回收情况统计(责任人)</p>
-                  <ve-histogram :data="dfChartData2"
-                                :colors="colors"
-                                height="250px"></ve-histogram>
-                </el-col>
-                <el-col :span="8">
-                  <ul style="height: 32px">
-                    <li>
-                      <p></p>
-                      <div>
-                        <p></p>
-                        <p></p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">欠费情况统计(班组)</p>
-                  <ve-histogram :data="dfChartData3"
-                                :colors="colors"
-                                height="250px"></ve-histogram>
-                </el-col>
-              </el-row>
-            </div>
-            <div class="item"
-                 v-if="activeName === 'second'">
-              <h3>台区线损率</h3>
-              <el-row>
-                <el-col :span="24">
-                  <ve-histogram :data="tqChartData"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-              </el-row>
-            </div>
-            <div class="item"
-                 v-if="activeName === 'second'">
-              <h3>96789</h3>
-              <ul>
-                <li>
-                  <p><i class="el-icon-plus"></i></p>
-                  <div>
-                    <p>抢修工单数</p>
-                    <p>99</p>
-                  </div>
-                </li>
-                <li>
-                  <p><i class="el-icon-plus"></i></p>
-                  <div>
-                    <p>每万户报修率</p>
-                    <p>9%</p>
-                  </div>
-                </li>
-                <li>
-                  <p><i class="el-icon-plus"></i></p>
-                  <div>
-                    <p>累计平均修复时间</p>
-                    <p>90min</p>
-                  </div>
-                </li>
-                <li>
-                  <p><i class="el-icon-plus"></i></p>
-                  <div>
-                    <p>单日完成工单数</p>
-                    <p>9</p>
-                  </div>
-                </li>
-                <li>
-                  <p><i class="el-icon-plus"></i></p>
-                  <div>
-                    <p>96789工单同比</p>
-                    <p>9</p>
-                  </div>
-                </li>
-              </ul>
-              <el-row>
-                <el-col :span="8">
-                  <p class="text-center mt10 mb10">抢修工单数</p>
-                  <ve-histogram :data="jlChartData1"
-                                :colors="colors"
-                                height="250px"></ve-histogram>
-                </el-col>
-                <el-col :span="8">
-                  <p class="text-center mt10 mb10">
-                    96789故障报装到达现场及时率
-                  </p>
-                  <ve-histogram :data="jlChartData2"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-                <el-col :span="8">
-                  <p class="text-center mt10 mb10">故障报修率</p>
-                  <ve-histogram :data="jlChartData3"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-              </el-row>
-            </div>
-          </el-tab-pane>
-          <el-tab-pane label="设备运行"
-                       name="third">
-            <div class="item"
-                 v-if="activeName === 'third'">
-              <h3>公变运行</h3>
-              <el-row>
-                <el-col :span="12">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>公变采集成功率(昨日)</p>
-                        <p>99%</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>所排名</p>
-                        <p>90</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>采集不成功清单</p>
-                        <p>9</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">公变采集</p>
-                  <ve-histogram :data="gbChartData"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-                <el-col :span="12">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>公变低电压率(昨日)</p>
-                        <p>99%</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>所排名</p>
-                        <p>90</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>公变低电压清单</p>
-                        <p>9</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">公变低电压</p>
-                  <ve-histogram :data="gbChartData1"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-              </el-row>
-            </div>
-            <div class="item mt10"
-                 v-if="activeName === 'third'">
-              <h3>用电采集</h3>
-              <el-row>
-                <el-col :span="12">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>低电压安装覆盖率</p>
-                        <p>99%</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>所排名</p>
-                        <p>90</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>低电压未安装清单</p>
-                        <p>9</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">低电压安装班组指标分析</p>
-                  <ul class="border-top mt10">
-                    <li class="mt10">班组</li>
-                    <li>计量班1</li>
-                    <li>计量班2</li>
-                    <li>计量班3</li>
-                  </ul>
-                  <ul class="border-top border-bottom mb10">
-                    <li class="mt10 mb10">指标率</li>
-                    <li>99%</li>
-                    <li>99%</li>
-                    <li>99%</li>
-                  </ul>
-                  <ve-histogram :data="gbChartData"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-
-                <el-col :span="12">
-                  <ul>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>低电压采集率</p>
-                        <p>99%</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>所排名</p>
-                        <p>90</p>
-                      </div>
-                    </li>
-                    <li>
-                      <p><i class="el-icon-plus"></i></p>
-                      <div>
-                        <p>低电压采集不成功装清单</p>
-                        <p>9</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <p class="text-center mt10 mb10">低电压采集班组指标分析</p>
-                  <ul class="border-top mt10">
-                    <li class="mt10">班组</li>
-                    <li>计量班1</li>
-                    <li>计量班2</li>
-                    <li>计量班3</li>
-                  </ul>
-                  <ul class="border-top border-bottom mb10">
-                    <li class="mt10 mb10">指标率</li>
-                    <li>99%</li>
-                    <li>99%</li>
-                    <li>99%</li>
-                  </ul>
-                  <ve-histogram :data="gbChartData"
-                                :colors="colors"
-                                height="250px"
-                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
-                </el-col>
-              </el-row>
-            </div>
-          </el-tab-pane>
         </el-tabs>
       </el-col>
     </el-row>
@@ -586,7 +616,7 @@ export default {
   data() {
     return {
       detailStatus: false,
-      activeName: 'first',
+      activeName: 'second',
       colors: [
         '#0b3a8a',
         '#1767ac',

@@ -195,7 +195,7 @@ const routes = [
         name: 'spm',
         component: () => import('../views/tydb/Spm.vue'),
         meta: {
-          title: '市公司排名',
+          title: '地市市公司详细排名',
           icon: 'el-icon-document',
         },
       },
@@ -204,7 +204,7 @@ const routes = [
         name: 'xpm',
         component: () => import('../views/tydb/Xpm.vue'),
         meta: {
-          title: '县公司排名',
+          title: '县公司详细排名',
           icon: 'el-icon-document',
         },
       },
@@ -213,7 +213,7 @@ const routes = [
         name: 'gdspm',
         component: () => import('../views/tydb/Gdspm.vue'),
         meta: {
-          title: '供电所排名',
+          title: '供电所详细排名',
           icon: 'el-icon-document',
         },
       },

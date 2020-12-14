@@ -33,9 +33,17 @@
         </div>
       </el-col>
       <el-col :span="12" class="content border">
-        <p class="text-center">工单按单位展示(2020-12-1)</p>
+        <p class="text-center">工单按台区展示(2020-12-1)</p>
         <ve-line
           :data="gdChartData"
+          :settings="chartSetting"
+          :colors="colors"
+          height="270px"
+          v-if="gdsDataStatus"
+        ></ve-line>
+        <ve-line
+        v-else
+          :data="gdChartDatagds"
           :settings="chartSetting"
           :colors="colors"
           height="270px"
@@ -45,6 +53,14 @@
         <p class="text-center ">工单分类统计(2020-12-1)</p>
         <ve-line
           :data="gdFlChartData"
+          :settings="chartSetting"
+          :colors="colors"
+          height="270px"
+          v-if="gdsDataStatus"
+        ></ve-line>
+         <ve-line
+         v-else
+          :data="gdFlChartDatagds"
           :settings="chartSetting"
           :colors="colors"
           height="270px"
@@ -76,10 +92,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'vueName',
+   computed: {
+    ...mapState(['city']),
+  },
+  watch: {
+    city(val) {
+      val.length > 3 ? this.gdsDataStatus= false : this.gdsDataStatus = true
+    }
+  },
   data() {
     return {
+      gdsDataStatus: false,
       colors: [
         '#0b3a8a',
         '#1767ac',
@@ -91,23 +117,45 @@ export default {
       gdChartData: {
         columns: ['日期', '数量'],
         rows: [
-          { 日期: '区域1', 数量: 0 },
-          { 日期: '区域2', 数量: 0 },
-          { 日期: '区域3', 数量: 0 },
-          { 日期: '区域4', 数量: 0 },
-          { 日期: '区域5', 数量: 0 },
-          { 日期: '区域6', 数量: 0 },
+          { 日期: '西安', 数量: 0 },
+          { 日期: '咸阳', 数量: 0 },
+          { 日期: '宝鸡', 数量: 0 },
+          { 日期: '渭南', 数量: 0 },
+          { 日期: '汉中', 数量: 0 },
+          { 日期: '榆林', 数量: 0 },
         ],
       },
       gdFlChartData: {
         columns: ['日期', '类型一', '类型二', '类型三', '类型四'],
         rows: [
-          { 日期: '区域1', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '区域2', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '区域3', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '区域4', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '区域5', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '区域6', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '西安', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '咸阳', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '宝鸡', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '渭南', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '汉中', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '榆林', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+        ],
+      },
+      gdChartDatagds: {
+        columns: ['日期', '数量'],
+        rows: [
+          { 日期: '台区1', 数量: 0 },
+          { 日期: '台区2', 数量: 0 },
+          { 日期: '台区3', 数量: 0 },
+          { 日期: '台区4', 数量: 0 },
+          { 日期: '台区5', 数量: 0 },
+          { 日期: '台区6', 数量: 0 },
+        ],
+      },
+      gdFlChartDatagds: {
+        columns: ['日期', '类型一', '类型二', '类型三', '类型四'],
+        rows: [
+          { 日期: '台区1', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '台区2', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '台区3', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '台区4', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '台区5', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '台区6', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
         ],
       },
       extend: {

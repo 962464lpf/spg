@@ -23,7 +23,7 @@
     </ul>
     <el-row>
       <el-col :span="12">
-        <h4>地电陕西省电力公司宝鸡市岐山县供电公司</h4>
+        <h4 class="mt10 mb10">陕西省地方电力 ( 集团 ) 有限公司宝鸡供电公司岐山县供电公司</h4>
         <el-table :data="tableData" border style="width: 100%">
           <el-table-column type="index" label="序号" width="50">
           </el-table-column>
