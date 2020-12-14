@@ -8,18 +8,34 @@
       <el-button type="primary" @click="jxjsStatus = true">绩效计算</el-button>
       <el-button type="primary">绩效汇总</el-button>
     </div>
-    <el-table :data="tableData" style="width: 100%" class="mt10">
+    <el-form :inline="true" class="mt10">
+      <el-form-item label="考核人">
+        <el-select placeholder="">
+          <el-option label="小李"
+                     value="shanghai"></el-option>
+          <el-option label="小王"
+                     value="beijing"></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="考核时间">
+        <el-date-picker type="month"
+                        placeholder="选择月"> </el-date-picker>
+      </el-form-item>
+      
+      <el-button type="primary">检索</el-button>
+    </el-form>
+    <el-table :data="tableData" style="width: 100%" class="mt10" border>
       <el-table-column prop="name" label="姓名"> </el-table-column>
-      <el-table-column prop="dw" label="单位"> </el-table-column>
-      <el-table-column prop="zw" label="职务"> </el-table-column>
       <el-table-column prop="bz" label="班组"> </el-table-column>
-      <el-table-column prop="df" label="得分"> </el-table-column>
-      <el-table-column label="操作">
-        <template>
-          <el-button type="primary">修改</el-button>
-          <el-button type="primary">锁定</el-button>
-        </template>
-      </el-table-column>
+      <el-table-column prop="jcgwf" label="基础岗位分"> </el-table-column>
+      <el-table-column prop="jhgz" label="计划工作"> </el-table-column>
+      <el-table-column prop="zhgl" label="综合管理"> </el-table-column>
+      <el-table-column prop="jf" label="加分"> </el-table-column>
+      <el-table-column prop="zbqk" label="指标情况"> </el-table-column>
+      <el-table-column prop="jf" label="减分"> </el-table-column>
+      <el-table-column prop="lsgz" label="临时工作"> </el-table-column>
+      <el-table-column prop="zdf" label="总得分"> </el-table-column>
+      <el-table-column prop="pm" label="排名"> </el-table-column>
     </el-table>
     <div v-if="mbdzStatus">
       <Mbdz v-model="mbdzStatus"></Mbdz>
@@ -43,15 +59,9 @@ export default {
       mbdzStatus: false,
       jxjsStatus: false,
       tableData: [
-        {
-          name: '小李',
-          dw: 'xxx供电所',
-          zw: '普通职员',
-          bz: '一班一组',
-          df: 95,
-        },
+       
       ],
-    }
+    } 
   },
   methods: {
     goBack() {

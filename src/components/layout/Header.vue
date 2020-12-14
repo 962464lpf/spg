@@ -12,7 +12,7 @@
       </el-col>
       <el-col :span="6"
               class="right-box">
-        <el-cascader v-model="formInline.city"
+        <el-cascader v-model="formInline.city" @change="cityChange"
                      :options="options"
                      :props="{ expandTrigger: 'hover',checkStrictly: true }"></el-cascader>
         <span class="ml10">李淳罡</span>
@@ -86,7 +86,11 @@ export default {
       ],
     }
   },
-  methods: {},
+  methods: {
+    cityChange() {
+      this.$store.commit('cityChange', this.formInline.city)
+    }
+  },
   mounted() {},
 }
 </script>

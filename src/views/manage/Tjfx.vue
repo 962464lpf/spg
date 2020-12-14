@@ -27,7 +27,7 @@
           >
             <Gdtj></Gdtj>
           </el-tab-pane>
-          <el-tab-pane label="台区统计" name="third" lazy style="height: 100%;">
+          <el-tab-pane v-if="tqStatus" label="台区统计" name="third" lazy style="height: 100%;">
             <Tqtj></Tqtj>
           </el-tab-pane>
         </el-tabs>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Jbxx from './tjfx/Jbxx'
 import Gdtj from './tjfx/Gdtj'
 import Tqtj from './tjfx/Tqtj'
@@ -46,15 +47,20 @@ export default {
     Gdtj,
     Tqtj,
   },
+ 
   watch: {
-    filterText(val) {
-      this.$refs.tree.filter(val)
-    },
+    city (val) {
+      val.length > 3 ? this.tqStatus = true: this.tqStatus = false
+    }
+  },
+  computed: {
+    ...mapState(['city']),
   },
   data() {
     return {
       activeName: 'first',
       filterText: '',
+      tqStatus: false,
       data: [
         {
           id: 1,

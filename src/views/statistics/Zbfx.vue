@@ -14,10 +14,12 @@
         </el-tree>
       </el-col> -->
       <el-col :span="24">
-        <el-tabs v-model="activeName" type="card">
-          <el-tab-pane label="综合管理" name="first">
+        <el-tabs v-model="activeName"
+                 type="card">
+          <el-tab-pane label="综合管理"
+                       name="first">
             <el-row>
-              <el-col :span="24" class="item">
+              <!-- <el-col :span="12" class="item">
                 <h3>供电所情况</h3>
                 <ul>
                   <li>
@@ -63,116 +65,132 @@
                     </div>
                   </li>
                 </ul>
-                <ve-line
-                  height="300px"
-                  :data="chartData"
-                  :colors="colors"
-                ></ve-line>
-              </el-col>
-              <el-col class="item mt10" :span="24">
-                <h3>客户情况</h3>
-                <ul>
-                  <li>
-                    <p><i class="el-icon-s-tools"></i></p>
-                    <div>
-                      <p>重要客户</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-warning"></i></p>
-                    <div>
-                      <p>一般客户</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-plus"></i></p>
-                    <div>
-                      <p>低压用户</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-upload"></i></p>
-                    <div>
-                      <p>居民</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-s-fold"></i></p>
-                    <div>
-                      <p>非居民</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                </ul>
-                <ve-ring
-                  :data="ringChartData"
-                  height="300px"
-                  :colors="colors"
-                  :settings="chartSetting"
-                ></ve-ring>
-              </el-col>
-              <el-col :span="24" class="item mt10 item3">
+               
+              </el-col> -->
+              <el-col :span="24"
+                      class="item item3">
                 <h3>设备（网架）情况</h3>
-                <ul>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-s-tools"></i></p>
-                    <div>
-                      <p>专变台数</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-warning"></i></p>
-                    <div>
-                      <p>智能电表</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-plus"></i></p>
-                    <div>
-                      <p>集中器台数</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-upload"></i></p>
-                    <div>
-                      <p>平均供电半径</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-s-fold"></i></p>
-                    <div>
-                      <p>0.4KV低压塔杆数量</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-s-fold"></i></p>
-                    <div>
-                      <p>低压线路长度</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li class="curp" @click="detailStatus = true">
-                    <p><i class="el-icon-s-fold"></i></p>
-                    <div>
-                      <p>低压线路条数</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                </ul>
+                <el-row>
+                  <el-col :span="16">
+                    <ul>
+                      <li class="curp"
+                          @click="detailStatus = true">
+                        <p><i class="el-icon-s-tools"></i></p>
+                        <div>
+                          <p>专变台数</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li class="curp"
+                          @click="detailStatus = true">
+                        <p><i class="el-icon-warning"></i></p>
+                        <div>
+                          <p>智能电表</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li class="curp"
+                          @click="detailStatus = true">
+                        <p><i class="el-icon-plus"></i></p>
+                        <div>
+                          <p>集中器台数</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+
+                      <li class="curp"
+                          @click="detailStatus = true">
+                        <p><i class="el-icon-s-fold"></i></p>
+                        <div>
+                          <p>0.4KV低压塔杆数量</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li class="curp"
+                          @click="detailStatus = true">
+                        <p><i class="el-icon-s-fold"></i></p>
+                        <div>
+                          <p>低压线路长度</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li class="curp"
+                          @click="detailStatus = true">
+                        <p><i class="el-icon-s-fold"></i></p>
+                        <div>
+                          <p>低压线路条数</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </el-col>
+                  <el-col :span="8">
+                    <ve-gauge :data="wjchartData"
+                              height="250px"
+                              :settings="wjchartSettings"></ve-gauge>
+                  </el-col>
+                </el-row>
+
               </el-col>
+              <el-col class="item mt10"
+                      :span="24">
+                <h3>客户情况</h3>
+                <el-row>
+                  <el-col :span="16">
+                    <ul>
+                      <li>
+                        <p><i class="el-icon-s-tools"></i></p>
+                        <div>
+                          <p>重要客户</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li>
+                        <p><i class="el-icon-warning"></i></p>
+                        <div>
+                          <p>一般客户</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li>
+                        <p><i class="el-icon-plus"></i></p>
+                        <div>
+                          <p>低压用户</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li>
+                        <p><i class="el-icon-upload"></i></p>
+                        <div>
+                          <p>居民</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                      <li>
+                        <p><i class="el-icon-s-fold"></i></p>
+                        <div>
+                          <p>非居民</p>
+                          <p>99</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </el-col>
+                  <el-col :span="8">
+                    <ve-ring :data="ringChartData"
+                             height="300px"
+                             :colors="colors"
+                             :settings="chartSetting"></ve-ring>
+                  </el-col>
+                </el-row>
+
+              </el-col>
+
             </el-row>
           </el-tab-pane>
-          <el-tab-pane label="营销服务" name="second">
-            <div class="item" v-if="activeName === 'second'">
+          <el-tab-pane label="营销服务"
+                       name="second">
+            <div class="item"
+                 v-if="activeName === 'second'">
               <h3>业扩报装</h3>
               <el-row>
                 <el-col :span="12">
@@ -194,23 +212,20 @@
                   </ul>
 
                   <p class="text-center mt10 mb10">当月发起流程图统计分析</p>
-                  <ve-histogram
-                    :data="ykChartData1"
-                    height="250px"
-                    :colors="colors"
-                    :settings="chartSetting"
-                  ></ve-histogram>
+                  <ve-histogram :data="ykChartData1"
+                                height="250px"
+                                :colors="colors"
+                                :settings="chartSetting"></ve-histogram>
                 </el-col>
                 <el-col :span="12">
                   <p class="text-center mt10 mb10">当月在途流程统计</p>
-                  <ve-ring
-                    :data="ykringChartData"
-                    height="300px"
-                    :colors="colors"
-                    :settings="chartSetting"
-                  ></ve-ring>
+                  <ve-ring :data="ykringChartData"
+                           height="300px"
+                           :colors="colors"
+                           :settings="chartSetting"></ve-ring>
                 </el-col>
-                <el-col :span="12" class="mt10 border-top">
+                <el-col :span="12"
+                        class="mt10 border-top">
                   <ul>
                     <li>
                       <p><i class="el-icon-plus"></i></p>
@@ -228,27 +243,24 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">业扩报装时限统计分析</p>
-                  <ve-histogram
-                    :data="ykChartData2"
-                    height="250px"
-                    :colors="colors"
-                    :settings="chartSetting"
-                  ></ve-histogram>
+                  <ve-histogram :data="ykChartData2"
+                                height="250px"
+                                :colors="colors"
+                                :settings="chartSetting"></ve-histogram>
                 </el-col>
                 <el-col :span="12">
                   <p class="text-center mt10 mb10">
                     业扩报装时限达标率月曲线图
                   </p>
-                  <ve-line
-                    :data="ykChartData3"
-                    height="250px"
-                    :colors="colors"
-                    :settings="chartSetting1"
-                  ></ve-line>
+                  <ve-line :data="ykChartData3"
+                           height="250px"
+                           :colors="colors"
+                           :settings="chartSetting1"></ve-line>
                 </el-col>
               </el-row>
             </div>
-            <div class="item" v-if="activeName === 'second'">
+            <div class="item"
+                 v-if="activeName === 'second'">
               <h3>电费回收</h3>
               <el-row>
                 <el-col :span="8">
@@ -276,12 +288,10 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">电费回收情况统计(班组)</p>
-                  <ve-line
-                    :data="dfChartData1"
-                    height="250px"
-                    :colors="colors"
-                    :settings="{ area: true, yAxisName: ['单位：万元'] }"
-                  ></ve-line>
+                  <ve-line :data="dfChartData1"
+                           height="250px"
+                           :colors="colors"
+                           :settings="{ area: true, yAxisName: ['单位：万元'] }"></ve-line>
                 </el-col>
                 <el-col :span="8">
                   <ul style="height: 32px">
@@ -294,11 +304,9 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">电费回收情况统计(责任人)</p>
-                  <ve-histogram
-                    :data="dfChartData2"
-                    :colors="colors"
-                    height="250px"
-                  ></ve-histogram>
+                  <ve-histogram :data="dfChartData2"
+                                :colors="colors"
+                                height="250px"></ve-histogram>
                 </el-col>
                 <el-col :span="8">
                   <ul style="height: 32px">
@@ -311,28 +319,26 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">欠费情况统计(班组)</p>
-                  <ve-histogram
-                    :data="dfChartData3"
-                    :colors="colors"
-                    height="250px"
-                  ></ve-histogram>
+                  <ve-histogram :data="dfChartData3"
+                                :colors="colors"
+                                height="250px"></ve-histogram>
                 </el-col>
               </el-row>
             </div>
-            <div class="item" v-if="activeName === 'second'">
+            <div class="item"
+                 v-if="activeName === 'second'">
               <h3>台区线损率</h3>
               <el-row>
                 <el-col :span="24">
-                  <ve-histogram
-                    :data="tqChartData"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="tqChartData"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
               </el-row>
             </div>
-            <div class="item" v-if="activeName === 'second'">
+            <div class="item"
+                 v-if="activeName === 'second'">
               <h3>96789</h3>
               <ul>
                 <li>
@@ -374,37 +380,33 @@
               <el-row>
                 <el-col :span="8">
                   <p class="text-center mt10 mb10">抢修工单数</p>
-                  <ve-histogram
-                    :data="jlChartData1"
-                    :colors="colors"
-                    height="250px"
-                  ></ve-histogram>
+                  <ve-histogram :data="jlChartData1"
+                                :colors="colors"
+                                height="250px"></ve-histogram>
                 </el-col>
                 <el-col :span="8">
                   <p class="text-center mt10 mb10">
                     96789故障报装到达现场及时率
                   </p>
-                  <ve-histogram
-                    :data="jlChartData2"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ area: true, yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="jlChartData2"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
                 <el-col :span="8">
                   <p class="text-center mt10 mb10">故障报修率</p>
-                  <ve-histogram
-                    :data="jlChartData3"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ area: true, yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="jlChartData3"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
               </el-row>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="设备运行" name="third">
-            <div class="item" v-if="activeName === 'third'">
+          <el-tab-pane label="设备运行"
+                       name="third">
+            <div class="item"
+                 v-if="activeName === 'third'">
               <h3>公变运行</h3>
               <el-row>
                 <el-col :span="12">
@@ -432,12 +434,10 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">公变采集</p>
-                  <ve-histogram
-                    :data="gbChartData"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ area: true, yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
                 <el-col :span="12">
                   <ul>
@@ -464,16 +464,15 @@
                     </li>
                   </ul>
                   <p class="text-center mt10 mb10">公变低电压</p>
-                  <ve-histogram
-                    :data="gbChartData1"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ area: true, yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="gbChartData1"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
               </el-row>
             </div>
-            <div class="item mt10" v-if="activeName === 'third'">
+            <div class="item mt10"
+                 v-if="activeName === 'third'">
               <h3>用电采集</h3>
               <el-row>
                 <el-col :span="12">
@@ -513,12 +512,10 @@
                     <li>99%</li>
                     <li>99%</li>
                   </ul>
-                  <ve-histogram
-                    :data="gbChartData"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ area: true, yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
 
                 <el-col :span="12">
@@ -558,12 +555,10 @@
                     <li>99%</li>
                     <li>99%</li>
                   </ul>
-                  <ve-histogram
-                    :data="gbChartData"
-                    :colors="colors"
-                    height="250px"
-                    :settings="{ area: true, yAxisType: ['percent'] }"
-                  ></ve-histogram>
+                  <ve-histogram :data="gbChartData"
+                                :colors="colors"
+                                height="250px"
+                                :settings="{ area: true, yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
               </el-row>
             </div>
@@ -600,28 +595,24 @@ export default {
         '#b7c5e2',
         '#e7e9f5',
       ],
-      data: [
-        {
-          id: 1,
-          label: '陕西省',
-          children: [
-            {
-              id: 4,
-              label: '宝鸡市',
-              children: [
-                {
-                  id: 9,
-                  label: '眉县',
-                },
-                {
-                  id: 10,
-                  label: '岐山县',
-                },
-              ],
-            },
-          ],
+      wjchartData: {
+        columns: ['type', 'value'],
+        rows: [{ type: 'speed', value: 2 }],
+      },
+      wjchartSettings: {
+        labelMap: {
+          speed: '平均供电半径',
         },
-      ],
+        dataName: {
+          speed: 'km',
+        },
+        seriesMap: {
+          speed: {
+            radius: '100%',
+          },
+          offsetY: 80,
+        },
+      },
       defaultProps: {
         children: 'children',
         label: 'label',
@@ -663,9 +654,9 @@ export default {
       ykChartData2: {
         columns: ['日期', '应抄数', '实抄数', '未抄数'],
         rows: [
-          { 日期: '抄表1班', 应抄数: 100, 实抄数: 180, 未抄数: 20 },
-          { 日期: '抄表2班', 应抄数: 200, 实抄数: 120, 未抄数: 80 },
-          { 日期: '抄表3班', 应抄数: 300, 实抄数: 240, 未抄数: 60 },
+          { 日期: '1月', 应抄数: 100, 实抄数: 180, 未抄数: 20 },
+          { 日期: '2月', 应抄数: 200, 实抄数: 120, 未抄数: 80 },
+          { 日期: '3月', 应抄数: 300, 实抄数: 240, 未抄数: 60 },
         ],
       },
       ykChartData3: {
@@ -687,17 +678,17 @@ export default {
       dfChartData1: {
         columns: ['日期', '应抄数', '实抄数', '未抄数'],
         rows: [
-          { 日期: '抄表1班', 应抄数: 100, 实抄数: 180, 未抄数: 20 },
-          { 日期: '抄表2班', 应抄数: 200, 实抄数: 120, 未抄数: 80 },
-          { 日期: '抄表3班', 应抄数: 300, 实抄数: 240, 未抄数: 60 },
+          { 日期: '1月', 应抄数: 100, 实抄数: 180, 未抄数: 20 },
+          { 日期: '2月', 应抄数: 200, 实抄数: 120, 未抄数: 80 },
+          { 日期: '3月', 应抄数: 300, 实抄数: 240, 未抄数: 60 },
         ],
       },
       dfChartData2: {
         columns: ['日期', '应抄数', '实抄数', '未抄数'],
         rows: [
-          { 日期: '抄表1班', 应抄数: 100, 实抄数: 180, 未抄数: 20 },
-          { 日期: '抄表2班', 应抄数: 200, 实抄数: 120, 未抄数: 80 },
-          { 日期: '抄表3班', 应抄数: 300, 实抄数: 240, 未抄数: 60 },
+          { 日期: '1月', 应抄数: 100, 实抄数: 180, 未抄数: 20 },
+          { 日期: '2月', 应抄数: 200, 实抄数: 120, 未抄数: 80 },
+          { 日期: '3月', 应抄数: 300, 实抄数: 240, 未抄数: 60 },
         ],
       },
       dfChartData3: {

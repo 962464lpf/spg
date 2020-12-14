@@ -15,8 +15,23 @@ VueAMap.initAMapApiLoader({
   v: '1.4.4'
 });
 Vue.config.productionTip = false
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {
+    city: ['陕西省']
+  },
+  mutations: {
+    cityChange (state, data) {
+      state.city = data
+    }
+  }
+})
 
 new Vue({
   router,
+  store: store,
   render: (h) => h(App),
 }).$mount('#app')

@@ -2,7 +2,7 @@
   <div class="jbxx">
     <el-row class="border-box">
       <el-col :span="12">
-        <p class="text-center">2020年xx供电所基本信息统计</p>
+        <p class="text-center">2020年集团农电机构人员信息</p>
         <el-row>
           <el-col :span="12">
             <p>供电所总数： 34</p>
@@ -23,7 +23,7 @@
           <el-col :span="12">
             <p>离职人数： 4个</p>
           </el-col>
-          <el-col :span="12">
+          <!-- <el-col :span="12">
             <p>房产总数： 40</p>
           </el-col>
           <el-col :span="12">
@@ -31,18 +31,16 @@
           </el-col>
           <el-col :span="12">
             <p>计算机台数： 14</p>
-          </el-col>
+          </el-col> -->
         </el-row>
       </el-col>
       <el-col :span="12">
-        <p class="text-center">2020年xx供电所情况</p>
-        <ve-histogram
-          :extend="extend"
-          :colors="colors"
-          height="250px"
-          :data="gdsChartData"
-          :legend-visible="false"
-        ></ve-histogram>
+        <p class="text-center">2020年11月供电所情况</p>
+        <ve-histogram :extend="extend"
+                      :colors="colors"
+                      height="250px"
+                      :data="gdsChartData"
+                      :legend-visible="false"></ve-histogram>
       </el-col>
     </el-row>
 
@@ -51,7 +49,8 @@
         <p class="text-center">2020年12月所辖区域情况</p>
       </div>
       <el-row class="h300 mb10">
-        <el-col :span="8" class="flex-center">
+        <el-col :span="8"
+                class="flex-center">
           <el-col :span="8">
             <p>乡镇人口</p>
             <p>54万</p>
@@ -66,61 +65,89 @@
           </el-col>
         </el-col>
         <el-col :span="16">
-          <ve-histogram
-            :extend="extend"
-            height="300px"
-            :colors="colors"
-            :legend-visible="false"
-            :settings="qySetting"
-            :data="qyChartData"
-          ></ve-histogram>
+          <ve-histogram :extend="extend"
+                        height="300px"
+                        :colors="colors"
+                        :legend-visible="false"
+                        :settings="qySetting"
+                        :data="qyChartData"></ve-histogram>
         </el-col>
       </el-row>
     </el-row>
+
+    <el-row class="mt10 border">
+      <div class="top-remove">
+        <p class="text-center">2020年装备情况</p>
+      </div>
+      <el-row class="h300 mb10">
+        <el-col :span="6">
+          <p class="text-center">房产类别</p>
+          <ve-pie :colors="colors"
+                  :data="fcChartData"
+                  :settings="fcChartSetting"
+                  :legend-visible="false"></ve-pie>
+        </el-col>
+        <el-col :span="6">
+          <p class="text-center">房屋使用年限</p>
+          <ve-pie :colors="colors"
+                  :data="nxChartData"
+                  :settings="fcChartSetting"
+                  :legend-visible="false"></ve-pie>
+        </el-col>
+        <el-col :span="6">
+          <p class="text-center">车辆情况</p>
+          <ve-histogram :extend="extend"
+                      :colors="colors"
+                      :data="clChartData"
+                      :legend-visible="false"></ve-histogram>
+        </el-col>
+        <el-col :span="6">
+          <p class="text-center">计算机配置情况</p>
+           <ve-histogram :extend="extend"
+                      :colors="colors"
+                      :data="jsjChartData"
+                      :legend-visible="false"></ve-histogram>
+        </el-col>
+      </el-row>
+    </el-row>
+
     <el-row class=" border mt10">
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员年龄结构</p>
-        <p class="text-center fl" style="position: relative;left: 40%;">
+        <p class="text-center fl"
+           style="position: relative;left: 40%;">
           平均47.4岁
         </p>
-        <ve-pie
-          :data="nlChartData"
-          :settings="chartSetting"
-          :legend-visible="false"
-          height="250px"
-          :colors="colors"
-        ></ve-pie>
+        <ve-pie :data="nlChartData"
+                :settings="chartSetting"
+                :legend-visible="false"
+                height="250px"
+                :colors="colors"></ve-pie>
       </el-col>
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员学历结构</p>
 
-        <ve-pie
-          :colors="colors"
-          :data="xlChartData"
-          :settings="chartSetting"
-          :legend-visible="false"
-          height="250px"
-        ></ve-pie>
+        <ve-pie :colors="colors"
+                :data="xlChartData"
+                :settings="chartSetting"
+                :legend-visible="false"
+                height="250px"></ve-pie>
       </el-col>
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员职称结构</p>
-        <ve-pie
-          :colors="colors"
-          :data="zcChartData"
-          :settings="chartSetting"
-          :legend-visible="false"
-          height="250px"
-        ></ve-pie>
+        <ve-pie :colors="colors"
+                :data="zcChartData"
+                :settings="chartSetting"
+                :legend-visible="false"
+                height="250px"></ve-pie>
       </el-col>
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员技能等级结构</p>
-        <ve-pie
-          :colors="colors"
-          :data="jnChartData"
-          :settings="chartSetting"
-          :legend-visible="false"
-          height="250px"
-        ></ve-pie>
+        <ve-pie :colors="colors"
+                :data="jnChartData"
+                :settings="chartSetting"
+                :legend-visible="false"
+                height="250px"></ve-pie>
       </el-col>
     </el-row>
   </div>
@@ -142,19 +169,54 @@ export default {
       gdsChartData: {
         columns: ['日期', '数量'],
         rows: [
-          { 日期: '区域1', 数量: 139 },
-          { 日期: '区域2', 数量: 353 },
-          { 日期: '区域3', 数量: 292 },
-          { 日期: '区域4', 数量: 292 },
+          { 日期: '西安', 数量: 139 },
+          { 日期: '咸阳', 数量: 353 },
+          { 日期: '宝鸡', 数量: 292 },
+          { 日期: '渭南', 数量: 292 },
+        ],
+      },
+      jsjChartData: {
+        columns: ['日期', '数量'],
+        rows: [
+          { 日期: '西安', 数量: 190 },
+          { 日期: '咸阳', 数量: 201 },
+          { 日期: '宝鸡', 数量: 158 },
+          { 日期: '渭南', 数量: 163 },
         ],
       },
       qyChartData: {
         columns: ['日期', '数量'],
         rows: [
-          { 日期: '乡镇1', 数量: 1.4 },
-          { 日期: '乡镇2', 数量: 3.53 },
-          { 日期: '乡镇3', 数量: 2.92 },
-          { 日期: '乡镇4', 数量: 2.12 },
+          { 日期: '西安', 数量: 1.4 },
+          { 日期: '咸阳', 数量: 3.53 },
+          { 日期: '宝鸡', 数量: 2.92 },
+          { 日期: '渭南', 数量: 2.12 },
+          { 日期: '汉中', 数量: 2.12 },
+        ],
+      },
+      clChartData: {
+         columns: ['日期', '数量'],
+        rows: [
+          { 日期: '西安', 数量: 124 },
+          { 日期: '咸阳', 数量: 110 },
+          { 日期: '宝鸡', 数量: 98 },
+          { 日期: '渭南', 数量: 87 },
+        ],
+      },
+      fcChartData: {
+        columns: ['日期', '数量'],
+        rows: [
+          { 日期: '租用', 数量: 139 },
+          { 日期: '自有产权', 数量: 353 },
+        ],
+      },
+      nxChartData: {
+        columns: ['日期', '数量'],
+        rows: [
+          { 日期: '5年内', 数量: 139 },
+          { 日期: '5-15年', 数量: 353 },
+          { 日期: '15-25年', 数量: 353 },
+          { 日期: '25年以上', 数量: 353 },
         ],
       },
       nlChartData: {
@@ -200,9 +262,9 @@ export default {
           })
           return v
         },
-        yAxis: {
-          offset: -15,
-        },
+        // yAxis: {
+        //   offset: -15,
+        // },
       },
 
       qySetting: {
@@ -211,6 +273,10 @@ export default {
       chartSetting: {
         radius: 60,
         offsetY: 120,
+      },
+      fcChartSetting: {
+        radius: 80,
+        offsetY: 100,
       },
     }
   },
