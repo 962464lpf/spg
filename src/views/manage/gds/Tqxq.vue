@@ -5,7 +5,7 @@
     width="65%"
     :before-close="handleClose"
   >
-    <div>
+    <!-- <div>
       <el-form :inline="true">
         <el-form-item label="手机号">
           <el-input placeholder=""></el-input>
@@ -15,7 +15,7 @@
           <el-button type="primary" class="fr">添加</el-button>
         </el-form-item>
       </el-form>
-    </div>
+    </div> -->
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="yhbh" label="用户编号"> </el-table-column>
       <el-table-column prop="yhmc" label="用户名称"> </el-table-column>

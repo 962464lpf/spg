@@ -25,9 +25,9 @@
         </el-form>
 
         <div class="fr clearfloat mt10">
-          <el-button type="primary">入库</el-button>
-          <el-button type="primary">出库</el-button>
-          <el-button type="primary">导出excel</el-button>
+          <el-button type="primary">新增</el-button>
+          <el-button type="primary">批量导入</el-button>
+          <el-button type="primary">导出</el-button>
         </div>
         <div class="clearfloat"></div>
         <el-table :data="tableData"
@@ -39,15 +39,18 @@
                            width="55">
           </el-table-column>
           <el-table-column prop="bh"
-                           label="编号"> </el-table-column>
-          <el-table-column prop="mc"
-                           label="名称"> </el-table-column>
-          <el-table-column prop="sl"
-                           label="数量"> </el-table-column>
-          <el-table-column prop="gg"
-                           label="规格"> </el-table-column>
+                           label="编号"
+                           width="55"> </el-table-column>
+          <el-table-column prop="wldm"
+                           label="物料代码"> </el-table-column>
           <el-table-column prop="lx"
-                           label="类型"> </el-table-column>
+                           label="物料类型"> </el-table-column>
+          <el-table-column prop="mc"
+                           label="物料名称"> </el-table-column>
+          <el-table-column prop="sl"
+                           label="物料数量"> </el-table-column>
+          <el-table-column prop="yjsl"
+                           label="预警数量"> </el-table-column>
           <el-table-column prop="dw"
                            label="单位"> </el-table-column>
           <el-table-column label="出入库"
@@ -94,18 +97,24 @@
                   class="mt10">
           <el-table-column prop="bh"
                            label="编号"> </el-table-column>
+          <el-table-column prop="wldm"
+                           label="物料代码"> </el-table-column>
+          <el-table-column prop="lx"
+                           label="物料类型"> </el-table-column>
+          <el-table-column prop="mc"
+                           label="物料名称"> </el-table-column>
           <el-table-column prop="gdh"
                            label="工单号"> </el-table-column>
-          <el-table-column prop="mc"
-                           label="名称"> </el-table-column>
           <el-table-column prop="czlx"
                            label="操作类型"> </el-table-column>
           <el-table-column prop="sl"
                            label="数量"> </el-table-column>
-          <el-table-column prop="gg"
-                           label="规格"> </el-table-column>
+          <el-table-column prop="dw"
+                           label="单位"> </el-table-column>
           <el-table-column prop="czsj"
                            label="操作时间"> </el-table-column>
+          <el-table-column prop="czfzr"
+                           label="操作负责人"> </el-table-column>
         </el-table>
       </el-tab-pane>
       <el-tab-pane label="库存盘点"
@@ -116,17 +125,18 @@
                   style="width: 100%"
                   class="mt10">
           <el-table-column prop="bh"
-                           label="编号"> </el-table-column>
+                           label="编号"
+                           width="55"> </el-table-column>
+          <el-table-column prop="wldm"
+                           label="物料代码"> </el-table-column>
           <el-table-column prop="lx"
-                           label="类型"> </el-table-column>
+                           label="物料类型"> </el-table-column>
           <el-table-column prop="mc"
-                           label="名称"> </el-table-column>
+                           label="物料名称"> </el-table-column>
           <el-table-column prop="sl"
-                           label="库存数量"> </el-table-column>
-          <el-table-column prop="gg"
-                           label="单位"> </el-table-column>
-          <el-table-column prop="jjsl"
-                           label="警戒数量"> </el-table-column>
+                           label="物料数量"> </el-table-column>
+          <el-table-column prop="yjsl"
+                           label="预警数量"> </el-table-column>
           <el-table-column prop="bcts"
                            label="补充提示"> </el-table-column>
           <el-table-column prop="gg"
@@ -154,32 +164,21 @@ export default {
       tableData: [
         {
           bh: 1,
-          mc: '电线',
+          mc: '急速导线（2*35）',
           gg: '米',
           syr: '小李',
-          lx: '线缆',
-          sl: '1000',
-          dw: 'xxx供电所',
+          lx: '备件',
+          sl: '34',
+          dw: 'm',
           bz: 'xxx',
           czlx: '归还入库',
           czsj: '2020-12.1 12:23:34',
           jjsl: 100,
           bcts: '充足',
-        },
-        {
-          bh: 2,
-          mc: '蝴蝶瓶',
-          gg: '个',
-          syr: '小李',
-          lx: '备件',
-          sl: 500,
-          dw: 'xxx供电所',
-          bz: 'xxx',
-          czlx: '出库',
-          czsj: '2020-12.1 8:23:34',
-          jjsl: 100,
-          bcts: '充足',
-          gdh: '12345'
+          wldm: '3-007',
+          yjsl: 100,
+          gdh: '2020110202',
+          czfzr: '闫春莉'
         },
       ],
     }

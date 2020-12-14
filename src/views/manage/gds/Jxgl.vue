@@ -6,6 +6,7 @@
     <div class="mt10">
       <el-button type="primary" @click="mbdzStatus = true">模板定制</el-button>
       <el-button type="primary" @click="jxjsStatus = true">绩效计算</el-button>
+      <el-button type="primary">绩效汇总</el-button>
     </div>
     <el-table :data="tableData" style="width: 100%" class="mt10">
       <el-table-column prop="name" label="姓名"> </el-table-column>

@@ -1,66 +1,70 @@
 <template>
   <div class="tqgl">
     <div>
-      <el-button type="primary" @click="goBack">返回</el-button>
+      <el-button type="primary"
+                 @click="goBack">返回</el-button>
+    </div>
+    <div class="clearfloat"></div>
+    <div class="mt10">
+      <el-amap ref="map"
+               vid="amapDemo"
+               :center="center"
+               :zoom="zoom"
+               :events="events"
+               class="amap-demo">
+        <el-amap-marker v-for="(marker, index) in markers"
+                        :key="index + 'mar'"
+                        :position="marker.position"
+                        :events="marker.events"
+                        :visible="marker.visible"
+                        :draggable="marker.draggable"
+                        :vid="index"></el-amap-marker>
+        <el-amap-text v-for="text in texts"
+                      :key="text"
+                      :text="text.text"
+                      :offset="text.offset"
+                      :position="text.position"
+                      :events="text.events"></el-amap-text>
+
+        <el-amap-polygon v-for="(polygon, index) in polygons"
+                         :key="index + 'poly'"
+                         :vid="index"
+                         :ref="`polygon_${index}`"
+                         :fillColor="polygon.fillColor"
+                         :strokeColor="polygon.strokeColor"
+                         :path="polygon.path"
+                         :draggable="polygon.draggable"
+                         :events="polygon.events"></el-amap-polygon>
+      </el-amap>
     </div>
     <div class="mt10 fr">
       <el-button type="primary">新增</el-button>
       <el-button type="primary">批量导入</el-button>
     </div>
-    <div class="clearfloat"></div>
-    <div class="mt10">
-      <el-amap
-        ref="map"
-        vid="amapDemo"
-        :center="center"
-        :zoom="zoom"
-        :events="events"
-        class="amap-demo"
-      >
-        <el-amap-marker
-          v-for="(marker, index) in markers"
-          :key="index + 'mar'"
-          :position="marker.position"
-          :events="marker.events"
-          :visible="marker.visible"
-          :draggable="marker.draggable"
-          :vid="index"
-        ></el-amap-marker>
-        <el-amap-text
-          v-for="text in texts"
-          :key="text"
-          :text="text.text"
-          :offset="text.offset"
-          :position="text.position"
-          :events="text.events"
-        ></el-amap-text>
-
-        <el-amap-polygon
-          v-for="(polygon, index) in polygons"
-          :key="index + 'poly'"
-          :vid="index"
-          :ref="`polygon_${index}`"
-          :fillColor="polygon.fillColor"
-          :strokeColor="polygon.strokeColor"
-          :path="polygon.path"
-          :draggable="polygon.draggable"
-          :events="polygon.events"
-        ></el-amap-polygon>
-      </el-amap>
-    </div>
-    <el-table :data="tableData" border style="width: 100%" class="mt10">
-      <el-table-column prop="tqmc" label="台区名称"> </el-table-column>
-      <el-table-column prop="tqfzr" label="台区负责人"> </el-table-column>
-      <el-table-column prop="pbrl" label="配变容量"> </el-table-column>
-      <el-table-column prop="10kv" label="10KV接杆"> </el-table-column>
-      <el-table-column prop="dxhs" label="单相户数"> </el-table-column>
-      <el-table-column prop="sxhs" label="三相户数"> </el-table-column>
+    <el-table :data="tableData"
+              border
+              style="width: 100%"
+              class="mt10">
+      <el-table-column prop="tqmc"
+                       label="台区名称"> </el-table-column>
+      <el-table-column prop="tqfzr"
+                       label="台区负责人"> </el-table-column>
+      <el-table-column prop="pbxh"
+                       label="配变型号"> </el-table-column>
+      <el-table-column prop="pbrl"
+                       label="配变容量"> </el-table-column>
+      <el-table-column prop="10kv"
+                       label="10KV接杆"> </el-table-column>
+      <el-table-column prop="dxhs"
+                       label="单相户数"> </el-table-column>
+      <el-table-column prop="sxhs"
+                       label="三相户数"> </el-table-column>
       <!-- <el-table-column prop="wz" label="位置"> </el-table-column> -->
-      <el-table-column label="操作" width="80">
+      <!-- <el-table-column label="操作" width="80">
         <template>
           <el-button type="primary" @click="tqxqStatus = true">详情</el-button>
         </template>
-      </el-table-column>
+      </el-table-column> -->
     </el-table>
     <div v-if="tqxqStatus">
       <Tqxq v-model="tqxqStatus"></Tqxq>
@@ -100,13 +104,13 @@ export default {
       texts: [
         {
           position: [107.594127, 34.470633],
-          text: '台区一',
+          text: '134秦镇线秦三综合变电器',
           offset: [0, 15],
           textAlign: 'center',
         },
         {
           position: [107.640132, 34.468227],
-          text: '台区二',
+          text: '白杨寨公用变综合变农',
           offset: [0, 15],
           textAlign: 'center',
         },
@@ -159,11 +163,24 @@ export default {
       ],
       tqxqStatus: false,
       tableData: [
-        { tqmc: '一台区', tqfzr: '小王', pbrl: '', wz: 'xx街道以西' },
-        { tqmc: '二台区', tqfzr: '小王', pbrl: '' , wz: '' },
-        { tqmc: '三台区', tqfzr: '小王', pbrl: '' , wz: '' },
-        { tqmc: '四台区', tqfzr: '小王', pbrl: '' , wz: '' },
-        { tqmc: '五台区', tqfzr: '小王', pbrl: '' , wz: '' },
+        {
+          tqmc: '134秦镇线秦三综合变电器',
+          tqfzr: '张峰',
+          pbxh: 'S9',
+          pbrl: '400',
+          '10kv': '秦三东抗支6#杆',
+          dxhs: '81',
+          sxhs: '21',
+        },
+        {
+          tqmc: '白杨寨公用变综合变农',
+          tqfzr: '崔海龙',
+          pbxh: 'S9',
+          pbrl: '200',
+          '10kv': '秦镇线53#杆',
+          dxhs: '21',
+          sxhs: '9',
+        },
       ],
     }
   },
