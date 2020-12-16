@@ -8,16 +8,11 @@
       <el-tab-pane label="备品备件库"
                    name="first">
         <el-form :inline="true">
-          <el-form-item label="编号">
+          <el-form-item label="物料代码">
             <el-input></el-input>
           </el-form-item>
-          <el-form-item label="类型">
-            <el-select>
-              <el-option label="类型1"
-                         value="shanghai"></el-option>
-              <el-option label="类型1"
-                         value="beijing"></el-option>
-            </el-select>
+          <el-form-item label="物料名称">
+            <el-input></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary">检索</el-button>
@@ -72,18 +67,13 @@
       <el-tab-pane label="出入库记录"
                    name="second">
         <el-form :inline="true">
-          <el-form-item label="编号">
+          <el-form-item label="物料代码">
+            <el-input></el-input>
+          </el-form-item>
+          <el-form-item label="物料名称">
             <el-input></el-input>
           </el-form-item>
 
-          <el-form-item label="类型">
-            <el-select>
-              <el-option label="类型1"
-                         value="shanghai"></el-option>
-              <el-option label="类型1"
-                         value="beijing"></el-option>
-            </el-select>
-          </el-form-item>
           <el-form-item>
             <el-button type="primary">检索</el-button>
             <el-button type="primary">导出</el-button>
@@ -114,7 +104,7 @@
           <el-table-column prop="czsj"
                            label="操作时间"> </el-table-column>
           <el-table-column prop="czfzr"
-                           label="操作负责人"> </el-table-column>
+                           label="管理负责人"> </el-table-column>
         </el-table>
       </el-tab-pane>
       <el-tab-pane label="库存盘点"

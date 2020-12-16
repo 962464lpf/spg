@@ -8,16 +8,11 @@
       <el-tab-pane label="工器具台账"
                    name="first">
         <el-form :inline="true">
-          <el-form-item label="编号">
+          <el-form-item label="名称">
             <el-input></el-input>
           </el-form-item>
-          <el-form-item label="类型">
-            <el-select>
-              <el-option label="类型1"
-                         value="shanghai"></el-option>
-              <el-option label="类型1"
-                         value="beijing"></el-option>
-            </el-select>
+          <el-form-item label="编号">
+            <el-input></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary">检索</el-button>
@@ -127,8 +122,6 @@
                            label="工单号"> </el-table-column>
           <el-table-column prop="pgsj"
                            label="签发时间"> </el-table-column>
-          <el-table-column prop="gdly"
-                           label="工单来源"> </el-table-column>
           <el-table-column prop="rwmc"
                            label="任务名称"> </el-table-column>
           <el-table-column prop="zylx"
@@ -214,7 +207,7 @@ export default {
           pgsj: '2020-11-23 12:23:34',
           pgdh: '2020112301',
           rwmc: '巡线',
-          zylx: '检查',
+          zylx: '用电检查',
           gzzrr: '王小虎',
           gdly: '96789',
           zdr: '张小虎',

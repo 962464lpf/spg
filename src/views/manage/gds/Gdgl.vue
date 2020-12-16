@@ -7,9 +7,9 @@
     <div>
       <el-form :inline="true"
                class="mt10">
-        <el-form-item label="工单号">
+        <!-- <el-form-item label="工单号">
           <el-input></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item label="工单状态">
           <el-select v-model="gdstatus"
                      placeholder="请选择">
@@ -73,7 +73,7 @@
       <el-table-column prop="gzzrr"
                        label="工作负责人"> </el-table-column>
       <el-table-column prop="zdr"
-                       label="制单人"> </el-table-column>
+                       label="工作成员"> </el-table-column>
       <el-table-column prop="zt"
                        label="状态"
                        width="400">
@@ -175,9 +175,9 @@ export default {
         },
       ],
       values: {
-        name: '客户表后无电',
+        name: '更换电表',
         content:
-          '杨山综合变得铜川市耀州区杨山村经济合作社户名：12345，表后无电，现场处理，开展志愿者服务。',
+          '',
         zxTime: '2020-11-13',
         jhTime: '',
         type: ['业扩报装'],

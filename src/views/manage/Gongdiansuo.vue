@@ -6,7 +6,7 @@
       <el-button type="primary"
                  @click="jump('/zhgl/gds/gqj')">工器具管理</el-button>
       <el-button type="primary"
-                 @click="jump('/zhgl/gds/bpbj')">备品备件</el-button>
+                 @click="jump('/zhgl/gds/bpbj')">备品备件管理</el-button>
       <el-button type="primary"
                  @click="jump('/zhgl/gds/clgl')">车辆管理</el-button>
       <el-button type="primary"

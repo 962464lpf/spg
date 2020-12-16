@@ -13,8 +13,18 @@
         <el-input type="textarea" v-model="form.content"></el-input>
       </el-form-item>
       <el-row>
-        <el-col :span="12">
-          <el-form-item label="派工时间">
+        <el-col :span="12" v-if="!values">
+          <el-form-item label="执行时间">
+            <el-date-picker
+              type="datetime"
+              v-model="form.zxTime"
+              placeholder="选择日期时间"
+            >
+            </el-date-picker>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12" v-if="values">
+          <el-form-item label="计划完成时间">
             <el-date-picker
               type="datetime"
               v-model="form.zxTime"
@@ -83,8 +93,8 @@
         <el-col :span="12">
           <el-form-item label="工作负责人">
             <el-select v-model="form.gzfzr" multiple>
-              <el-option label="小二" value="shanghai"></el-option>
-              <el-option label="小三" value="beijing"></el-option>
+              <el-option label="王永涛" value="shanghai"></el-option>
+              <el-option label="张峰" value="beijing"></el-option>
             </el-select>
           </el-form-item>
         </el-col>
@@ -93,8 +103,8 @@
         <el-col :span="12">
           <el-form-item label="工作成员">
             <el-select v-model="form.gzcy" multiple>
-              <el-option label="小二" value="shanghai"></el-option>
-              <el-option label="小三" value="beijing"></el-option>
+              <el-option label="袁春田" value="shanghai"></el-option>
+              <el-option label="肖远辉" value="beijing"></el-option>
             </el-select>
           </el-form-item>
         </el-col>
@@ -114,7 +124,7 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="工单号">
+          <el-form-item label="工作票号">
             <el-input v-model="form.gzph"></el-input>
           </el-form-item>
         </el-col>
@@ -132,12 +142,7 @@
         <el-input type="textarea" v-model="form.bpbj"></el-input>
         <el-button v-if="!values" type="primary">选择</el-button>
       </el-form-item>
-      <el-form-item label="签发人" v-if="values">
-        <el-row>
-          <el-col :span="12">签发人： {{ form.qfr }}</el-col>
-          <el-col :span="12">签发时间： {{ form.qfsj }}</el-col>
-        </el-row>
-      </el-form-item>
+     
       <el-form-item label="车况检查" v-if="values">
         <el-row>
           <el-col :span="8">本次里程： {{ form.bclc }}</el-col>
