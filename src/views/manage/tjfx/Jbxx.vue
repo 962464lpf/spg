@@ -5,10 +5,10 @@
         <p class="text-center">2020年集团农电机构人员信息</p>
         <el-row>
           <el-col :span="12">
-            <p>供电所总数： 34</p>
+            <p>供电所总数： 34个</p>
           </el-col>
           <el-col :span="12">
-            <p>外设营业厅总数： 54</p>
+            <p>外设营业厅总数： 54个</p>
           </el-col>
 
           <el-col :span="12">
@@ -40,6 +40,7 @@
                       :colors="colors"
                       height="250px"
                       :data="gdsChartData"
+                      :settings="gdsSetting"
                       :legend-visible="false"></ve-histogram>
       </el-col>
     </el-row>
@@ -97,16 +98,18 @@
         <el-col :span="6">
           <p class="text-center">车辆情况</p>
           <ve-histogram :extend="extend"
-                      :colors="colors"
-                      :data="clChartData"
-                      :legend-visible="false"></ve-histogram>
+                        :colors="colors"
+                        :data="clChartData"
+                        :settings="   { yAxisName: ['单位：辆'],}"
+                        :legend-visible="false"></ve-histogram>
         </el-col>
         <el-col :span="6">
           <p class="text-center">计算机配置情况</p>
-           <ve-histogram :extend="extend"
-                      :colors="colors"
-                      :data="jsjChartData"
-                      :legend-visible="false"></ve-histogram>
+          <ve-histogram :extend="extend"
+                        :colors="colors"
+                        :data="jsjChartData"
+                        :settings="   { yAxisName: ['单位：台'],}"
+                        :legend-visible="false"></ve-histogram>
         </el-col>
       </el-row>
     </el-row>
@@ -122,7 +125,8 @@
                 :settings="chartSetting"
                 :legend-visible="false"
                 height="250px"
-                :colors="colors"></ve-pie>
+                :colors="colors"
+                :events="chartEvents"></ve-pie>
       </el-col>
       <el-col :span="6">
         <p class="text-center">2020年12月农电人员学历结构</p>
@@ -150,6 +154,22 @@
                 height="250px"></ve-pie>
       </el-col>
     </el-row>
+    <el-dialog title="55岁以上人员分布情况"
+               :visible.sync="dialogVisible"
+               width="50%">
+      <ve-histogram :extend="extend"
+                        :colors="colors"
+                        :data="clChartData"
+                        height="250px"
+                        :settings="{ yAxisName: ['单位：人'],}"
+                        :legend-visible="false"></ve-histogram>
+      <span slot="footer"
+            class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary"
+                   @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -157,7 +177,19 @@
 export default {
   name: 'vueName',
   data() {
+    var self = this
+    this.chartEvents = {
+      click() {
+        self.dialogVisible = true
+      },
+    }
     return {
+      // chartEvents: {
+      //   click() {
+      //     this.dialogVisible = true
+      //   },
+      // },
+      dialogVisible: false,
       colors: [
         '#0b3a8a',
         '#1767ac',
@@ -195,7 +227,7 @@ export default {
         ],
       },
       clChartData: {
-         columns: ['日期', '数量'],
+        columns: ['日期', '数量'],
         rows: [
           { 日期: '西安', 数量: 124 },
           { 日期: '咸阳', 数量: 110 },
@@ -266,9 +298,9 @@ export default {
         //   offset: -15,
         // },
       },
-
+      gdsSetting: { yAxisName: ['个'] },
       qySetting: {
-        yAxisName: ['乡镇人口(万人)'],
+        yAxisName: [' ，       乡镇人口(万人)'],
       },
       chartSetting: {
         radius: 60,

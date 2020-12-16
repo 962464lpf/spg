@@ -17,7 +17,7 @@
       >
         <el-tabs v-model="activeName">
           <el-tab-pane v-if="!tqStatus" label="基本信息" name="first" lazy style="height: 100%;">
-            <Jbxx></Jbxx>
+            <Jbxx v-if="!tqStatus"></Jbxx>
           </el-tab-pane>
           <el-tab-pane
             label="工单统计"
@@ -28,7 +28,7 @@
             <Gdtj></Gdtj>
           </el-tab-pane>
           <el-tab-pane v-if="tqStatus" label="台区统计" name="third" lazy style="height: 100%;">
-            <Tqtj></Tqtj>
+            <Tqtj v-if="tqStatus"></Tqtj>
           </el-tab-pane>
         </el-tabs>
       </el-col>

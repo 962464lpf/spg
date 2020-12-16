@@ -48,6 +48,7 @@
         <div class="mt10">
           <h4 class="text-center">本月督办处理率</h4>
           <ve-gauge :data="chartData2"
+                    height="270px"
                     :settings="chartSettings"></ve-gauge>
         </div>
       </el-col>
@@ -82,8 +83,6 @@
                                  label="督办内容"> </el-table-column>
                 <el-table-column prop='dbfssj'
                                  label="督办生成时间"> </el-table-column>
-                <el-table-column prop='dwmc'
-                                 label="单位名称"> </el-table-column>
                 <el-table-column prop='sztq'
                                  label="所在台区"> </el-table-column>
                 <el-table-column prop='zrr'
@@ -92,8 +91,10 @@
                                  label="督办类型"> </el-table-column>
                 <el-table-column prop='dbbh'
                                  label="操作">
-                  <template>
-                    <el-button type="primary" @click="jump" >督办处理</el-button>
+                  <template slot-scope="scope">
+                    <el-button type="primary"
+                               @click="jump"
+                               v-if="!scope.row.status">督办处理</el-button>
                   </template>
                 </el-table-column>
               </el-table>
@@ -121,14 +122,13 @@
                 <el-table-column label="督办编号"> </el-table-column>
                 <el-table-column label="督办内容"> </el-table-column>
                 <el-table-column label="督办生成时间"> </el-table-column>
-                <el-table-column label="单位名称"> </el-table-column>
                 <el-table-column label="所在台区"> </el-table-column>
                 <el-table-column label="责任人"> </el-table-column>
                 <el-table-column label="督办类型"> </el-table-column>
               </el-table>
             </el-form>
           </el-tab-pane>
-        
+
         </el-tabs>
       </el-col>
     </el-row>
@@ -147,6 +147,36 @@ import ChooseGds from './ChooseGds'
 export default {
   components: { NewWork, ChooseGds },
   data() {
+    this.chartSettings = {
+      offsetY: 0,
+      dataType: {
+        处理率: 'percent',
+      },
+      seriesMap: {
+        处理率: {
+          min: 0,
+          max: 1,
+           axisLine: {
+              lineStyle: {
+                color: [[0.09, 'lime'],[0.82, '#1e90ff'],[1, '#ff4500']],
+                width: 3,
+                shadowColor: '#fff',
+                shadowBlur: 10
+              }
+            },
+          splitLine: {
+            //分割线-> 刻度线
+            length: 15, //数字距离刻度线的位置
+            lineStyle: {
+              width: 3,
+              color: '#fff', //刻度线颜色
+              shadowColor: '#fff', //刻度阴影
+              shadowBlur: 10, //模糊阴影大小 配合shadowColor,shadowOffsetX, shadowOffsetY设置使用
+            },
+          },
+        },
+      },
+    }
     return {
       activeName: 'first',
       colors: [
@@ -171,25 +201,16 @@ export default {
       ChartData1: {
         columns: ['日期', '数量'],
         rows: [
-          { 日期: '督办总数', 数量: 139 },
-          { 日期: '已处理数', 数量: 139 },
+          { 日期: '未处理数', 数量: 39 },
+          { 日期: '已处理数', 数量: 20 },
+          { 日期: '督办总数', 数量: 59 },
         ],
       },
       chartData2: {
         columns: ['type', 'value'],
         rows: [{ type: '处理率', value: 0.8 }],
       },
-      chartSettings: {
-        dataType: {
-          处理率: 'percent',
-        },
-        seriesMap: {
-          处理率: {
-            min: 0,
-            max: 1,
-          },
-        },
-      },
+
       newWorkStatus: false,
       chooseGdsStatus: false,
       formInline: {
@@ -237,6 +258,18 @@ export default {
           zrr: '王永涛',
           dbjb: '',
           dblx: '指标督办',
+        },
+        {
+          dbbh: '2020112005',
+          dbnr: '96789工单预警',
+          fbfdsj: '2020-11-20',
+          dbfssj: '2020-11-20',
+          dwmc: 'xxx',
+          sztq: '台区2',
+          zrr: '王永涛',
+          dbjb: '',
+          dblx: '超期提醒',
+          status: true,
         },
       ],
     }

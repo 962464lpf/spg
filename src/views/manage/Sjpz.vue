@@ -1,14 +1,31 @@
 <template>
   <div class="sjpz">
     <div>
-      <el-button type="primary" @click="gdssypzStatus = true"
-        >供电所首页配置</el-button
-      >
-      <el-button type="primary" @click="sjmbdzStatus = true"
-        >数据模板定制</el-button
-      >
-      <el-button type="primary" @click="sjtbStatus = true">数据填报</el-button>
-      <el-button type="primary">导出</el-button>
+      <!-- <el-button type="primary"
+                 @click="gdssypzStatus = true"
+                 v-if="gdsDataStatus">供电所首页配置</el-button> -->
+      <el-button type="primary"
+                 @click="sjmbdzStatus = true"
+                 v-if="!gdsDataStatus">数据模板定制</el-button>
+      <el-button type="primary"
+                 v-if="gdsDataStatus"
+                 @click="sjtbStatus = true">数据填报</el-button>
+      <el-form ref="form"
+               inline
+               class='mt10'
+               label-width="80px">
+        <el-form-item label="时间">
+          <el-date-picker type="datetimerange"
+                          range-separator="至"
+                          start-placeholder="开始日期"
+                          end-placeholder="结束日期">
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary">检索</el-button>
+          <el-button type="primary">导出</el-button>
+        </el-form-item>
+      </el-form>
     </div>
     <el-row class="mt10">
       <!-- <el-col :span="4">
@@ -23,23 +40,65 @@
         </el-tree
       ></el-col> -->
       <el-col :span="24">
-        <el-table :data="tableData" style="width: 100%" class="mt10">
-          <el-table-column prop="gdsmc" label="供电所名称" width="180">
+        <el-table :data="tableData"
+                  style="width: 100%"
+                  class="mt10"
+                  border>
+          <el-table-column prop="gdsmc"
+                           label="地市公司">
           </el-table-column>
-          <el-table-column prop="zbdh" label="值班电话" width="180">
+          <el-table-column prop="gdsmc"
+                           label="县公司">
           </el-table-column>
-          <el-table-column prop="gdsdz" label="供电所地址"> </el-table-column>
-          <el-table-column prop="szxm" label="所长姓名"> </el-table-column>
-          <el-table-column prop="szdh" label="所长电话"> </el-table-column>
-          <el-table-column prop="sjzt" label="数据状态"> </el-table-column>
-          <el-table-column label="操作" width="180">
+          <el-table-column prop="gdsmc"
+                           label="供电所名称">
+          </el-table-column>
+          <el-table-column prop="zbdh"
+                           label="供电所值班电话">
+          </el-table-column>
+          <el-table-column prop="gdsmc"
+                           label="本所人数">
+            <el-table-column prop="gdsmc"
+                             label="男（人）">
+            </el-table-column>
+            <el-table-column prop="gdsmc"
+                             label="女（人）">
+            </el-table-column>
+            <el-table-column prop="gdsmc"
+                             label="管理岗人数">
+            </el-table-column>
+            <el-table-column prop="gdsmc"
+                             label="营配业务人数">
+            </el-table-column>
+            <el-table-column prop="gdsmc"
+                             label="综合业务人数">
+            </el-table-column>
+          </el-table-column>
+          <el-table-column prop="gdsmc"
+                           label="计算机配置">
+            <el-table-column prop="gdsmc"
+                             label="总数">
+            </el-table-column>
+            <el-table-column prop="gdsmc"
+                             label="使用六年以上">
+            </el-table-column>
+            <el-table-column prop="gdsmc"
+                             label="使用十年以上">
+            </el-table-column>
+          </el-table-column>
+          <el-table-column prop="sjzt"
+                           label="数据状态"> </el-table-column>
+          <el-table-column label="操作"
+                           width="180" fixed="right">
             <template>
-              <el-button type="primary" size="mini">审核</el-button>
-              <el-button type="primary" size="mini">数据锁定</el-button>
+              <el-button type="primary"
+                         size="mini">审核</el-button>
+              <el-button type="primary"
+                         size="mini">数据锁定</el-button>
             </template>
           </el-table-column>
-        </el-table></el-col
-      >
+        </el-table>
+      </el-col>
     </el-row>
 
     <div v-if="sjmbdzStatus">
@@ -55,6 +114,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Sjmbdz from './Sjmbdz'
 import Sjtb from './Sjtb'
 import Gdssypz from './Gdssypz'
@@ -64,52 +124,33 @@ export default {
     Sjtb,
     Gdssypz,
   },
+  computed: {
+    ...mapState(['city']),
+  },
   watch: {
-    filterText(val) {
-      this.$refs.tree.filter(val)
+    city(val) {
+      val.length > 3
+        ? (this.gdsDataStatus = true)
+        : (this.gdsDataStatus = false)
     },
   },
   data() {
     return {
+      gdsDataStatus: false,
       sjmbdzStatus: false,
       sjtbStatus: false,
       gdssypzStatus: false,
       tableData: [
-        {
-          gdsmc: '汤峪供电所',
-          zbdh: '12345888',
-          gdsdz: '汤峪',
-          szxm: '张小虎',
-          szdh: '13598725632',
-          sjzt: '未审核',
-        },
+        // {
+        //   gdsmc: '汤峪供电所',
+        //   zbdh: '12345888',
+        //   gdsdz: '汤峪',
+        //   szxm: '张小虎',
+        //   szdh: '13598725632',
+        //   sjzt: '未审核',
+        // },
       ],
-      data: [
-        {
-          id: 1,
-          label: '陕西省',
-          children: [
-            {
-              id: 4,
-              label: '宝鸡市',
-              children: [
-                {
-                  id: 9,
-                  label: '眉县',
-                },
-                {
-                  id: 10,
-                  label: '岐山县',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-      defaultProps: {
-        children: 'children',
-        label: 'label',
-      },
+    
     }
   },
   methods: {},

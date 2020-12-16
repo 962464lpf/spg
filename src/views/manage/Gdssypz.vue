@@ -1,10 +1,10 @@
 <template>
-  <el-dialog
+  <!-- <el-dialog
     title="供电所首页配置"
     :visible.sync="dialogVisible"
     width="65%"
     :before-close="handleClose"
-  >
+  > -->
     <el-form ref="form" label-width="120px" class="mt10">
       <el-row>
         <el-col :span="12">
@@ -62,11 +62,11 @@
         </el-col>
       </el-row>
     </el-form>
-    <span slot="footer" class="dialog-footer">
+    <!-- <span slot="footer" class="dialog-footer">
       <el-button @click="handleClose">取 消</el-button>
       <el-button type="primary" @click="handleClose">确 定</el-button>
-    </span>
-  </el-dialog>
+    </span> -->
+  <!-- </el-dialog> -->
 </template>
 
 <script>

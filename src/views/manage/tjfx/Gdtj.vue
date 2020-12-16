@@ -1,12 +1,13 @@
 <template>
   <div class="gdtj">
     <el-row>
-      <el-col :span="12" class="content border">
+      <el-col :span="12"
+              class="content border">
         <p class="text-center">工单总体情况统计(2020-12-1)</p>
         <p>
           统计维度：
-          <el-button type="primary">日</el-button>
           <el-button type="success">月</el-button>
+          <el-button type="primary">日</el-button>
         </p>
         <div class="flex">
           <p>
@@ -32,79 +33,97 @@
           </el-row>
         </div>
       </el-col>
-      <el-col :span="12" class="content border">
-        <p class="text-center">工单按台区展示(2020-12-1)</p>
-        <ve-line
-          :data="gdChartData"
-          :settings="chartSetting"
-          :colors="colors"
-          height="270px"
-          v-if="gdsDataStatus"
-        ></ve-line>
-        <ve-line
-        v-else
-          :data="gdChartDatagds"
-          :settings="chartSetting"
-          :colors="colors"
-          height="270px"
-        ></ve-line>
+      <el-col :span="12"
+              class="content border">
+        <p class="text-center"> {{gdsDataStatus ? '工单按台区展示(2020-12-1)' : '工单按地区展示(2020-12-1)'}}</p>
+        <ve-line :data="gdChartData"
+                 :settings="{offsetY: 0, yAxisName: ['单位：个'],}"
+                 :colors="colors"
+                 height="270px"
+                 :toolbox="toolbox"
+                 v-if="!gdsDataStatus"></ve-line>
+        <ve-line v-else
+                 :data="gdChartDatagds"
+                 :settings="{offsetY: 0, yAxisName: ['单位：个'],}"
+                 :colors="colors"
+                 height="270px"></ve-line>
       </el-col>
-      <el-col :span="12" class="content mt10 border">
+      <el-col :span="12"
+              class="content mt10 border">
         <p class="text-center ">工单分类统计(2020-12-1)</p>
-        <ve-line
-          :data="gdFlChartData"
-          :settings="chartSetting"
-          :colors="colors"
-          height="270px"
-          v-if="gdsDataStatus"
-        ></ve-line>
-         <ve-line
-         v-else
-          :data="gdFlChartDatagds"
-          :settings="chartSetting"
-          :colors="colors"
-          height="270px"
-        ></ve-line>
+        <ve-line :data="gdFlChartData"
+                 :settings="{offsetY: 0, yAxisName: ['单位：个'],}"
+                 :colors="colors"
+                 height="270px"
+                 v-if="!gdsDataStatus"></ve-line>
+        <ve-line v-else
+                 :data="gdFlChartDatagds"
+                 :settings="{offsetY: 0, yAxisName: ['单位：个'],}"
+                 :colors="colors"
+                 height="270px"></ve-line>
       </el-col>
-      <el-col :span="12" class="content mt10 border ">
+      <el-col :span="12"
+              class="content mt10 border ">
         <p class="text-center">工单完成情况统计(2020-12-1)</p>
         <el-row>
           <el-col :span="12">
-            <ve-ring
-              :data="gdWcChartData"
-              height="270px"
-              :colors="colors"
-              :settings="gdWcChartSetting"
-            ></ve-ring>
+            <ve-ring :data="gdWcChartData"
+                     height="270px"
+                     :colors="colors"
+                     :settings="gdWcChartSetting"></ve-ring>
           </el-col>
           <el-col :span="12">
-            <ve-ring
-              :data="gdPjChartData"
-              height="270px"
-              :colors="colors"
-              :settings="gdWcChartSetting"
-            ></ve-ring>
+            <ve-ring :data="gdPjChartData"
+                     height="270px"
+                     :colors="colors"
+                     :settings="gdWcChartSetting"></ve-ring>
           </el-col>
         </el-row>
       </el-col>
     </el-row>
+    <el-dialog title=""
+               :visible.sync="dialogVisible"
+               width="50%">
+      <ve-histogram :extend="extend"
+                        :colors="colors"
+                        :data="clChartData"
+                        height="250px"
+                        :settings="{ yAxisName: ['单位：人'],}"
+                        :legend-visible="false"></ve-histogram>
+      <span slot="footer"
+            class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary"
+                   @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import 'echarts/lib/component/toolbox'
 import { mapState } from 'vuex'
 export default {
   name: 'vueName',
-   computed: {
+  computed: {
     ...mapState(['city']),
   },
   watch: {
     city(val) {
-      val.length > 3 ? this.gdsDataStatus= false : this.gdsDataStatus = true
-    }
+      val.length > 3
+        ? (this.gdsDataStatus = true)
+        : (this.gdsDataStatus = false)
+    },
   },
   data() {
+    this.toolbox = {
+      feature: {
+        magicType: { type: ['line', 'bar'] },
+        saveAsImage: {},
+      },
+    }
     return {
+      dialogVisible: false,
       gdsDataStatus: false,
       colors: [
         '#0b3a8a',
@@ -117,45 +136,43 @@ export default {
       gdChartData: {
         columns: ['日期', '数量'],
         rows: [
-          { 日期: '西安', 数量: 0 },
-          { 日期: '咸阳', 数量: 0 },
-          { 日期: '宝鸡', 数量: 0 },
-          { 日期: '渭南', 数量: 0 },
-          { 日期: '汉中', 数量: 0 },
-          { 日期: '榆林', 数量: 0 },
+          { 日期: '西安', 数量: 15 },
+          { 日期: '咸阳', 数量: 10 },
+          { 日期: '宝鸡', 数量: 16 },
+          { 日期: '渭南', 数量: 12 },
+          { 日期: '汉中', 数量: 24 },
+          { 日期: '榆林', 数量: 17 },
         ],
       },
       gdFlChartData: {
         columns: ['日期', '类型一', '类型二', '类型三', '类型四'],
         rows: [
-          { 日期: '西安', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '咸阳', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '宝鸡', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '渭南', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '汉中', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '榆林', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '西安', 类型一: 12, 类型二: 23, 类型三: 15, 类型四: 23 },
+          { 日期: '咸阳', 类型一: 11, 类型二: 21, 类型三: 13, 类型四: 21 },
+          { 日期: '宝鸡', 类型一: 8, 类型二: 19, 类型三: 12, 类型四: 18 },
+          { 日期: '渭南', 类型一: 5, 类型二: 16, 类型三: 13, 类型四: 15 },
+          { 日期: '汉中', 类型一: 4, 类型二: 13, 类型三: 12, 类型四: 12 },
+          { 日期: '榆林', 类型一: 3, 类型二: 8, 类型三: 11, 类型四: 9 },
         ],
       },
       gdChartDatagds: {
         columns: ['日期', '数量'],
         rows: [
-          { 日期: '台区1', 数量: 0 },
-          { 日期: '台区2', 数量: 0 },
-          { 日期: '台区3', 数量: 0 },
-          { 日期: '台区4', 数量: 0 },
-          { 日期: '台区5', 数量: 0 },
-          { 日期: '台区6', 数量: 0 },
+          { 日期: '台区1', 数量: 15 },
+          { 日期: '台区2', 数量: 10 },
+          { 日期: '台区3', 数量: 16 },
+          { 日期: '台区4', 数量: 12 },
+          { 日期: '台区5', 数量: 24 },
         ],
       },
       gdFlChartDatagds: {
         columns: ['日期', '类型一', '类型二', '类型三', '类型四'],
         rows: [
-          { 日期: '台区1', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '台区2', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '台区3', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '台区4', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '台区5', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
-          { 日期: '台区6', 类型一: 0, 类型二: 0, 类型三: 0, 类型四: 0 },
+          { 日期: '台区1', 类型一: 12, 类型二: 23, 类型三: 15, 类型四: 23 },
+          { 日期: '台区2', 类型一: 11, 类型二: 21, 类型三: 13, 类型四: 25 },
+          { 日期: '台区3', 类型一: 8, 类型二: 19, 类型三: 12, 类型四: 27 },
+          { 日期: '台区4', 类型一: 5, 类型二: 16, 类型三: 13, 类型四: 24 },
+          { 日期: '台区5', 类型一: 4, 类型二: 13, 类型三: 12, 类型四: 22 },
         ],
       },
       extend: {
@@ -172,15 +189,15 @@ export default {
       gdWcChartData: {
         columns: ['项', '访问用户'],
         rows: [
-          { 项: '已完成', 访问用户: 0 },
-          { 项: '未完成', 访问用户: 0 },
+          { 项: '已结单', 访问用户: 0 },
+          { 项: '未结单', 访问用户: 0 },
         ],
       },
       gdPjChartData: {
         columns: ['项', '访问用户'],
         rows: [
-          { 项: '已评价', 访问用户: 0 },
-          { 项: '未评价', 访问用户: 0 },
+          { 项: '已归档', 访问用户: 0 },
+          { 项: '未归档', 访问用户: 0 },
         ],
       },
       gdWcChartSetting: {

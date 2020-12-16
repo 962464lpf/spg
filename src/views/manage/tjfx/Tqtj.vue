@@ -53,7 +53,7 @@
           <el-tab-pane label="待办"
                        name="first">
             <div class="list">
-              <p>申请编号：12345</p>
+              <p>申请编号：120103</p>
               <p>接收时间：2020-12-1</p>
               <p>业务类型：业扩报装</p>
               <p>流程节点：装表接电</p>
@@ -61,7 +61,7 @@
             </div>
             <el-divider></el-divider>
             <div class="list">
-              <p>申请编号：12345</p>
+              <p>申请编号：120104</p>
               <p>接收时间：2020-12-1</p>
               <p>业务类型：业扩报装</p>
               <p>流程节点：装表接电</p>
@@ -175,6 +175,7 @@ export default {
     overflow: auto;
     opacity: 0.9;
     .list {
+      padding: 0 10px;
       p {
         font-size: 12px;
         line-height: 24px;
