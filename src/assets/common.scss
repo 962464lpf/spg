@@ -190,3 +190,18 @@ img {
   background-color: rgb(232, 65, 49) !important;
   border-color: rgb(232, 65, 49) !important;
 }
+
+.el-table thead{
+  th{
+    text-align: center !important;
+  }
+}
+
+.el-table tbody{
+  tr{
+    td{
+      text-align: center !important;
+
+    }
+  }
+}
