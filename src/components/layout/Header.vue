@@ -1,23 +1,20 @@
 <template>
   <div class="header">
-    <el-row>
-      <el-col :span="6"
-              class="imgbox">
-        <img src="../../assets/logo.png"
-             alt="" />
-        <span>陕西省地方电力 ( 集团 ) 有限公司</span>
-      </el-col>
-      <el-col :span="12">
-        <b style="font-size: 22px;">供电所综合信息管理系统</b>
-      </el-col>
-      <el-col :span="6"
-              class="right-box">
-        <el-cascader v-model="formInline.city" @change="cityChange"
-                     :options="options"
-                     :props="{ expandTrigger: 'hover',checkStrictly: true }"></el-cascader>
-        <span class="ml10">李淳罡</span>
-      </el-col>
-    </el-row>
+    <p class="imgbox"><img src="../../assets/logo.png"
+           alt="" />
+      <span>陕西省地方电力 ( 集团 ) 有限公司</span>
+    </p>
+
+    <p>
+      <b style="font-size: 22px;">供电所综合信息管理系统</b>
+    </p>
+    <p class="right-box">
+      <el-cascader v-model="formInline.city"
+                   @change="cityChange"
+                   :options="options"
+                   :props="{ expandTrigger: 'hover',checkStrictly: true }"></el-cascader>
+      <span class="ml10">李淳罡</span>
+    </p>
 
   </div>
 </template>
@@ -89,7 +86,7 @@ export default {
   methods: {
     cityChange() {
       this.$store.commit('cityChange', this.formInline.city)
-    }
+    },
   },
   mounted() {},
 }
@@ -102,6 +99,8 @@ export default {
   text-align: center;
   color: white;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   .imgbox {
     height: 100%;
     display: flex;
