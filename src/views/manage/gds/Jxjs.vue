@@ -45,6 +45,12 @@
       </el-table-column>
       <el-table-column prop="df"
                        label="得分">
+                       <template slot-scope="scope">
+                         <el-input v-model="scope.row.df"></el-input>
+                       </template>
+      </el-table-column>
+      <el-table-column prop="bz"
+                       label="备注">
       </el-table-column>
     </el-table>
     <span slot="footer"
@@ -76,6 +82,7 @@ export default {
           gzsl: '1',
           bzf: '10',
           df: '10',
+          bz: ''
         },
         
       ],

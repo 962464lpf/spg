@@ -89,12 +89,13 @@
           <el-table-column prop="sjzt"
                            label="数据状态"> </el-table-column>
           <el-table-column label="操作"
-                           width="180" fixed="right">
+                           width="180"
+                           fixed="right">
             <template>
               <el-button type="primary"
-                         size="mini">审核</el-button>
-              <el-button type="primary"
-                         size="mini">数据锁定</el-button>
+                         size="mini">审核状态</el-button>
+              <!-- <el-button type="primary"
+                         size="mini">数据锁定</el-button> -->
             </template>
           </el-table-column>
         </el-table>
@@ -141,6 +142,7 @@ export default {
       sjtbStatus: false,
       gdssypzStatus: false,
       tableData: [
+        {}
         // {
         //   gdsmc: '汤峪供电所',
         //   zbdh: '12345888',
@@ -150,11 +152,12 @@ export default {
         //   sjzt: '未审核',
         // },
       ],
-    
     }
   },
   methods: {},
-  mounted() {},
+  mounted() {
+    this.city > 3 ? (this.gdsDataStatus = true) : (this.gdsDataStatus = false)
+  },
 }
 </script>
 

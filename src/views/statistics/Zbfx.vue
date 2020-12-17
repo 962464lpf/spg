@@ -17,9 +17,9 @@
         <el-tabs v-model="activeName"
                  type="card">
           <el-tab-pane label="营销服务"
-                       name="second">
+                       name="first" >
             <div class="item"
-                 v-if="activeName === 'second'">
+                 v-if="activeName === 'first'">
               <h3>业扩报装</h3>
               <el-row>
                 <el-col :span="12">
@@ -86,7 +86,7 @@
               </el-row>
             </div>
             <div class="item"
-                 v-if="activeName === 'second'">
+                 v-if="activeName === 'first'">
               <h3>电费回收</h3>
               <el-row>
                 <el-col :span="8">
@@ -149,7 +149,7 @@
               </el-row>
             </div>
             <div class="item"
-                 v-if="activeName === 'second'">
+                 v-if="activeName === 'first'">
               <h3>台区线损率</h3>
               <el-row>
                 <el-col :span="24">
@@ -161,7 +161,7 @@
               </el-row>
             </div>
             <div class="item"
-                 v-if="activeName === 'second'">
+                 v-if="activeName === 'first'">
               <h3>96789</h3>
               <ul>
                 <li>
@@ -222,9 +222,9 @@
             </div>
           </el-tab-pane>
           <el-tab-pane label="设备运行"
-                       name="third">
+                       name="second">
             <div class="item"
-                 v-if="activeName === 'third'">
+                 v-if="activeName === 'second'">
               <h3>公变运行</h3>
               <el-row>
                 <el-col :span="12">
@@ -422,8 +422,8 @@
             </div>
           </el-tab-pane>
           <el-tab-pane label="综合管理"
-                       name="first">
-            <el-row>
+                       name="third">
+            <el-row  v-if="activeName === 'third'">
               <!-- <el-col :span="12" class="item">
                 <h3>供电所情况</h3>
                 <ul>
@@ -616,7 +616,7 @@ export default {
   data() {
     return {
       detailStatus: false,
-      activeName: 'second',
+      activeName: 'first',
       colors: [
         '#0b3a8a',
         '#1767ac',

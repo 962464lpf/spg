@@ -161,15 +161,15 @@ const routes = [
 					icon: 'el-icon-document',
 				},
 			},
-			{
-				path: '/zhgl/tjfx',
-				name: 'sjpz',
-				component: () => import('../views/manage/Tjfx.vue'),
-				meta: {
-					title: '统计分析',
-					icon: 'el-icon-document',
-				},
-			},
+			// {
+			// 	path: '/zhgl/tjfx',
+			// 	name: 'sjpz',
+			// 	component: () => import('../views/manage/Tjfx.vue'),
+			// 	meta: {
+			// 		title: '统计分析',
+			// 		icon: 'el-icon-document',
+			// 	},
+			// },
 			{
 				path: '/zhgl/zygl',
 				name: 'zygl',
