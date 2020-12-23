@@ -26,17 +26,18 @@
           <el-col :span="5">
             管理单位：凤鸣供电所
           </el-col>
-          <el-col :span="5">
+          <el-col :span="3">
             姓名：李永涛
           </el-col>
-          <el-col :span="4">
-            工号：03012025
+          <el-col :span="3">
+            工号：0301
           </el-col>
-          <el-col :span="4">
+          <el-col :span="3">
             分数：98
           </el-col>
-          <el-col :span="6">
+          <el-col :span="10">
             <el-button type="primary">试题导出</el-button>
+            <el-button type="primary">错题导出</el-button>
             <el-button type="primary">返回</el-button>
           </el-col>
         </el-row>
