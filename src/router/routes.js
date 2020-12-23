@@ -302,6 +302,66 @@ const routes = [
 			},
 		],
 	},
+  
+ 
+ 
+  {
+    path: '/jpgl',
+    name: 'spm',
+    component: () => import('../components/layout/RouterView.vue'),
+    meta: {
+      title: '教培管理',
+      icon: 'el-icon-document',
+    },
+    children: [
+      {
+        path: '/jpgl/index',
+        name: 'spm',
+        component: () => import('../views/education/EducationManage.vue'),
+        meta: {
+          title: '我的考试',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/jpgl/ywc',
+        name: 'spm',
+        component: () => import('../views/education/Ywckaoshi.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/tkgl',
+        name: 'spm',
+        component: () => import('../views/education/QuestionBank.vue'),
+        meta: {
+          title: '题库管理',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/tkgl/detail',
+        name: 'spm',
+        component: () => import('../views/education/QuestionBankDetail.vue'),
+        meta: {
+          title: '',
+          icon: 'el-icon-document',
+        },
+      },
+      {
+        path: '/sjgl',
+        name: 'spm',
+        component: () => import('../views/education/TestPaper.vue'),
+        meta: {
+          title: '试卷管理',
+          icon: 'el-icon-document',
+        },
+      },
+    ]
+  },
+  
 ]
 
 export default routes

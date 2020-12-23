@@ -32,16 +32,16 @@
               class="mt10">
       <el-table-column prop="num"
                        label="车牌号"> </el-table-column>
-      <el-table-column prop="type"
-                       label="车辆类型"> </el-table-column>
-      <el-table-column prop="nylx"
-                       label="能源类型"> </el-table-column>
-      <el-table-column prop="zclx"
-                       label="资产类型"> </el-table-column>
-      <el-table-column prop="bfnf"
-                       label="车辆报废年份"> </el-table-column>
-      <!-- <el-table-column prop="ziyou"
-                       label="资产类型"> </el-table-column> -->
+      <el-table-column prop="zcbm"
+                       label="资产编码"> </el-table-column>
+      <el-table-column prop="rllx"
+                       label="燃料类型"> </el-table-column>
+      <el-table-column prop="clpp"
+                       label="车辆品牌"> </el-table-column>
+      <el-table-column prop="gcrq"
+                       label="购车日期"> </el-table-column>
+      <el-table-column prop="syzt"
+                       label="使用状态"> </el-table-column>
 
     </el-table>
     <el-table :data="tableData1"
@@ -81,12 +81,11 @@ export default {
       tableData: [
         {
           num: '陕A12343',
-          type: '卡车',
-          nylx: '汽油',
-          bfnf: '2025-3-12',
-          ziyou: '是',
-          gzsj: '2015-3.11',
-          zclx: '自购',
+          zcbm: 'QYs-19920-232',
+          rllx: '汽油',
+          clpp: '东风',
+          gcrq: '2014.12',
+          syzt: '使用'
         },
       ],
       tableData1: [
