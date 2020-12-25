@@ -17,7 +17,7 @@
       <el-form :inline="true"
                class="mt10">
         <el-form-item label="模板">
-          <el-select placeholder="">
+          <el-select placeholder="" v-model="selectmb">
             <el-option label="模板1"
                        value="shanghai1"></el-option>
             <el-option label="模板2"
@@ -56,7 +56,7 @@
     <div v-if="!mbdzStatus && jxjsStatus && !jxhzStatus">
       <el-form :inline="true">
         <el-form-item label="考核人">
-          <el-select placeholder="">
+          <el-select placeholder="" v-model="selectkhr">
             <el-option label="小李"
                        value="shanghai"></el-option>
             <el-option label="小王"
@@ -111,7 +111,7 @@
       <el-form :inline="true"
                class="mt10">
         <el-form-item label="考核人">
-          <el-select placeholder="">
+          <el-select placeholder="" v-model="selectkhr">
             <el-option label="小李"
                        value="shanghai"></el-option>
             <el-option label="小王"
@@ -208,6 +208,8 @@ export default {
       mbdzStatusDialog: false,
       jxjsStatusDialog: false,
       selectVisible: false,
+      selectmb: '',
+      selectkhr: '',
       tableData: [{}],
       formInline: {
         time: '',
