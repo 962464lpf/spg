@@ -124,7 +124,7 @@ export default {
     return {
       addMbStatus: false,
       dialogVisible: this.value,
-      radio: 1,
+      radio: 2,
       form: { name: '' },
       tableData: [
         {
