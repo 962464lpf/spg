@@ -423,14 +423,20 @@
           </el-tab-pane>
           <el-tab-pane label="综合管理"
                        name="third">
-            <el-row v-if="activeName === 'third'">
+            <el-row v-if="activeName === 'third'"
+                    style="height:100%">
               <el-col :span="24"
-                      class="item item3">
+                      class="item item3"
+                      style="height:100%">
                 <h3>设备（网架）情况</h3>
-                <el-row class="sbwj">
-                  <el-col :span="16">
-                    <el-row>
-                      <el-col :span="8">
+                <el-row class="sbwj"
+                        style="height:100%">
+                  <el-col :span="16"
+                          style="height:100%">
+                    <el-row style="height:100%">
+                      <el-col :span="8"
+                              class="col-1"
+                              style="height:100%">
                         <h4 class='ml10 mt10'>线路</h4>
                         <ul>
                           <li class="curp">
@@ -439,43 +445,43 @@
                               <p>99</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>10kv线路总长度</p>
                               <p>99km</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>10kv线路架空线路长度</p>
                               <p>99</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>10kv线缆长度</p>
                               <p>99</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>低压线路条数</p>
                               <p>99</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>低压线路长度</p>
                               <p>99</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>10kv杆塔数量</p>
                               <p>99</p>
                             </div>
                           </li>
-                           <li class="curp">
+                          <li class="curp">
                             <div>
                               <p>0.4kv杆塔数量</p>
                               <p>99</p>
@@ -483,7 +489,9 @@
                           </li>
                         </ul>
                       </el-col>
-                      <el-col :span="8" class="col-2">
+                      <el-col :span="8"
+                              class="col-2"
+                              style="height:100%">
                         <h4 class='ml10 mt10'>配变</h4>
                         <ul>
                           <li>
@@ -515,16 +523,18 @@
                           </li>
                           <li>
                             <div>
-                              <p>0户均容量</p>
+                              <p>户均容量</p>
                             </div>
                           </li>
                         </ul>
                       </el-col>
-                      <el-col :span="8">
+                      <el-col :span="8"
+                              class="col-3"
+                              style="height:100%">
                         <h4 class='ml10 mt10'>终端</h4>
                         <ul>
                           <li>
-                           <div>
+                            <div>
                               <p>公变终端台数</p>
                               <p>99</p>
                             </div>
@@ -871,11 +881,15 @@ export default {
     ul {
       flex-wrap: wrap;
       justify-content: left;
+      height: 300px;
+
       li {
-        width: 46%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        width: 45%;
         margin-top: 20px;
-          text-align: center;
-        p{
+        text-align: center;
+        p {
           margin-top: 8px;
           text-align: center;
         }
@@ -892,6 +906,17 @@ export default {
     color: $shallow-base-color;
     text-align: center;
   }
- 
+  .col-1 {
+    //  background: #eee;
+  }
+  .col-2 {
+    // background: #08c0ea;
+    // color: white;
+    border-left: 1px dashed  #08c0ea;
+    border-right: 1px dashed  #08c0ea;
+  }
+  .col-3 {
+    //  background: #eee;
+  }
 }
 </style>

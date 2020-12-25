@@ -153,12 +153,12 @@ ul {
     align-items: center;
     justify-content: center;
     height: 28px;
-    background: #fff6f6;
-    color: #ff8484;
+    background: $shallow-base-color;
+    color:white;
     margin-top: 10px;
   }
   .color {
-    background: #eee;
+    background: $base-color;
   }
 }
 </style>
