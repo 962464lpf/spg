@@ -17,7 +17,7 @@
         <el-tabs v-model="activeName"
                  type="card">
           <el-tab-pane label="营销服务"
-                       name="first" >
+                       name="first">
             <div class="item"
                  v-if="activeName === 'first'">
               <h3>业扩报装</h3>
@@ -349,7 +349,7 @@
               <el-row>
 
                 <el-col :span="8">
-                   <ul>
+                  <ul>
                     <li>
                       <div>
                         <p>低电压安装覆盖率</p>
@@ -417,117 +417,146 @@
                                 :legend-visible="false"
                                 :settings="{  yAxisType: ['percent'] }"></ve-histogram>
                 </el-col>
-               
+
               </el-row>
             </div>
           </el-tab-pane>
           <el-tab-pane label="综合管理"
                        name="third">
-            <el-row  v-if="activeName === 'third'">
-              <!-- <el-col :span="12" class="item">
-                <h3>供电所情况</h3>
-                <ul>
-                  <li>
-                    <p><i class="el-icon-s-tools"></i></p>
-                    <div>
-                      <p>班组信息</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-warning"></i></p>
-                    <div>
-                      <p>员工人数</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-plus"></i></p>
-                    <div>
-                      <p>供电所面积</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-upload"></i></p>
-                    <div>
-                      <p>生产车辆</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-s-fold"></i></p>
-                    <div>
-                      <p>集体工具</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                  <li>
-                    <p><i class="el-icon-s-grid"></i></p>
-                    <div>
-                      <p>备品备件</p>
-                      <p>99</p>
-                    </div>
-                  </li>
-                </ul>
-               
-              </el-col> -->
+            <el-row v-if="activeName === 'third'">
               <el-col :span="24"
                       class="item item3">
                 <h3>设备（网架）情况</h3>
-                <el-row>
+                <el-row class="sbwj">
                   <el-col :span="16">
-                    <ul>
-                      <li class="curp"
-                          @click="detailStatus = true">
-                        <p><i class="el-icon-s-tools"></i></p>
-                        <div>
-                          <p>专变台数</p>
-                          <p>99</p>
-                        </div>
-                      </li>
-                      <li class="curp"
-                          @click="detailStatus = true">
-                        <p><i class="el-icon-warning"></i></p>
-                        <div>
-                          <p>智能电表</p>
-                          <p>99</p>
-                        </div>
-                      </li>
-                      <li class="curp"
-                          @click="detailStatus = true">
-                        <p><i class="el-icon-plus"></i></p>
-                        <div>
-                          <p>集中器台数</p>
-                          <p>99</p>
-                        </div>
-                      </li>
+                    <el-row>
+                      <el-col :span="8">
+                        <h4 class='ml10 mt10'>线路</h4>
+                        <ul>
+                          <li class="curp">
+                            <div>
+                              <p>10kv线路条数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>10kv线路总长度</p>
+                              <p>99km</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>10kv线路架空线路长度</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>10kv线缆长度</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>低压线路条数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>低压线路长度</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>10kv杆塔数量</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                           <li class="curp">
+                            <div>
+                              <p>0.4kv杆塔数量</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </el-col>
+                      <el-col :span="8" class="col-2">
+                        <h4 class='ml10 mt10'>配变</h4>
+                        <ul>
+                          <li>
+                            <div>
+                              <p>公变台数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>公变容量</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>专变台数</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>专变容量</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>低压无功补偿台数</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>0户均容量</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </el-col>
+                      <el-col :span="8">
+                        <h4 class='ml10 mt10'>终端</h4>
+                        <ul>
+                          <li>
+                           <div>
+                              <p>公变终端台数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>专变终端台数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>智能总保台数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>集中器台数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <p>智能电表台数</p>
+                              <p>99</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </el-col>
+                    </el-row>
 
-                      <li class="curp"
-                          @click="detailStatus = true">
-                        <p><i class="el-icon-s-fold"></i></p>
-                        <div>
-                          <p>0.4KV低压塔杆数量</p>
-                          <p>99</p>
-                        </div>
-                      </li>
-                      <li class="curp"
-                          @click="detailStatus = true">
-                        <p><i class="el-icon-s-fold"></i></p>
-                        <div>
-                          <p>低压线路长度</p>
-                          <p>99</p>
-                        </div>
-                      </li>
-                      <li class="curp"
-                          @click="detailStatus = true">
-                        <p><i class="el-icon-s-fold"></i></p>
-                        <div>
-                          <p>低压线路条数</p>
-                          <p>99</p>
-                        </div>
-                      </li>
-                    </ul>
                   </el-col>
                   <el-col :span="8">
                     <ve-gauge :data="wjchartData"
@@ -843,8 +872,13 @@ export default {
       flex-wrap: wrap;
       justify-content: left;
       li {
-        width: 23%;
+        width: 46%;
         margin-top: 20px;
+          text-align: center;
+        p{
+          margin-top: 8px;
+          text-align: center;
+        }
       }
     }
   }
@@ -854,5 +888,10 @@ export default {
   .border-bottom {
     border-bottom: 1px solid#eee;
   }
+  h4 {
+    color: $shallow-base-color;
+    text-align: center;
+  }
+ 
 }
 </style>

@@ -141,17 +141,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  ul{
-    border: 1px solid black;
-    padding: 15px 8px;
-    margin-right: 20px;
-    li{
-      line-height: 34px;
-      border-bottom: 1px solid black;
-      text-align: center;
-    }
-    .color{
-      background: #eee;
-    }
+ul {
+  // border: 1px solid black;
+  padding: 15px 8px;
+  margin-right: 20px;
+  li {
+    // line-height: 34px;
+    // border-bottom: 1px solid black;
+    // text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    background: #fff6f6;
+    color: #ff8484;
+    margin-top: 10px;
   }
+  .color {
+    background: #eee;
+  }
+}
 </style>
