@@ -110,7 +110,7 @@
                       </div>
                     </li>
                   </ul>
-                  <p class="text-center mt10 mb10">电费回收情况统计(班组)</p>
+                  <p class="text-center mt10 mb10">电费回收情况统计</p>
                   <ve-line :data="dfChartData1"
                            height="250px"
                            :colors="colors"
@@ -126,7 +126,7 @@
                       </div>
                     </li>
                   </ul>
-                  <p class="text-center mt10 mb10">电费回收情况统计(责任人)</p>
+                  <p class="text-center mt10 mb10">电费回收情况统计</p>
                   <ve-histogram :data="dfChartData2"
                                 :colors="colors"
                                 height="250px"></ve-histogram>
@@ -141,7 +141,7 @@
                       </div>
                     </li>
                   </ul>
-                  <p class="text-center mt10 mb10">欠费情况统计(班组)</p>
+                  <p class="text-center mt10 mb10">欠费情况统计</p>
                   <ve-histogram :data="dfChartData3"
                                 :colors="colors"
                                 height="250px"></ve-histogram>

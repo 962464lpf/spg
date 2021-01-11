@@ -204,7 +204,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="人员结构">
+            <el-form-item label="用工方式">
               <el-select placeholder="请选择">
                 <el-option label="劳务派遣"
                            value="1">
@@ -238,7 +238,7 @@
           </el-col>
          
           <el-col :span="13">
-            <el-form-item label="职业资格等级">
+            <el-form-item label="职业资格名称">
               <el-select placeholder="请选择">
                 <el-option label="电气试验工"
                            value="1">
