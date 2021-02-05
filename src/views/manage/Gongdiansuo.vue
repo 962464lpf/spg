@@ -1,42 +1,44 @@
 <template>
   <div class="gds">
     <div class="mt10">
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/gdgl')">工单管理</el-button>
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/gqj')">工器具管理</el-button>
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/bpbj')">备品备件管理</el-button>
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/clgl')">车辆管理</el-button>
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/tqgl')">台区管理</el-button>
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/rygl')">员工管理</el-button>
-      <el-button type="primary"
-                 @click="jump('/zhgl/gds/jxgl')">绩效管理</el-button>
+      <el-button type="primary" @click="jump('/zhgl/gds/zhiban')"
+        >值班管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/gdgl')"
+        >工单管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/gqj')"
+        >工器具管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/bpbj')"
+        >备品备件管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/clgl')"
+        >车辆管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/tqgl')"
+        >台区管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/rygl')"
+        >员工管理</el-button
+      >
+      <el-button type="primary" @click="jump('/zhgl/gds/jxgl')"
+        >绩效管理</el-button
+      >
     </div>
     <el-row class="mt10">
-      <el-col class="js"
-              :span='12'>
+      <el-col class="js" :span="12">
         <p class="mt10">
-          党岔供电所位于*，业务覆盖*个行政村，管辖总面积*平方公里，服务总人口*万人，服务客户*万户。<br>
+          党岔供电所位于*，业务覆盖*个行政村，管辖总面积*平方公里，服务总人口*万人，服务客户*万户。<br />
         </p>
         <p>
-          供电所共有员工*名，其中在岗人员*人，男女比例*，其中中级工及以上*人，大专以上学历*人。<br>
-
+          供电所共有员工*名，其中在岗人员*人，男女比例*，其中中级工及以上*人，大专以上学历*人。<br />
         </p>
+        <p>供电所现有房产*处，总面积*平方米。<br /></p>
+        <p>供电所现有*辆车，出车总里程数*公里。<br /></p>
+        <p>现有施工工器具*个、安全工器具*个，个人工器具*个。<br /></p>
         <p>
-          供电所现有房产*处，总面积*平方米。<br>
-        </p>
-        <p>
-          供电所现有*辆车，出车总里程数*公里。<br>
-        </p>
-        <p>
-          现有施工工器具*个、安全工器具*个，个人工器具*个。<br>
-        </p>
-        <p>
-          党岔供电所负责运维*台综合变、总容量*千伏安，低压线路长度*米。<br>
+          党岔供电所负责运维*台综合变、总容量*千伏安，低压线路长度*米。<br />
         </p>
         <p>
           党岔供电所2020年11月对标省公司评分*分，全省第*名，环比上升*名
@@ -56,33 +58,25 @@
       </el-col>
       <el-col :span="12">
         <el-tabs v-model="activeName">
-          <el-tab-pane label="门头"
-                       name="first">
+          <el-tab-pane label="门头" name="first">
             <el-col :span="24">
               <div class="gdstp">
-                <img src="../../assets/img/gds1.jpg"
-                     alt="" />
+                <img src="../../assets/img/gds1.jpg" alt="" />
               </div>
             </el-col>
           </el-tab-pane>
-          <el-tab-pane label="营业厅"
-                       name="second">
+          <el-tab-pane label="营业厅" name="second">
             <div class="gdstp">
-              <img src="../../assets/img/gds2.jpg"
-                   alt="" />
+              <img src="../../assets/img/gds2.jpg" alt="" />
             </div>
           </el-tab-pane>
-          <el-tab-pane label="生活"
-                       name="third">
+          <el-tab-pane label="生活" name="third">
             <div class="gdstp">
-              <img src="../../assets/img/gds3.jpg"
-                   alt="" />
+              <img src="../../assets/img/gds3.jpg" alt="" />
             </div>
           </el-tab-pane>
         </el-tabs>
-
       </el-col>
-
     </el-row>
     <!-- <el-row class="mt10">
       <el-col :span="12">
