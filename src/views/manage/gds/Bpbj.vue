@@ -111,7 +111,7 @@
                   style="width: 100%"
                   class="mt10">
           <el-table-column prop="bh"
-                           label="编号"
+                           label="编号 "
                            width="55"> </el-table-column>
           <el-table-column prop="wldm"
                            label="物料代码"> </el-table-column>
