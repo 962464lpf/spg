@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mbdz">
     <el-dialog title="绩效模板定制"
                :visible.sync="dialogVisible"
                width="75%"
@@ -41,11 +41,14 @@
         </el-table-column>
         <el-table-column prop="gzlx"
                          label="工作类型"
+                         align="left"
                          width="80"> </el-table-column>
         <el-table-column prop="khbz"
+                         align="center"
                          label="考核班组"
                          width="120"> </el-table-column>
         <el-table-column label="标准分"
+                         align="center"
                          width="150">
           <template slot-scope="scope">
             <el-input v-model="scope.row.score"
@@ -384,7 +387,7 @@ export default {
             },
           ],
         },
-         {
+        {
           id: 8,
           gzkhx: '配电设备运行维护及事故处理',
           gzlx: '计划工作',
@@ -467,7 +470,7 @@ export default {
             },
           ],
         },
-          {
+        {
           id: 9,
           gzkhx: '安全用电',
           gzlx: '计划工作',
@@ -496,7 +499,7 @@ export default {
             },
           ],
         },
-           {
+        {
           id: 10,
           gzkhx: '新兴业务',
           gzlx: '计划工作',
@@ -556,6 +559,15 @@ export default {
 </script>
 
 <style lang="scss">
+.mbdz {
+  .el-table tbody {
+    tr {
+      td:nth-child(1) {
+        text-align: left !important;
+      }
+    }
+  }
+}
 .checkbox-group {
   .el-checkbox {
     width: 80px;
